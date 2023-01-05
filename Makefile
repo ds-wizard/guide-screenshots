@@ -21,4 +21,4 @@ copy:
 
 .PHONY: dev.open
 dev.open:
-	@cd screenshots && $(CYPRESS) open
+	@$(CYPRESS) open --browser chrome

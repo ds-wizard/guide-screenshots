@@ -1,6 +1,12 @@
 describe('Projects', () => {
-  it('Detail', () => {
-    cy.loginAs('admin')
+  it('Create', () => {
+    cy.loginAs('researcher')
+    cy.visitApp('/projects/create/from-template')
+    cy.get('.Questionnaires__Create').screenshot('projects/create/project-create', { padding: [10, 0, -35, 0] })
+  })
+
+  it.only('Detail', () => {
+    cy.loginAs('researcher')
     cy.visitApp('/projects/c66ab9be-dd94-4dbd-92a5-ceb31658a99b')
     cy.collapseSidebar()
 
@@ -22,5 +28,25 @@ describe('Projects', () => {
     cy.get('.nav-link').contains('Interpreting data').click()
     cy.get('#question-a797cab9-0829-4787-a096-1b5cedc9147f').scrollIntoView().screenshot('projects/detail/questionnaire/list-question')
     cy.get('#question-63ed4349-9743-4fd1-96df-73dbb7e4f05b').scrollIntoView().screenshot('projects/detail/questionnaire/integration-question', { padding: [0, 10, -25, 10] })
+
+    cy.get('.btn-link').contains('View').click()
+    cy.get('.btn-link').contains('View').focus()
+    cy.get('.dropdown-menu.show').screenshot('projects/detail/questionnaire/view-options', { padding: [38, 5, 5, 5]})
+
+    cy.get('.item').contains('Warnings').click()
+    cy.get('.questionnaire__right-panel .todos div').screenshot('projects/detail/questionnaire/warnings', { padding: [55, 0, 30, 200] })
+
+    cy.get('.item').contains('Comments').click()
+    cy.get('.question').contains('Will you be using').click()
+    cy.get('.Comments').screenshot('projects/detail/questionnaire/comments', { padding: [55, 30, 30, 300] })
+
+    cy.get('.item').contains('TODOs').click()
+    cy.wait(200)
+    cy.get('.item').contains('TODOs').screenshot('projects/detail/questionnaire/todos', { padding: [0, 200, 200, 70] })
+
+    cy.get('.item').contains('Version history').click()
+    cy.get('.history-day:nth-child(2) .date').click()
+    cy.get('.history-day:nth-child(2) .history-event:first-child .ListingDropdown').click()
+    cy.get('.questionnaire__right-panel').screenshot('projects/detail/questionnaire/version-history')
   })
 })

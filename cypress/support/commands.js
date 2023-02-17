@@ -91,3 +91,14 @@ Cypress.Commands.add('fillFields', (fields) => {
         }
     })
 })
+
+
+// Listing commands
+
+Cypress.Commands.add('getListingItem', (identifier) => {
+    cy.getCy('listing_item').contains(identifier).closest(dataCy('listing_item'))
+})
+
+Cypress.Commands.add('clickListingItemAction', (identifier, action) => {
+    cy.getListingItem(identifier).find(dataCy(`listing-item_action_${action}`)).click({ force: true })
+})

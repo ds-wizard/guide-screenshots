@@ -69,7 +69,7 @@ describe('Projects', () => {
     cy.get('.questionnaire__summary-report').should('exist')
     cy.screenshot('application/projects/list/detail/metrics/metrics')
 
-    
+
     // # Preview --------------------------------------------------------------
 
     // Template not set
@@ -107,5 +107,27 @@ describe('Projects', () => {
     cy.getCy('project_nav_settings').click()
     cy.get('.TypeHintInput__Value a').click()
     cy.get('.text-end .btn').contains('Save').click()
+
+    // # Documents ------------------------------------------------------------
+
+    // Document list
+    cy.getCy('project_nav_documents').click().blur()
+    cy.get('.list-group-item').should('exist')
+    cy.screenshot('application/projects/list/detail/documents/list')
+
+    // New document
+    cy.get('.btn').contains('New document').click()
+    cy.fillFields({
+      th_documentTemplateId: 'Horizon Europe DMP'
+    })
+    cy.get('.export-link').contains('PDF').click()
+    cy.get('.col-detail').screenshot('application/projects/list/detail/documents/new', { padding: [20, 0, 20, 0] })
+
+    // Document submission
+    cy.getCy('project_nav_documents').click().blur()
+    cy.clickListingItemAction('My Experiment v1', 'submit')
+    cy.get('.form-radio-group').should('exist')
+    cy.get('.modal-cover.visible').invoke('attr', 'style', 'background: #fff')
+    cy.get('.modal-cover.visible .modal-dialog').screenshot('application/projects/list/detail/documents/submission', { padding: [20, 20, 20, 20] })
   })
 })

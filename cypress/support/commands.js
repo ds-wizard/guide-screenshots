@@ -32,6 +32,11 @@ const login = (resp) => {
     })
 }
 
+const dataCy = (key) => {
+    return `[data-cy="${key}"]`
+}
+
+
 // Authentication commands
 
 Cypress.Commands.add('loginAs', (role) => {
@@ -50,3 +55,39 @@ Cypress.Commands.add('collapseSidebar', () => {
     cy.get('.collapse-link').click()
 })
 
+
+// Selection commands
+
+Cypress.Commands.add('getCy', (key, extra = '') => {
+    return cy.get(`${dataCy(key)}${extra}`)
+})
+
+
+// Form commands
+
+Cypress.Commands.add('fillFields', (fields) => {
+    Object.entries(fields).forEach(([key, value]) => {
+        if (key.startsWith('s_')) {
+            key = key.replace(/^s_/, '')
+            cy.get(`#${key}`).select(value)
+        } else if (key.startsWith('th_')) {
+            key = key.replace(/^th_/, '')
+            cy.get(`#${key}`).click()
+            cy.get(`#${key} .TypeHintInput__TypeHints__Search`).type(value)
+            cy.get(`#${key} .TypeHintInput__TypeHints ul li a`).contains(value).click()
+        } else if (key.startsWith('c_')) {
+            key = key.replace(/^c_/, '')
+            if (value) {
+                cy.get(`#${key}`).check()
+            } else {
+                cy.get(`#${key}`).uncheck()
+            }
+        } else {
+            if (value.length > 0) {
+                cy.get(`#${key}`).clear().type(value)
+            } else {
+                cy.get(`#${key}`).clear()
+            }
+        }
+    })
+})

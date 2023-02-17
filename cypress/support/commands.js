@@ -92,6 +92,16 @@ Cypress.Commands.add('fillFields', (fields) => {
     })
 })
 
+Cypress.Commands.add('checkToggle', (field) => {
+    cy.wait(100)
+    cy.get(`#${field}`).check({ force: true })
+})
+
+Cypress.Commands.add('uncheckToggle', (field) => {
+    cy.wait(100)
+    cy.get(`#${field}`).uncheck({ force: true })
+})
+
 
 // Listing commands
 

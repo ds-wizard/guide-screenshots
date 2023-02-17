@@ -5,11 +5,12 @@ describe('Projects', () => {
     cy.get('.Questionnaires__Create').screenshot('application/projects/list/create/project-create', { padding: [10, 0, -35, 0] })
   })
 
-  it.only('Detail', () => {
+  it('Detail', () => {
     cy.loginAs('researcher')
     cy.visitApp('/projects/c66ab9be-dd94-4dbd-92a5-ceb31658a99b')
     cy.collapseSidebar()
     cy.wait(2000)
+
 
     // # Project Detail -------------------------------------------------------
     
@@ -108,6 +109,7 @@ describe('Projects', () => {
     cy.get('.TypeHintInput__Value a').click()
     cy.get('.text-end .btn').contains('Save').click()
 
+
     // # Documents ------------------------------------------------------------
 
     // Document list
@@ -129,5 +131,19 @@ describe('Projects', () => {
     cy.get('.form-radio-group').should('exist')
     cy.get('.modal-cover.visible').invoke('attr', 'style', 'background: #fff')
     cy.get('.modal-cover.visible .modal-dialog').screenshot('application/projects/list/detail/documents/submission', { padding: [20, 20, 20, 20] })
+
+
+    // # Settings -------------------------------------------------------------
+    
+    cy.getCy('project_nav_settings').click().blur()
+    cy.screenshot('application/projects/list/detail/settings/settings')
+
+
+    // # Sharing --------------------------------------------------------------
+
+    cy.getCy('project_detail_share-button').click()
+    cy.checkToggle('visibilityEnabled')
+    cy.get('.modal-cover.visible').invoke('attr', 'style', 'background: #fff')
+    cy.get('.modal-cover.visible .modal-dialog').screenshot('application/projects/list/detail/sharing/share-modal', { padding: [20, 20, 20, 20] })
   })
 })

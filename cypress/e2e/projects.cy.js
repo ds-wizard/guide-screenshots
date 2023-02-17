@@ -1,4 +1,11 @@
 describe('Projects', () => {
+  it('List', () => {
+    cy.loginAs('researcher')
+    cy.visitApp('/projects')
+    cy.get('.list-group-item').should('exist')
+    cy.get('.col-list').screenshot('application/projects/list/index/project-list', { padding: [20, 0, 20, 0]})
+  })
+
   it('Create', () => {
     cy.loginAs('researcher')
     cy.visitApp('/projects/create/from-template')

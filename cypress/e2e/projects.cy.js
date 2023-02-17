@@ -146,4 +146,28 @@ describe('Projects', () => {
     cy.get('.modal-cover.visible').invoke('attr', 'style', 'background: #fff')
     cy.get('.modal-cover.visible .modal-dialog').screenshot('application/projects/list/detail/sharing/share-modal', { padding: [20, 20, 20, 20] })
   })
+
+  it('Migration', () => {
+    cy.loginAs('researcher')
+    cy.visitApp('/projects')
+    cy.collapseSidebar()
+    cy.wait(2000)
+
+    // Create migration
+    cy.clickListingItemAction('My Experiment', 'create-migration')
+    cy.get('.Questionnaires__CreateMigration').should('exist')
+    cy.screenshot('application/projects/list/migration/create')
+
+    // Migration screenshot
+    cy.fillFields({
+      s_packageId: 'dsw:root:1.0.0'
+    })
+    cy.get('.btn').contains('Create').click()
+    cy.get('.changes-view').should('exist')
+    cy.screenshot('application/projects/list/migration/migration')
+
+    // Delete migration to clean up
+    cy.visitApp('/projects')
+    cy.clickListingItemAction('1.0.0', 'cancel-migration')
+  })
 })

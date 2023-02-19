@@ -47,7 +47,11 @@ Cypress.Commands.add('loginAs', (role) => {
 // Navigation commands
 
 Cypress.Commands.add('visitApp', (url) => {
-    cy.visit(`${Cypress.env('url')}${url}`)
+    cy.visit(`${Cypress.env('url')}${url}`, {
+        onBeforeLoad(win) {
+          Object.defineProperty(win.navigator, 'language', { value: 'en' });
+        },
+      });
     cy.get('.full-page-loader').should('not.exist')
 })
 
@@ -89,6 +93,7 @@ Cypress.Commands.add('fillFields', (fields) => {
                 cy.get(`#${key}`).clear()
             }
         }
+        cy.get(`#${key}`).blur()
     })
 })
 

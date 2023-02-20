@@ -107,7 +107,7 @@ describe('Projects', () => {
 
     // Download preview
     cy.getCy('project_nav_preview').click().blur()
-    cy.wait(4000)
+    cy.wait(6000)
     cy.getCy('illustrated-message_format-not-supported').should('exist')
     cy.screenshot('application/projects/list/detail/preview/download')
 
@@ -138,6 +138,7 @@ describe('Projects', () => {
     cy.get('.form-radio-group').should('exist')
     cy.get('.modal-cover.visible').invoke('attr', 'style', 'background: #fff')
     cy.get('.modal-cover.visible .modal-dialog').screenshot('application/projects/list/detail/documents/submission', { padding: [20, 20, 20, 20] })
+    cy.get('.modal-cover.visible .btn').contains('Cancel').click()
 
 
     // # Settings -------------------------------------------------------------

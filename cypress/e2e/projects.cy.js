@@ -178,4 +178,11 @@ describe('Projects', () => {
     cy.visitApp('/projects')
     cy.clickListingItemAction('1.0.0', 'cancel-migration')
   })
+
+  it('Importers', () => {
+    cy.loginAs('dataSteward')
+    cy.visitApp('/project-importers')
+    cy.get('.list-group-item').should('exist')
+    cy.get('.col-list').screenshot('application/projects/importers/importers')
+  })
 })

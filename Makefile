@@ -14,6 +14,11 @@ screenshots:
 	@rm -rf output && $(CYPRESS) run --browser chrome
 
 
+.PHONY: screenshots.spec
+screenshots.spec:
+	@rm -rf output && $(CYPRESS) run --browser chrome --spec=$(spec)
+
+
 .PHONY: copy
 copy:
 	@node scripts/copy-screenshots $(DOCS_DIR) $(SCREENSHOTS_DIR)

@@ -117,3 +117,9 @@ Cypress.Commands.add('getListingItem', (identifier) => {
 Cypress.Commands.add('clickListingItemAction', (identifier, action) => {
     cy.getListingItem(identifier).find(dataCy(`listing-item_action_${action}`)).click({ force: true })
 })
+
+// Modals
+
+Cypress.Commands.add('clickModalAction', () => {
+    cy.getCy('modal_action-button').filter(':visible').click()
+})

@@ -70,4 +70,30 @@ describe('Knowledge Models / Editors', () => {
         cy.get('.KMEditor__Publish').should('exist')
         cy.screenshot('application/knowledge-models/editors/detail/publishing/publish-form', { capture: 'viewport' })
     })
+
+    it('Migration', () => {
+        cy.visitApp('/km-editor')
+        cy.get('.KMEditor__Index').should('exist')
+
+        // update available badge
+        cy.getListingItem('Chemistry').screenshot('application/knowledge-models/editors/migration/update-available', { padding: [0, -700, 0, 0] })
+
+        // create migration modal
+        cy.getCy('km-editor_list_outdated-badge').click()
+        cy.get('#targetPackageId').should('exist')
+        cy.getCy('modal_km-editor-upgrade').screenshot('application/knowledge-models/editors/migration/create-migration-modal')
+
+        // migration itself
+        cy.fillFields({ s_targetPackageId: 'dsw:root:2.4.4' })
+        cy.clickModalAction()
+        cy.getCy('km-editor_migration').should('exist')
+        cy.getCy('km-migration_apply-button').click()
+        cy.contains('Edit question').should('exist')
+        cy.screenshot('application/knowledge-models/editors/migration/migration')
+
+        // clean up
+        cy.visitApp('/km-editor')
+        cy.get('.KMEditor__Index').should('exist')
+        cy.clickListingItemAction('Chemistry', 'cancel-migration')
+    })
 })

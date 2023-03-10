@@ -6,6 +6,8 @@ describe('Users', () => {
 
         cy.wait(500)
 
+        cy.get('.dropdown-toggle').last().click()
+
         cy.screenshot('application/administration/users/index/list')
     })
 

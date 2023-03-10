@@ -6,6 +6,8 @@ describe('Documents', () => {
 
         cy.wait(500)
 
+        cy.get('.dropdown-toggle').last().click()
+
         cy.screenshot('application/documents/index/list')
     })
 })

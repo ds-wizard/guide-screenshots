@@ -1,12 +1,15 @@
-describe('Documents', () => {
+describe('Locales', () => {
     it('List', () => {
         cy.loginAs('admin')
         cy.visitApp('/locales')
         cy.get('.list-group-item').should('exist')
 
+        cy.wait(500)
+
+        cy.get('.dropdown-toggle').last().click()
+
         cy.screenshot('application/administration/locales/index/list')
     })
-
 
     it('Detail', () => {
         cy.loginAs('admin')
@@ -16,7 +19,6 @@ describe('Documents', () => {
         cy.screenshot('application/administration/locales/detail/detail')
     })
 
-
     it('Import from Registry', () => {
         cy.loginAs('admin')
         cy.visitApp('/locales/import?localeId=dsw:nl:0.2.0')
@@ -24,7 +26,6 @@ describe('Documents', () => {
 
         cy.get('.col-detail').screenshot('application/administration/locales/import/registry', { padding: [10, 10, 10, 10] })
     })
-
 
     it('Import from file', () => {
         cy.loginAs('admin')

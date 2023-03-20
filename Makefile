@@ -21,7 +21,7 @@ screenshots.spec:
 
 .PHONY: copy
 copy:
-	@node scripts/copy-screenshots $(DOCS_DIR) $(SCREENSHOTS_DIR)
+	@node scripts/copy-screenshots "$(DOCS_DIR)" "$(SCREENSHOTS_DIR)"
 
 
 .PHONY: dev.open

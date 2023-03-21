@@ -44,7 +44,7 @@ describe('Knowledge Models / Editors', () => {
         cy.get('.right-panel ul').screenshot('application/knowledge-models/editors/detail/knowledge-model/warnings', { padding: [60, 10, 20, 20] })
     })
 
-    it.only('Detail / Phases', () => {
+    it('Detail / Phases', () => {
         cy.visitApp('/km-editor/editor/fc0c83ff-f38b-4645-91bf-7deae343778d/phases')
         cy.collapseSidebar()
         cy.wait(1000)

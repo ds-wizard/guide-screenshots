@@ -69,13 +69,15 @@ describe('Knowledge Models / Editors', () => {
         cy.visitApp('/km-editor/editor/fc0c83ff-f38b-4645-91bf-7deae343778d/settings')
         cy.collapseSidebar()
         cy.wait(1000)
-        cy.get('.col-detail').screenshot('application/knowledge-models/editors/detail/settings/settings-form', { padding: [-10, 10, -10, 10] })
+        cy.get('.col-full').screenshot('application/knowledge-models/editors/detail/settings/settings-form')
     })
 
-    it('Detail / Publishing', () => {
-        cy.visitApp('/km-editor/publish/fc0c83ff-f38b-4645-91bf-7deae343778d')
-        cy.get('.KMEditor__Publish').should('exist')
-        cy.screenshot('application/knowledge-models/editors/detail/publishing/publish-form', { capture: 'viewport' })
+    it('Detail / Publish', () => {
+        cy.visitApp('/km-editor/editor/fc0c83ff-f38b-4645-91bf-7deae343778d/settings')
+        cy.get('.KMEditor__Editor').should('exist')
+        cy.get('.DetailNavigation__Row__Section__Actions .btn').contains('Publish').click()
+        cy.get('.modal-cover.visible').invoke('attr', 'style', 'background: #fff')
+        cy.getCy('modal_km-editor_publish').screenshot('application/knowledge-models/editors/detail/publish/publish-modal', { padding: [10, 10, 10, 10] })
     })
 
     it('Migration', () => {

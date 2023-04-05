@@ -90,7 +90,7 @@ describe('Knowledge Models / Editors', () => {
         // create migration modal
         cy.getCy('km-editor_list_outdated-badge').click()
         cy.get('#targetPackageId').should('exist')
-        cy.getCy('modal_km-editor-upgrade').screenshot('application/knowledge-models/editors/migration/create-migration-modal')
+        cy.getCy('modal_km-editor-update').screenshot('application/knowledge-models/editors/migration/create-migration-modal')
 
         // migration itself
         cy.fillFields({ s_targetPackageId: 'dsw:root:2.4.4' })

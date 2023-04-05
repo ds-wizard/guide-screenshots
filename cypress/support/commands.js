@@ -92,8 +92,8 @@ Cypress.Commands.add('fillFields', (fields) => {
             } else {
                 cy.get(`#${key}`).clear()
             }
+            cy.get(`#${key}`).blur()
         }
-        cy.get(`#${key}`).blur()
     })
 })
 

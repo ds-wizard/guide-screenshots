@@ -22,7 +22,7 @@ describe('Document Template Editors', () => {
 
     it('Detail', () => {
         cy.loginAs('admin')
-        cy.visitApp('/document-template-editors/dsw.mediakit:questionnaire-report:2.9.0')
+        cy.visitApp('/document-template-editors/dsw.mediakit:questionnaire-report:2.9.0/settings')
         cy.get('.DocumentTemplateEditor__MetadataEditor').should('exist')
 
         cy.screenshot('application/document-templates/editors/detail/index/editor')
@@ -30,7 +30,7 @@ describe('Document Template Editors', () => {
 
     it('Detail - Files', () => {
         cy.loginAs('admin')
-        cy.visitApp('/document-template-editors/dsw.mediakit:questionnaire-report:2.9.0/files')
+        cy.visitApp('/document-template-editors/dsw.mediakit:questionnaire-report:2.9.0')
         cy.get('.DocumentTemplateEditor').should('exist')
 
         cy.getCy('dt-editor_file-tree_file').contains('default.css').click()
@@ -63,7 +63,7 @@ describe('Document Template Editors', () => {
 
     it('Detail - Template (KMs)', () => {
         cy.loginAs('admin')
-        cy.visitApp('/document-template-editors/dsw.mediakit:questionnaire-report:2.9.0')
+        cy.visitApp('/document-template-editors/dsw.mediakit:questionnaire-report:2.9.0/settings')
         cy.get('.DocumentTemplateEditor__MetadataEditor').should('exist')
 
         cy.getCy('dt_template-nav_knowledge-models').click()
@@ -89,7 +89,7 @@ describe('Document Template Editors', () => {
 
     it('Detail - Template (Formats)', () => {
         cy.loginAs('admin')
-        cy.visitApp('/document-template-editors/dsw.mediakit:questionnaire-report:2.9.0')
+        cy.visitApp('/document-template-editors/dsw.mediakit:questionnaire-report:2.9.0/settings')
         cy.get('.DocumentTemplateEditor__MetadataEditor').should('exist')
 
         cy.getCy('dt_template-nav_formats').click()

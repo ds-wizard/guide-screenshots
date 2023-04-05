@@ -62,7 +62,7 @@ describe('Projects', () => {
     // TODOs
     cy.get('.item').contains('TODOs').click()
     cy.wait(200)
-    cy.get('.item').contains('TODOs').screenshot('application/projects/list/detail/questionnaire/todos', { padding: [0, 200, 200, 70] })
+    cy.get('.item').contains('TODOs').screenshot('application/projects/list/detail/questionnaire/todos', { padding: [0, 300, 200, 5] })
 
     // Version History
     cy.get('.item').contains('Version history').click()
@@ -164,6 +164,7 @@ describe('Projects', () => {
     // Create migration
     cy.clickListingItemAction('My Experiment', 'create-migration')
     cy.get('.Questionnaires__CreateMigration').should('exist')
+    cy.get('.tag-selection').should('exist')
     cy.screenshot('application/projects/list/migration/create')
 
     // Migration screenshot

@@ -3,7 +3,7 @@ describe('Settings', () => {
         cy.loginAs('admin')
         cy.visitApp('/settings/authentication')
 
-        cy.get('.btn').contains('Add').click()
+        cy.getCy('form-group_list_add-button').contains('Add service').click()
 
         cy.fillFields({
             'services\\.0\\.id': 'institutional-idp',
@@ -23,7 +23,7 @@ describe('Settings', () => {
         cy.loginAs('admin')
         cy.visitApp('/settings/look-and-feel')
 
-        cy.get('.btn').contains('Add').click()
+        cy.getCy('form-group_list_add-button').contains('Add link').click()
 
         cy.getCy('input-icon').type('fas fa-book')
         cy.getCy('input-title').type('User Guide')

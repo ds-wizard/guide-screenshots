@@ -44,4 +44,22 @@ describe('Profile', () => {
 
         cy.get('.col-full').screenshot('application/profile/edit/password/form', { padding: [0, -150, -550, 0] })
     })
+
+    it('Api Keys', () => {
+        cy.loginAs('admin')
+        cy.visitApp('/users/edit/current')
+        cy.get('.col-wide-detail').should('exist')
+        cy.get('.nav-link').contains('API Keys').click()
+
+        cy.get('.col-wide-detail').screenshot('application/profile/edit/api-keys/form', { padding: [50, 240, 10, 330] })
+    })
+
+    it.only('Active Sessions', () => {
+        cy.loginAs('admin')
+        cy.visitApp('/users/edit/current')
+        cy.get('.col-wide-detail').should('exist')
+        cy.get('.nav-link').contains('Active Sessions').click()
+
+        cy.get('.col-wide-detail').screenshot('application/profile/edit/active-sessions/form', { padding: [50, 240, 10, 330] })
+    })
 })

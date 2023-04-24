@@ -54,7 +54,7 @@ describe('Profile', () => {
         cy.get('.col-wide-detail').screenshot('application/profile/edit/api-keys/form', { padding: [50, 240, 10, 330] })
     })
 
-    it.only('Active Sessions', () => {
+    it('Active Sessions', () => {
         cy.loginAs('admin')
         cy.visitApp('/users/edit/current')
         cy.get('.col-wide-detail').should('exist')

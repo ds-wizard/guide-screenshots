@@ -91,7 +91,7 @@ describe('Projects', () => {
       'th_documentTemplateId': 'Horizon Europe'
     })
     cy.get('.export-link').contains('HTML').click()
-    cy.get('.text-end .btn').contains('Save').click()
+    cy.get('.form-actions-dynamic .btn').contains('Save').click()
 
     // HTML preview
     cy.getCy('project_nav_preview').click().blur()
@@ -103,7 +103,7 @@ describe('Projects', () => {
     // Set Horizon Europe Word
     cy.getCy('project_nav_settings').click()
     cy.get('.export-link').contains('MS Word').click()
-    cy.get('.text-end .btn').contains('Save').click()
+    cy.get('.form-actions-dynamic .btn').contains('Save').click()
 
     // Download preview
     cy.getCy('project_nav_preview').click().blur()
@@ -114,7 +114,7 @@ describe('Projects', () => {
     // Reset template after screenshots
     cy.getCy('project_nav_settings').click()
     cy.get('.TypeHintInput__Value a').click()
-    cy.get('.text-end .btn').contains('Save').click()
+    cy.get('.form-actions-dynamic .btn').contains('Save').click()
 
 
     // # Documents ------------------------------------------------------------

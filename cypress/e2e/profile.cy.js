@@ -28,7 +28,7 @@ describe('Profile', () => {
     it('Edit profile', () => {
         cy.loginAs('admin')
         cy.visitApp('/users/edit/current')
-        cy.get('.col-full').should('exist')
+        cy.get('.col-wide-detail').should('exist')
 
         cy.get('.col-full').screenshot('application/profile/edit/index/form', { padding: [0, 0, -230, 0] })
     })
@@ -43,7 +43,7 @@ describe('Profile', () => {
         cy.get('.col-full').screenshot('application/profile/edit/password/form', { padding: [0, -150, -550, 0] })
     })
 
-    it('Api Keys', () => {
+    it('API Keys', () => {
         cy.loginAs('admin')
         cy.visitApp('/users/edit/current/api-keys')
 

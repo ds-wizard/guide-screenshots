@@ -31,6 +31,7 @@ describe('Knowledge Models', () => {
         cy.loginAs('admin')
         cy.visitApp('/knowledge-models/import')
         cy.getCy('km_import_nav_file').click()
+        cy.get('.dropzone').should('exist')
 
         cy.get('.col-detail').screenshot('application/knowledge-models/list/import/file', { padding: [10, 10, 10, 10] })
     })

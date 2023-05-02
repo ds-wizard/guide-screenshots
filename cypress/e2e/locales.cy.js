@@ -31,6 +31,7 @@ describe('Locales', () => {
         cy.loginAs('admin')
         cy.visitApp('/locales/import')
         cy.getCy('locale_import_nav_file').click()
+        cy.get('.dropzone').should('exist')
 
         cy.get('.col-detail').screenshot('application/administration/locales/import/file', { padding: [10, 10, 10, 10] })
     })

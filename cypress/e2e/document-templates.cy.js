@@ -31,6 +31,7 @@ describe('Document Templates', () => {
         cy.loginAs('admin')
         cy.visitApp('/document-templates/import')
         cy.getCy('template_import_nav_file').click()
+        cy.get('.dropzone').should('exist')
 
         cy.get('.col-detail').screenshot('application/document-templates/list/import/file', { padding: [10, 10, 10, 10] })
     })

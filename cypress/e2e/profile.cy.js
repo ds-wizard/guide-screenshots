@@ -35,9 +35,7 @@ describe('Profile', () => {
 
     it('Change password', () => {
         cy.loginAs('admin')
-        cy.visitApp('/users/edit/current')
-        cy.get('.col-wide-detail').should('exist')
-        cy.get('.nav-link').contains('Password').click()
+        cy.visitApp('/users/edit/current/password')
         cy.get('#password').type('somepassword')
         cy.get('#passwordConfirmation').type('somepassword')
         cy.get('#passwordConfirmation').blur()
@@ -47,18 +45,14 @@ describe('Profile', () => {
 
     it('Api Keys', () => {
         cy.loginAs('admin')
-        cy.visitApp('/users/edit/current')
-        cy.get('.col-wide-detail').should('exist')
-        cy.get('.nav-link').contains('API Keys').click()
+        cy.visitApp('/users/edit/current/api-keys')
 
         cy.get('.col-wide-detail').screenshot('application/profile/edit/api-keys/form', { padding: [50, 240, 10, 330] })
     })
 
     it('Active Sessions', () => {
         cy.loginAs('admin')
-        cy.visitApp('/users/edit/current')
-        cy.get('.col-wide-detail').should('exist')
-        cy.get('.nav-link').contains('Active Sessions').click()
+        cy.visitApp('/users/edit/current/active-sessions')
 
         cy.get('.col-wide-detail').screenshot('application/profile/edit/active-sessions/form', { padding: [50, 240, 10, 330] })
     })

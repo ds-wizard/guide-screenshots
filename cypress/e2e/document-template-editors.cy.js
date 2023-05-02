@@ -84,7 +84,7 @@ describe('Document Template Editors', () => {
             'allowedPackages\\.1\\.maxVersion': '2.4.0',
         })
 
-        cy.get('.form-group').screenshot('application/document-templates/editors/detail/template/allowed-kms', { padding: [10, 10, 10, 10] })
+        cy.get('.form-group').filter(':visible').screenshot('application/document-templates/editors/detail/template/allowed-kms', { padding: [10, 10, 10, 10] })
     })
 
     it('Detail - Template (Formats)', () => {

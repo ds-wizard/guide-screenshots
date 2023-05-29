@@ -23,10 +23,13 @@ const login = (resp) => {
     }).then((resp) => {
         window.localStorage.setItem('session', JSON.stringify({
             sidebarCollapsed: false,
-            token: { token },
+            token: { 
+                token,
+                expiresAt: new Date(Date.now() + 14000 * 86400)
+            },
             user: resp.body,
             fullscreen: false,
-            v6: true
+            v7: true
         }))
         window.localStorage.setItem('cookieConsent', 1)
     })

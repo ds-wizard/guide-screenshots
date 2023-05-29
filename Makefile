@@ -26,4 +26,4 @@ copy:
 
 .PHONY: dev.open
 dev.open:
-	@$(CYPRESS) open --browser chrome
+	@$(CYPRESS) open --browser chrome --e2e

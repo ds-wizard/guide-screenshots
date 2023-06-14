@@ -10,6 +10,13 @@ describe('Projects', () => {
     cy.loginAs('researcher')
     cy.visitApp('/projects/create/from-template')
     cy.get('.Questionnaires__Create').screenshot('application/projects/list/create/project-create', { padding: [10, 0, -35, 0] })
+
+    cy.visitApp('/projects/create/custom')
+    cy.fillFields({ th_packageId: 'Common'})
+    cy.get('#question-tags-filter').click()
+    cy.getCy('tag').contains('Horizon Europe DMP').click()
+    cy.getCy('tag').contains('maDMP').click()
+    cy.get('.Questionnaires__Create').screenshot('application/projects/list/create/project-create-custom', { padding: [10, 0, -35, 0] })
   })
 
   it('Detail', () => {

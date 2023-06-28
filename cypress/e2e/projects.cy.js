@@ -81,8 +81,8 @@ describe('Projects', () => {
 
     // Version History
     cy.get('.item').contains('Version history').click()
-    cy.get('.history-day:nth-child(2) .date').click()
-    cy.get('.history-day:nth-child(2) .history-event:first-child .ListingDropdown').click()
+    cy.get('.history-month:nth-child(2) .history-day:nth-child(2) .date').click()
+    cy.get('.history-month:nth-child(2) .history-day:nth-child(2) .history-event:first-child .ListingDropdown').click()
     cy.get('.questionnaire__right-panel').screenshot('application/projects/list/detail/questionnaire/version-history')
 
 

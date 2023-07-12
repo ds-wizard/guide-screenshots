@@ -110,6 +110,10 @@ Cypress.Commands.add('uncheckToggle', (field) => {
     cy.get(`#${field}`).uncheck({ force: true })
 })
 
+Cypress.Commands.add('submitForm', () => {
+    cy.getCy('form_submit').click()
+})
+
 
 // Listing commands
 

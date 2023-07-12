@@ -14,20 +14,28 @@ $ make install
 
 ### Setup Environment
 
-Create a new file `cypress.env.json` in the project root and fill in the URLs and user accounts of the instance used for taking screenshots.
+Create a new file `cypress.env.js` in the project root and fill in the URLs and user accounts of the instance used for taking screenshots, as well as some instance details to be filled.
 
-```json
-{
-    "url": "...",
-    "apiUrl": "...",
-    "adminUsername": "...",
-    "adminPassword": "...",
-    "dataStewardUsername": "...",
-    "dataStewardPassword": "...",
-    "researcherUsername": "...",
-    "researcherPassword": "..."
+```js
+module.exports = {
+    url: "...",
+    apiUrl: "...",
+    adminUsername: "...",
+    adminPassword: "...",
+    dataStewardUsername: "...",
+    dataStewardPassword: "...",
+    researcherUsername: "...",
+    researcherPassword: "...",
+
+    appTitle: 'DS Wizard',
+    appTitleShort: 'DS Wizard',
+    primaryColor: '#E95420',
+    illustrationsColor: '#E95420',
+    logoFixture: 'logo.svg',
 }
 ```
+
+Logo should be placed in `cypress/fixtures/logo` folder. If the `logoFixture` property is not set, the default logo will be used.
 
 Create `.env` in the project root and fill in path to DSW User Guide locally:
 

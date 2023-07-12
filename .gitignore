@@ -77,3 +77,7 @@ output
 
 # Cypress env
 cypress.env.json
+cypress.env.js
+
+# Logo fixtures
+cypress/fixtures/logo

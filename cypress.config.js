@@ -1,6 +1,8 @@
 const fs = require('fs')
 const path = require('path')
-const { defineConfig } = require("cypress");
+const { defineConfig } = require('cypress')
+const env = require('./cypress.env')
+
 
 const width = 1440
 const height = 900
@@ -45,5 +47,6 @@ module.exports = defineConfig({
         })
       })
     },
+    env,
   },
 })

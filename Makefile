@@ -19,6 +19,11 @@ screenshots.spec:
 	@rm -rf output && $(CYPRESS) run --browser chrome --spec=$(spec)
 
 
+.PHONY: screenshots.active-sessions
+screenshots.active-sessions:
+	@rm -rf output && $(CYPRESS) run --browser chrome --spec=cypress/e2e/active-sessions.cy.js
+
+
 .PHONY: copy
 copy:
 	@node scripts/copy-screenshots "$(DOCS_DIR)" "$(SCREENSHOTS_DIR)"

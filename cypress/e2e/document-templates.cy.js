@@ -13,7 +13,7 @@ describe('Document Templates', () => {
 
     it('Detail', () => {
         cy.loginAs('admin')
-        cy.visitApp('/document-templates/dsw:horizon-europe-dmp:1.3.0')
+        cy.visitApp('/document-templates/dsw:horizon-europe-dmp:latest')
         cy.get('.DetailPage__Content').should('exist')
 
         cy.screenshot('application/document-templates/list/detail/detail')

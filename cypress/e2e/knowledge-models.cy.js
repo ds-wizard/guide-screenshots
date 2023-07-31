@@ -13,7 +13,7 @@ describe('Knowledge Models', () => {
 
     it('Detail', () => {
         cy.loginAs('admin')
-        cy.visitApp('/knowledge-models/dsw:root:2.4.4')
+        cy.visitApp('/knowledge-models/dsw:root:latest')
         cy.get('.DetailPage__Content').should('exist')
 
         cy.screenshot('application/knowledge-models/list/detail/detail')

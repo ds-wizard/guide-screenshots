@@ -20,43 +20,31 @@ import './commands'
 // require('./commands')
 
 before(() => {
-    cy.loginAs('admin')
-    cy.visitApp('/settings/look-and-feel')
+    const apiUrl = Cypress.env('apiUrl')
+    let token
+    cy
+        .getTokenFor('admin')
+        .then((resp) => {
+            token = resp.body.token
+        })
+        .then(() => cy.request({
+            method: 'GET',
+            url: `${apiUrl}/tenants/current/config`,
+            headers: { Authorization: `Bearer ${token}` }
+        }))
+        .then((resp) => {
+            const config = resp.body
+            config.lookAndFeel.appTitle = Cypress.env('appTitle')
+            config.lookAndFeel.appTitleShort = Cypress.env('appTitleShort')
+            config.lookAndFeel.primaryColor = Cypress.env('primaryColor')
+            config.lookAndFeel.illustrationsColor = Cypress.env('illustrationsColor')
+            config.lookAndFeel.logoUrl = Cypress.env('logoUrl')
 
-    // Set logo
-    cy.get('.btn').contains('Change').click()
-    const logoFixture = Cypress.env('logoFixture')
-
-    // If there is logo fixture set use it, otherwise set default logo
-    if (logoFixture) {
-        cy.get('.logo-upload .dropzone')
-            .selectFile(`cypress/fixtures/logo/${logoFixture}`, {
-                action: 'drag-drop'
+            cy.request({
+                method: 'PUT',
+                url: `${apiUrl}/tenants/current/config`,
+                headers: { Authorization: `Bearer ${token}` },
+                body: config
             })
-    } else {
-        cy.contains('Use default logo').click()
-    }
-    cy.get('.modal-footer .btn-primary').contains('Save').click()
-
-    // generating new styles really take time, so wait a bit
-    cy.wait(4000)
-    cy.get('.modal-cover').should('not.be.visible')
-
-    // Fill fields with app details and colors
-    cy.fillFields({
-        appTitle: Cypress.env('appTitle'),
-        appTitleShort: Cypress.env('appTitleShort'),
-        stylePrimaryColor: Cypress.env('primaryColor'),
-        styleIllustrationsColor: Cypress.env('illustrationsColor')
-    })
-    cy.get('.form-actions-dynamic')
-        .then(($formActions) => {
-            // check if something has changed in the form before saving
-            if ($formActions.attr('class').indexOf('form-actions-dynamic-visible') > -1) {
-                cy.submitForm()
-                // generating new styles really take time, so wait a bit
-                cy.wait(4000)
-                cy.get('.form-actions-dynamic-visible').should('not.exist')
-            }
         })
 })

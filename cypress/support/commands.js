@@ -15,24 +15,18 @@ const getTokenFor = (role) => getTokenWith(
 
 const login = (resp) => {
     const token = resp.body.token
+    createSession(token)
+}
 
-    cy.request({
-        method: 'GET',
-        url: apiUrl('/users/current'),
-        headers: createHeaders(token)
-    }).then((resp) => {
-        window.localStorage.setItem('session', JSON.stringify({
-            sidebarCollapsed: false,
-            token: { 
-                token,
-                expiresAt: new Date(Date.now() + 14000 * 86400)
-            },
-            user: resp.body,
-            fullscreen: false,
-            v7: true
-        }))
-        window.localStorage.setItem('cookieConsent', 1)
-    })
+const createSession = (token, expiresAt = null) => {
+    expiresAt = expiresAt || new Date(Date.now() + 14000 * 86400)
+    window.localStorage.setItem('session/wizard', JSON.stringify({
+        apiUrl: apiUrl(''),
+        fullscreen: false,
+        sidebarCollapsed: false,
+        token: { token, expiresAt },
+        v8: true
+    }))
 }
 
 const dataCy = (key) => {
@@ -41,6 +35,8 @@ const dataCy = (key) => {
 
 
 // Authentication commands
+
+Cypress.Commands.add('getTokenFor', getTokenFor)
 
 Cypress.Commands.add('loginAs', (role) => {
     getTokenFor(role).then(login)

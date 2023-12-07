@@ -45,6 +45,7 @@ describe('Projects', () => {
     cy.get('.modal-cover.visible').invoke('attr', 'style', 'background: #fff')
     cy.getCy('modal_phase-selection').screenshot('application/projects/list/detail/questionnaire/phase-selection-modal')
     cy.getCy('phase-option').contains('Before Submitting the Proposal').click()
+    cy.getCy('modal_phase-selection').should('not.be.visible')
 
     // Resize chapter list
     cy.get('.pane-first-view').invoke('attr', 'style', 'display: flex; flex: 0.35 1 0%; width: 100%; height: 100%; overflow: hidden; box-sizing: border-box; position: relative;')

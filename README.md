@@ -35,8 +35,6 @@ module.exports = {
 }
 ```
 
-Logo should be placed in `cypress/fixtures/logo` folder. If the `logoFixture` property is not set, the default logo will be used.
-
 Create `.env` in the project root and fill in path to DSW User Guide locally:
 
 ```

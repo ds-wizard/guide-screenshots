@@ -22,7 +22,7 @@ describe('Locales', () => {
 
     it('Import from Registry', () => {
         cy.loginAs('admin')
-        cy.visitApp('/locales/import?localeId=dsw:nl:0.2.0')
+        cy.visitApp('/locales/import?localeId=dsw:nl:4.2.0')
         cy.get('.col-detail').should('exist')
 
         cy.get('.col-detail').screenshot('application/administration/locales/import/registry', { padding: [10, 10, 10, 10] })

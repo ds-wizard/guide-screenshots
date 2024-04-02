@@ -7,6 +7,7 @@ describe('Document Templates', () => {
         cy.wait(500)
 
         cy.get('.dropdown-toggle').last().click()
+        cy.get('.dropdown-item').should('be.visible')
 
         cy.screenshot('application/document-templates/list/index/list')
     })
@@ -21,7 +22,7 @@ describe('Document Templates', () => {
 
     it('Import from Registry', () => {
         cy.loginAs('admin')
-        cy.visitApp('/document-templates/import?documentTemplateId=dsw:questionnaire.report:2.8.0')
+        cy.visitApp('/document-templates/import?documentTemplateId=dsw:questionnaire.report:2.11.0')
         cy.get('.col-detail').should('exist')
 
         cy.get('.col-detail').screenshot('application/document-templates/list/import/registry', { padding: [10, 10, 10, 10] })

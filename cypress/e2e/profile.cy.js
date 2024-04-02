@@ -28,25 +28,26 @@ describe('Profile', () => {
     it('Edit profile', () => {
         cy.loginAs('admin')
         cy.visitApp('/users/edit/current')
-        cy.get('.col-wide-detail').should('exist')
 
-        cy.get('.col-full').screenshot('application/profile/edit/index/form', { padding: [0, 0, -230, 0] })
+        cy.get('.Users__Edit__content').screenshot('application/profile/edit/index/form', { padding: [0, 0, 0, 330] })
     })
 
     it('Change password', () => {
         cy.loginAs('admin')
         cy.visitApp('/users/edit/current/password')
+        cy.get('.Users__Edit__content').should('exist')
+
         cy.get('#password').type('somepassword')
         cy.get('#passwordConfirmation').type('somepassword')
         cy.get('#passwordConfirmation').blur()
 
-        cy.get('.col-full').screenshot('application/profile/edit/password/form', { padding: [0, -150, -550, 0] })
+        cy.get('.Users__Edit__content').screenshot('application/profile/edit/password/form', { padding: [0, -280, 0, 330] })
     })
 
     it('API Keys', () => {
         cy.loginAs('admin')
         cy.visitApp('/users/edit/current/api-keys')
 
-        cy.get('.col-wide-detail').screenshot('application/profile/edit/api-keys/form', { padding: [50, 240, 10, 330] })
+        cy.get('.Users__Edit__content').screenshot('application/profile/edit/api-keys/form', { padding: [0, 0, 0, 330] })
     })
 })

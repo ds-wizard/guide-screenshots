@@ -16,7 +16,7 @@ describe('Settings', () => {
             'services\\.0\\.styleColor': '#ffffff',
         })
 
-        cy.get('.col-full').screenshot('application/administration/settings/system/authentication/openid', { padding: [50, -20, -60, 0] })
+        cy.get('.form-group').eq(1).screenshot('application/administration/settings/system/authentication/openid', { padding: [70, 30, 30, 30] })
     })
 
     it('Custom Links', () => {
@@ -30,7 +30,7 @@ describe('Settings', () => {
         cy.getCy('input-url').type('https://guide.ds-wizard.org')
         cy.getCy('input-url').blur()
 
-        cy.get('.col-full').screenshot('application/administration/settings/user-interface/look-and-feel/custom-links', { padding: [50, -20, -60, 0] })
+        cy.get('.Settings__content').screenshot('application/administration/settings/user-interface/look-and-feel/custom-links', { padding: [50, 50, -60, 0] })
     })
 
     it('Usage', () => {
@@ -39,6 +39,6 @@ describe('Settings', () => {
 
         cy.get('.table-usage').should('exist')
 
-        cy.get('.col-full').screenshot('application/administration/settings/info/usage/usage', { padding: [50, -20, -350, 0] })
+        cy.get('.Settings__content').screenshot('application/administration/settings/info/usage/usage', { padding: [0, 0, 0, 330] })
     })
 })

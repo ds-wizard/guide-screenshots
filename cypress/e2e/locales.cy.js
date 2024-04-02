@@ -1,5 +1,5 @@
 describe('Locales', () => {
-    it('List', () => {
+    it.only('List', () => {
         cy.loginAs('admin')
         cy.visitApp('/locales')
         cy.get('.list-group-item').should('exist')
@@ -7,6 +7,7 @@ describe('Locales', () => {
         cy.wait(500)
 
         cy.get('.dropdown-toggle').last().click()
+        cy.get('.dropdown-item').should('be.visible')
 
         cy.screenshot('application/administration/locales/index/list')
     })
@@ -22,7 +23,7 @@ describe('Locales', () => {
 
     it('Import from Registry', () => {
         cy.loginAs('admin')
-        cy.visitApp('/locales/import?localeId=dsw:nl:0.2.0')
+        cy.visitApp('/locales/import?localeId=dsw:nl:4.4.0')
         cy.get('.col-detail').should('exist')
 
         cy.get('.col-detail').screenshot('application/administration/locales/import/registry', { padding: [10, 10, 10, 10] })

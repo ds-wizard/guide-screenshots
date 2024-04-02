@@ -18,6 +18,8 @@ describe('Profile', () => {
         })
 
         cy.visitApp('/users/edit/current/active-sessions')
-        cy.get('.col-wide-detail').screenshot('application/profile/edit/active-sessions/form', { padding: [50, 240, 10, 330] })
+        cy.get('.Users__Edit__content').should('exist')
+
+        cy.get('.Users__Edit__content').screenshot('application/profile/edit/active-sessions/form', { padding: [0, 0, 0, 330] })
     })
 })

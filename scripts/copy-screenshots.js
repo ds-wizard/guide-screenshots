@@ -14,7 +14,9 @@ glob(`${screenshotsDir}/**/*.png`, (err, files) => {
         const docsPath = `${docsDir}${file.replace(screenshotsDir, '')}`
         fs.copyFile(file, docsPath, (err) => {
             if (err) {
+                bar.stop()
                 console.error(err)
+                return
             }
 
             bar.update(++value)

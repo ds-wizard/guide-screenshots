@@ -1,5 +1,5 @@
 describe('Document Template Editors', () => {
-    it('List', () => {
+    it.only('List', () => {
         cy.loginAs('admin')
         cy.visitApp('/document-template-editors')
         cy.get('.list-group-item').should('exist')
@@ -8,6 +8,7 @@ describe('Document Template Editors', () => {
         cy.get('code.fragment').invoke('text', 'dsw:questionnaire-report:2.9.0')
 
         cy.get('.dropdown-toggle').last().click()
+        cy.get('.dropdown-item').should('be.visible')
 
         cy.screenshot('application/document-templates/editors/index/list')
     })
@@ -37,6 +38,7 @@ describe('Document Template Editors', () => {
         cy.getCy('dt-editor_file-tree_file').contains('default.html.j2').click()
         cy.getCy('dt-editor_file-tree_file').contains('default.md.j2').click()
         cy.get('.fa-columns').click()
+        cy.get('.tabs').eq('1').should('exist')
 
         cy.screenshot('application/document-templates/editors/detail/files/files')
     })

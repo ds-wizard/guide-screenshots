@@ -8,18 +8,19 @@ describe('Projects', () => {
 
   it('Create', () => {
     cy.loginAs('researcher')
-    cy.visitApp('/projects/create/from-template')
-    cy.get('.Questionnaires__Create').screenshot('application/projects/list/create/project-create', { padding: [10, 0, -35, 0] })
+    cy.visitApp('/projects/create')
+    cy.get('.Projects__Create').screenshot('application/projects/list/create/project-create', { padding: [10, 0, -35, 0] })
 
-    cy.visitApp('/projects/create/custom')
+    cy.visitApp('/projects/create')
+    cy.getCy('project_create_nav_custom').click()
     cy.fillFields({ th_packageId: 'Common'})
     cy.get('#question-tags-filter').click()
     cy.getCy('tag').contains('Horizon Europe DMP').click()
     cy.getCy('tag').contains('maDMP').click()
-    cy.get('.Questionnaires__Create').screenshot('application/projects/list/create/project-create-custom', { padding: [10, 0, -35, 0] })
+    cy.get('.Projects__Create').screenshot('application/projects/list/create/project-create-custom', { padding: [10, 0, -35, 0] })
   })
 
-  it('Detail', () => {
+  it.only('Detail', () => {
     cy.loginAs('researcher')
     cy.visitApp('/projects/c66ab9be-dd94-4dbd-92a5-ceb31658a99b')
     cy.collapseSidebar()
@@ -52,13 +53,13 @@ describe('Projects', () => {
 
     // Different question types
     cy.get('#question-6155ad47-3d1e-4488-9f2a-742de1e56580').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/value-question', { padding: [0, 10, -25, 10] })
-    cy.get('#question-829dcda6-db8a-40ac-819a-92b9b52490f5').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/mutli-choice-question', { padding: [0, 10, -300, 10], capture: 'viewport' })
+    cy.get('#question-829dcda6-db8a-40ac-819a-92b9b52490f5').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/multi-choice-question', { padding: [0, 10, -300, 10], capture: 'viewport' })
 
     cy.get('.nav-link').contains('Re-using data').click()
     cy.get('#question-efc80cc8-8318-4f8c-acb7-dc1c60e491c1').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/options-question')
 
     cy.get('.nav-link').contains('Interpreting data').click()
-    cy.get('#question-a797cab9-0829-4787-a096-1b5cedc9147f').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/list-question')
+    cy.get('#question-a797cab9-0829-4787-a096-1b5cedc9147f').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/list-question', { padding: [0, 0, -100, 0] })
     cy.get('#question-63ed4349-9743-4fd1-96df-73dbb7e4f05b').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/integration-question', { padding: [0, 10, -25, 10] })
 
     // Questionnaire view options
@@ -138,6 +139,8 @@ describe('Projects', () => {
     // Document list
     cy.getCy('project_nav_documents').click().blur()
     cy.get('.list-group-item').should('exist')
+    cy.get('.dropdown-toggle').last().click()
+    cy.get('.dropdown-item').should('be.visible')
     cy.screenshot('application/projects/list/detail/documents/list')
 
     // New document
@@ -160,6 +163,7 @@ describe('Projects', () => {
     // # Settings -------------------------------------------------------------
     
     cy.getCy('project_nav_settings').click().blur()
+    cy.get('.form-group > .form-control').should('be.visible')
     cy.screenshot('application/projects/list/detail/settings/settings')
 
 

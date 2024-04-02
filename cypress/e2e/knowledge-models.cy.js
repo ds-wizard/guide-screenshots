@@ -7,6 +7,7 @@ describe('Knowledge Models', () => {
         cy.wait(500)
 
         cy.get('.dropdown-toggle').last().click()
+        cy.get('.dropdown-item').should('be.visible')
 
         cy.screenshot('application/knowledge-models/list/index/list')
     })
@@ -21,7 +22,7 @@ describe('Knowledge Models', () => {
 
     it('Import from Registry', () => {
         cy.loginAs('admin')
-        cy.visitApp('/knowledge-models/import?packageId=dsw:root:2.5.0')
+        cy.visitApp('/knowledge-models/import?packageId=dsw:root:2.6.4')
         cy.get('.col-detail').should('exist')
 
         cy.get('.col-detail').screenshot('application/knowledge-models/list/import/registry', { padding: [10, 10, 10, 10] })

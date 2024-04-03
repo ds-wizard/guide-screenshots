@@ -1,5 +1,5 @@
 describe('Document Template Editors', () => {
-    it.only('List', () => {
+    it('List', () => {
         cy.loginAs('admin')
         cy.visitApp('/document-template-editors')
         cy.get('.list-group-item').should('exist')

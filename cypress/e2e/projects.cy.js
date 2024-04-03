@@ -20,7 +20,7 @@ describe('Projects', () => {
     cy.get('.Projects__Create').screenshot('application/projects/list/create/project-create-custom', { padding: [10, 0, -35, 0] })
   })
 
-  it.only('Detail', () => {
+  it('Detail', () => {
     cy.loginAs('researcher')
     cy.visitApp('/projects/c66ab9be-dd94-4dbd-92a5-ceb31658a99b')
     cy.collapseSidebar()

@@ -1,5 +1,5 @@
 describe('Locales', () => {
-    it.only('List', () => {
+    it('List', () => {
         cy.loginAs('admin')
         cy.visitApp('/locales')
         cy.get('.list-group-item').should('exist')

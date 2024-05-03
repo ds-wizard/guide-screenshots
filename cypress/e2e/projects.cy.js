@@ -85,6 +85,7 @@ describe('Projects', () => {
     cy.get('.item').contains('Version history').click()
     cy.get('.history-month:nth-last-child(2) .history-day:nth-child(2) .date').click()
     cy.get('.history-month:nth-last-child(2) .history-day:nth-child(2) .history-event:first-child .ListingDropdown').click()
+    cy.getCy('listing-item_action_view-questionnaire').should('be.visible')
     cy.get('.questionnaire__right-panel').screenshot('application/projects/list/detail/questionnaire/version-history')
 
 
@@ -113,7 +114,7 @@ describe('Projects', () => {
     // HTML preview
     cy.getCy('project_nav_preview').click().blur()
     cy.wait(4000)
-    cy.get('iframe').should('exist')
+    cy.get('iframe').should('be.visible')
     cy.wait(2000)
     cy.screenshot('application/projects/list/detail/preview/preview-html')
 
@@ -130,7 +131,7 @@ describe('Projects', () => {
 
     // Reset template after screenshots
     cy.getCy('project_nav_settings').click()
-    cy.get('.TypeHintInput__Value a').click()
+    cy.get('.TypeHintInput__Value a > .fa').click()
     cy.get('.form-actions-dynamic .btn').contains('Save').click()
 
 
@@ -172,6 +173,7 @@ describe('Projects', () => {
     cy.getCy('project_detail_share-button').click()
     cy.checkToggle('visibilityEnabled')
     cy.get('.modal-cover.visible').invoke('attr', 'style', 'background: #fff')
+    cy.get('.form-group').contains('Other logged-in users can').should('be.visible')
     cy.get('.modal-cover.visible .modal-dialog').screenshot('application/projects/list/detail/sharing/share-modal', { padding: [20, 20, 20, 20] })
   })
 

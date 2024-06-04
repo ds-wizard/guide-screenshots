@@ -59,7 +59,7 @@ describe('Projects', () => {
     cy.get('#question-efc80cc8-8318-4f8c-acb7-dc1c60e491c1').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/options-question')
 
     cy.get('.nav-link').contains('Interpreting data').click()
-    cy.get('#question-a797cab9-0829-4787-a096-1b5cedc9147f').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/list-question', { padding: [0, 0, -100, 0] })
+    cy.get('#question-a797cab9-0829-4787-a096-1b5cedc9147f').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/list-of-items-question', { padding: [0, 0, -100, 0] })
     cy.get('#question-63ed4349-9743-4fd1-96df-73dbb7e4f05b').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/integration-question', { padding: [0, 10, -25, 10] })
 
     // Questionnaire view options

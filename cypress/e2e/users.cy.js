@@ -15,7 +15,7 @@ describe('Users', () => {
     it('Detail', () => {
         cy.loginAs('admin')
         cy.visitApp('/users/edit/ec6f8e90-2a91-49ec-aa3f-9eab2267f000')
-        cy.get('.Users__Edit__content').should('exist')
+        cy.get('.Users__Edit__content').should('be.visible')
 
         cy.get('.Users__Edit__content').screenshot('application/administration/users/detail/profile', { padding: [0, 0, 0, 330] })
     })

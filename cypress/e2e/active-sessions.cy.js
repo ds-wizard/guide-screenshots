@@ -18,7 +18,7 @@ describe('Profile', () => {
         })
 
         cy.visitApp('/users/edit/current/active-sessions')
-        cy.get('.Users__Edit__content').should('exist')
+        cy.get('.list-group-item').should('be.visible')
 
         cy.get('.Users__Edit__content').screenshot('application/profile/edit/active-sessions/form', { padding: [0, 0, 0, 330] })
     })

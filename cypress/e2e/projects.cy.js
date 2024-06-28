@@ -170,6 +170,9 @@ describe('Projects', () => {
 
     // # Sharing --------------------------------------------------------------
 
+    cy.get('.ShareDropdown').click()
+    cy.get('.dropdown-menu').screenshot('application/projects/list/detail/sharing/share-dropdown', { padding: [40, 5, 5, 5] })
+
     cy.getCy('project_detail_share-button').click()
     cy.checkToggle('visibilityEnabled')
     cy.get('.modal-cover.visible').invoke('attr', 'style', 'background: #fff')

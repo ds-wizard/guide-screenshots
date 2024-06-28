@@ -25,9 +25,10 @@ describe('Profile', () => {
         cy.getCy('modal_languages').screenshot('application/profile/language/modal', { padding: [10, 10, 10, 10] })
     })
 
-    it('Edit profile', () => {
+    it.only('Edit profile', () => {
         cy.loginAs('admin')
         cy.visitApp('/users/edit/current')
+        cy.get('#email').should('be.visible')
 
         cy.get('.Users__Edit__content').screenshot('application/profile/edit/index/form', { padding: [0, 0, 0, 330] })
     })
@@ -47,6 +48,7 @@ describe('Profile', () => {
     it('API Keys', () => {
         cy.loginAs('admin')
         cy.visitApp('/users/edit/current/api-keys')
+        cy.getCy('flash_alert-info').should('be.visible')
 
         cy.get('.Users__Edit__content').screenshot('application/profile/edit/api-keys/form', { padding: [0, 0, 0, 330] })
     })

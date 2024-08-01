@@ -25,7 +25,7 @@ describe('Profile', () => {
         cy.getCy('modal_languages').screenshot('application/profile/language/modal', { padding: [10, 10, 10, 10] })
     })
 
-    it.only('Edit profile', () => {
+    it('Edit profile', () => {
         cy.loginAs('admin')
         cy.visitApp('/users/edit/current')
         cy.get('#email').should('be.visible')
@@ -51,5 +51,18 @@ describe('Profile', () => {
         cy.getCy('flash_alert-info').should('be.visible')
 
         cy.get('.Users__Edit__content').screenshot('application/profile/edit/api-keys/form', { padding: [0, 0, 0, 330] })
+    })
+
+    it('About', () =>{
+        cy.loginAs('admin')
+        cy.visitApp('/dashboard')
+
+        cy.get('#menu_profile').trigger('mouseenter')
+        cy.get('.profile-submenu').should('be.visible')
+        cy.getCy('menu_about').click()
+        cy.get('.modal-cover').should('be.visible')
+        cy.get('.modal-cover.visible').invoke('attr', 'style', 'background: #fff')
+
+        cy.getCy('modal_about').screenshot('application/profile/about/modal', { padding: [5, 5, 5, 5] })
     })
 })

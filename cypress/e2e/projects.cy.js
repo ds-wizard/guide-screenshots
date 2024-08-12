@@ -112,7 +112,7 @@ describe('Projects', () => {
     cy.get('.form-actions-dynamic .btn').contains('Save').click()
 
     // HTML preview
-    cy.getCy('project_nav_preview').click().blur()
+    cy.getCy('project_nav_preview').click()
     cy.wait(4000)
     cy.get('iframe').should('be.visible')
     cy.wait(2000)
@@ -124,7 +124,7 @@ describe('Projects', () => {
     cy.get('.form-actions-dynamic .btn').contains('Save').click()
 
     // Download preview
-    cy.getCy('project_nav_preview').click().blur()
+    cy.getCy('project_nav_preview').click()
     cy.wait(6000)
     cy.getCy('illustrated-message_format-not-supported').should('exist')
     cy.screenshot('application/projects/list/detail/preview/download')
@@ -132,13 +132,13 @@ describe('Projects', () => {
     // Reset template after screenshots
     cy.getCy('project_nav_settings').click()
     cy.get('.TypeHintInput__Value a > .fa').click()
-    cy.get('.form-actions-dynamic .btn').contains('Save').click()
+    cy.get('.form-actions-dynamic .btn').should('be.visible').contains('Save').click()
 
 
     // # Documents ------------------------------------------------------------
 
     // Document list
-    cy.getCy('project_nav_documents').click().blur()
+    cy.getCy('project_nav_documents').click()
     cy.get('.list-group-item').should('exist')
     cy.get('.dropdown-toggle').last().click()
     cy.get('.dropdown-item').should('be.visible')

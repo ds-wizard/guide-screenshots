@@ -46,11 +46,16 @@ Cypress.Commands.add('loginAs', (role) => {
 // Navigation commands
 
 Cypress.Commands.add('visitApp', (url) => {
-    cy.visit(`${Cypress.env('url')}${url}`, {
-        onBeforeLoad(win) {
-          Object.defineProperty(win.navigator, 'language', { value: 'en' });
+    cy.visit({
+        url: `${Cypress.env('url')}${url}`,
+        method: 'GET',
+        headers: {
+            'Accept-Language': 'en',
         },
-      });
+        onBeforeLoad: (win) => {
+            Object.defineProperty(win.navigator, 'language', { value: 'en' })
+        },
+    })
     cy.get('.full-page-loader').should('not.exist')
 })
 

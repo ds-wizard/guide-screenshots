@@ -17,7 +17,7 @@ describe('Knowledge Models / Editors', () => {
     it('Detail', () => {
         cy.visitApp('/km-editor/editor/fc0c83ff-f38b-4645-91bf-7deae343778d')
         cy.collapseSidebar()
-        cy.wait(1000)
+ 
         cy.get('.input-children').should('exist')
         cy.get('.editor-content').invoke('attr', 'style', 'opacity: 1')
         cy.screenshot('application/knowledge-models/editors/detail/index/km-editor')
@@ -26,7 +26,7 @@ describe('Knowledge Models / Editors', () => {
     it('Detail / Knowledge Model', () => {
         cy.visitApp('/km-editor/editor/fc0c83ff-f38b-4645-91bf-7deae343778d/edit/f0ef08fd-d733-465c-bc66-5de0b826c41b')
         cy.collapseSidebar()
-        cy.wait(1000)
+
         cy.get('.input-children').should('exist')
         cy.get('.editor-content').invoke('attr', 'style', 'opacity: 1')
 
@@ -47,28 +47,28 @@ describe('Knowledge Models / Editors', () => {
     it('Detail / Phases', () => {
         cy.visitApp('/km-editor/editor/fc0c83ff-f38b-4645-91bf-7deae343778d/phases')
         cy.collapseSidebar()
-        cy.wait(1000)
+        
         cy.get('.col-full').screenshot('application/knowledge-models/editors/detail/phases/phases-editor')
     })
 
     it('Detail / Question Tags', () => {
         cy.visitApp('/km-editor/editor/fc0c83ff-f38b-4645-91bf-7deae343778d/question-tags')
         cy.collapseSidebar()
-        cy.wait(1000)
+        
         cy.get('.col-full').screenshot('application/knowledge-models/editors/detail/question-tags/question-tag-editor')
     })
 
     it('Detail / Preview', () => {
         cy.visitApp('/km-editor/editor/fc0c83ff-f38b-4645-91bf-7deae343778d/preview')
         cy.collapseSidebar()
-        cy.wait(1000)
+        
         cy.get('.col-full').screenshot('application/knowledge-models/editors/detail/preview/preview')
     })
 
     it('Detail / Settings', () => {
         cy.visitApp('/km-editor/editor/fc0c83ff-f38b-4645-91bf-7deae343778d/settings')
         cy.collapseSidebar()
-        cy.wait(1000)
+        
         cy.get('.col-full').screenshot('application/knowledge-models/editors/detail/settings/settings-form')
     })
 

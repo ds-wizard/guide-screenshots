@@ -60,7 +60,7 @@ cy.screenshot('projects/detail/index/questionnaire')
  ```
  $ make screenshots
  ```
- ### Run Cypress to Generate the Screenshots of Specific Part
+ ### Run Cypress to Generate the Screenshots of a Specific Part
 
  For example `document-templates.cy.js`
 

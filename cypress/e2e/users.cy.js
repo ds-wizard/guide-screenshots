@@ -20,6 +20,14 @@ describe('Users', () => {
         cy.get('.Users__Edit__content').screenshot('application/administration/users/detail/profile', { padding: [0, 0, 0, 330] })
     })
 
+    it('Create', () => {
+        cy.loginAs('admin')
+        cy.visitApp('/users/create')
+        cy.get('.Users__Create').should('exist')
+
+        cy.get('.Users__Create').screenshot('application/administration/users/create/create', { padding: [0, 0, -30, 0] })
+    })
+
     it('Password', () => {
         cy.loginAs('admin')
         cy.visitApp('/users/edit/ec6f8e90-2a91-49ec-aa3f-9eab2267f000')

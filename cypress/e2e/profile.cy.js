@@ -29,6 +29,14 @@ describe('Profile', () => {
         cy.get('.Users__Edit__content').screenshot('application/profile/edit/index/form', { padding: [0, 0, 0, 330] })
     })
 
+    it('Assigned comments', () => {
+        cy.loginAs('researcher')
+        cy.visitApp('/comments?resolved=false')
+        cy.getCy('listing_item').should('be.visible')
+
+        cy.screenshot('application/profile/assigned-comments/list')
+    })
+
     it('Change password', () => {
         cy.loginAs('admin')
         cy.visitApp('/users/edit/current/password')

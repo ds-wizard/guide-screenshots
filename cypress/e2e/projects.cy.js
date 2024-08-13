@@ -25,14 +25,14 @@ describe('Projects', () => {
     cy.visitApp('/projects/c66ab9be-dd94-4dbd-92a5-ceb31658a99b')
     cy.collapseSidebar()
     cy.wait(2000)
-
-
-    // # Project Detail -------------------------------------------------------
     
     cy.screenshot('application/projects/list/detail/index/questionnaire')
+  })
 
-
-    // # Questionnaire --------------------------------------------------------
+  it('Questionnaire', () => {
+    cy.loginAs('researcher')
+    cy.visitApp('/projects/c66ab9be-dd94-4dbd-92a5-ceb31658a99b')
+    cy.collapseSidebar()
     
     // Chapter list
     cy.get('.pane-first-view').invoke('attr', 'style', 'display: flex; flex: 0.25 1 0%; width: 100%; height: 100%; overflow: hidden; box-sizing: border-box; position: relative;')
@@ -87,16 +87,22 @@ describe('Projects', () => {
     cy.get('.history-month:nth-last-child(2) .history-day:nth-child(2) .history-event:first-child .ListingDropdown').click()
     cy.getCy('listing-item_action_view-questionnaire').should('be.visible')
     cy.get('.questionnaire__right-panel').screenshot('application/projects/list/detail/questionnaire/version-history')
+  })
 
-
-    // # Metrics --------------------------------------------------------------
+  it('Metrics', () => {
+    cy.loginAs('researcher')
+    cy.visitApp('/projects/c66ab9be-dd94-4dbd-92a5-ceb31658a99b')
+    cy.collapseSidebar()
 
     cy.getCy('project_nav_metrics').click().blur()
     cy.get('.questionnaire__summary-report').should('exist')
     cy.screenshot('application/projects/list/detail/metrics/metrics')
+  })
 
-
-    // # Preview --------------------------------------------------------------
+  it('Preview', () => {
+    cy.loginAs('researcher')
+    cy.visitApp('/projects/c66ab9be-dd94-4dbd-92a5-ceb31658a99b')
+    cy.collapseSidebar()
 
     // Template not set
     cy.getCy('project_nav_preview').click().blur()
@@ -125,7 +131,6 @@ describe('Projects', () => {
 
     // Download preview
     cy.getCy('project_nav_preview').click()
-    cy.wait(6000)
     cy.getCy('illustrated-message_format-not-supported').should('exist')
     cy.screenshot('application/projects/list/detail/preview/download')
 
@@ -133,14 +138,18 @@ describe('Projects', () => {
     cy.getCy('project_nav_settings').click()
     cy.get('.TypeHintInput__Value a > .fa').click()
     cy.get('.form-actions-dynamic .btn').should('be.visible').contains('Save').click()
+  })
 
-
-    // # Documents ------------------------------------------------------------
+  it('Documents', () => {
+    cy.loginAs('researcher')
+    cy.visitApp('/projects/c66ab9be-dd94-4dbd-92a5-ceb31658a99b')
+    cy.collapseSidebar()
 
     // Document list
     cy.getCy('project_nav_documents').click()
     cy.get('.list-group-item').should('exist')
-    cy.get('.dropdown-toggle').last().click()
+    cy.get('.dropdown-toggle').last().click({ force: true })
+    //cy.get('.dropdown-menu.dropdown-menu-right').should('be.visible')
     cy.get('.dropdown-item').should('be.visible')
     cy.screenshot('application/projects/list/detail/documents/list')
 
@@ -160,16 +169,24 @@ describe('Projects', () => {
     cy.get('.modal-cover.visible .modal-dialog').screenshot('application/projects/list/detail/documents/submission', { padding: [20, 20, 20, 20] })
     cy.get('.modal-cover.visible .btn').contains('Cancel').click()
 
+  })
 
-    // # Settings -------------------------------------------------------------
-    
+  it('Settings', () => {
+    cy.loginAs('researcher')
+    cy.visitApp('/projects/c66ab9be-dd94-4dbd-92a5-ceb31658a99b')
+    cy.collapseSidebar()
+
     cy.getCy('project_nav_settings').click().blur()
     cy.get('.form-group > .form-control').should('be.visible')
     cy.screenshot('application/projects/list/detail/settings/settings')
+  })
 
+   it('Sharing', () => {
+    cy.loginAs('researcher')
+    cy.visitApp('/projects/c66ab9be-dd94-4dbd-92a5-ceb31658a99b')
+    cy.collapseSidebar()
 
-    // # Sharing --------------------------------------------------------------
-
+    cy.getCy('project_nav_settings').click().blur()
     cy.get('.ShareDropdown').click()
     cy.get('.dropdown-menu').screenshot('application/projects/list/detail/sharing/share-dropdown', { padding: [40, 5, 5, 5] })
 
@@ -184,7 +201,6 @@ describe('Projects', () => {
     cy.loginAs('researcher')
     cy.visitApp('/projects')
     cy.collapseSidebar()
-    cy.wait(2000)
 
     // Create migration
     cy.clickListingItemAction('My Experiment', 'create-migration')

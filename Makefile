@@ -1,6 +1,6 @@
 include .env
 
-CYPRESS=npx cypress
+CYPRESS=./node_modules/.bin/cypress
 SCREENSHOTS_DIR=$(PWD)/output/screenshots
 DOCS_DIR=$(GUIDE_PATH)/docs
 
@@ -12,6 +12,10 @@ install:
 .PHONY: screenshots
 screenshots:
 	@rm -rf output && $(CYPRESS) run --browser chrome
+
+.PHONY: screenshots.spec
+screenshots.spec:
+	@rm -rf output && $(CYPRESS) run --browser chrome --spec=$(spec)
 
 .PHONY:screenshots-specific
 screenshots-specific:

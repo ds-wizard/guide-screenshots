@@ -13,7 +13,7 @@ describe('Locales', () => {
     it('Detail', () => {
         cy.loginAs('admin')
         cy.visitApp('/locales')
-        cy.clickListingItemAction('dsw:cs', 'view')
+        cy.clickListingItemAction('dsw:nl', 'view')
         cy.get('.DetailPage__Content').should('exist')
 
         cy.screenshot('application/administration/locales/detail/detail')

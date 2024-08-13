@@ -4,8 +4,6 @@ describe('Users', () => {
         cy.visitApp('/users')
         cy.get('.list-group-item').should('exist')
 
-        cy.wait(500)
-
         cy.get('.dropdown-toggle').last().click()
         cy.get('.dropdown-item').should('be.visible')
 

@@ -149,7 +149,6 @@ describe('Projects', () => {
     cy.getCy('project_nav_documents').click()
     cy.get('.list-group-item').should('exist')
     cy.get('.dropdown-toggle').last().click({ force: true })
-    //cy.get('.dropdown-menu.dropdown-menu-right').should('be.visible')
     cy.get('.dropdown-item').should('be.visible')
     cy.screenshot('application/projects/list/detail/documents/list')
 

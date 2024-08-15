@@ -8,7 +8,6 @@ DOCS_DIR=$(GUIDE_PATH)/docs
 install:
 	@npm install
 
-
 .PHONY: screenshots
 screenshots:
 	@rm -rf output && $(CYPRESS) run --browser chrome
@@ -20,7 +19,6 @@ screenshots.spec:
 .PHONY: copy
 copy:
 	@node scripts/copy-screenshots "$(DOCS_DIR)" "$(SCREENSHOTS_DIR)"
-
 
 .PHONY: dev.open
 dev.open:

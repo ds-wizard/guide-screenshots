@@ -20,7 +20,7 @@ describe('Projects', () => {
     cy.get('.Projects__Create').screenshot('application/projects/list/create/project-create-custom', { padding: [10, 0, -35, 0] })
   })
 
-  it('Detail', () => {
+  it.only('Detail', () => {
     cy.loginAs('researcher')
     cy.visitApp('/projects/c66ab9be-dd94-4dbd-92a5-ceb31658a99b')
     cy.collapseSidebar()
@@ -74,7 +74,7 @@ describe('Projects', () => {
     // Comments
     cy.get('.item').contains('Comments').click()
     cy.get('.question').contains('Will you be using').click()
-    cy.get('.Comments').screenshot('application/projects/list/detail/questionnaire/comments', { padding: [55, 30, 30, 300] })
+    cy.get('.Comments').screenshot('application/projects/list/detail/questionnaire/comments', { padding: [55, 30, 0, 300] })
 
     // TODOs
     cy.get('.item').contains('TODOs').click()
@@ -94,7 +94,7 @@ describe('Projects', () => {
     cy.visitApp('/projects/c66ab9be-dd94-4dbd-92a5-ceb31658a99b')
     cy.collapseSidebar()
 
-    cy.getCy('project_nav_metrics').click().blur()
+    cy.getCy('project_nav_metrics').click()
     cy.get('.questionnaire__summary-report').should('exist')
     cy.screenshot('application/projects/list/detail/metrics/metrics')
   })
@@ -105,7 +105,7 @@ describe('Projects', () => {
     cy.collapseSidebar()
 
     // Template not set
-    cy.getCy('project_nav_preview').click().blur()
+    cy.getCy('project_nav_preview').click()
     cy.getCy('illustrated-message_template-not-set').should('exist')
     cy.screenshot('application/projects/list/detail/preview/document-template-not-set')
 
@@ -161,7 +161,7 @@ describe('Projects', () => {
     cy.get('.col-detail').screenshot('application/projects/list/detail/documents/new', { padding: [20, 0, 20, 0] })
 
     // Document submission
-    cy.getCy('project_nav_documents').click().blur()
+    cy.getCy('project_nav_documents').click()
     cy.clickListingItemAction('My Experiment v1', 'submit')
     cy.get('.form-radio-group').should('exist')
     cy.get('.modal-cover.visible').invoke('attr', 'style', 'background: #fff')
@@ -174,8 +174,8 @@ describe('Projects', () => {
     cy.loginAs('researcher')
     cy.visitApp('/projects/c66ab9be-dd94-4dbd-92a5-ceb31658a99b')
     cy.collapseSidebar()
-
-    cy.getCy('project_nav_settings').click().blur()
+    
+    cy.getCy('project_nav_settings').click()
     cy.get('.form-group > .form-control').should('be.visible')
     cy.screenshot('application/projects/list/detail/settings/settings')
   })

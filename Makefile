@@ -13,12 +13,8 @@ install:
 screenshots:
 	@rm -rf output && $(CYPRESS) run --browser chrome
 
-.PHONY: screenshots.spec
+.PHONY:screenshots.spec
 screenshots.spec:
-	@rm -rf output && $(CYPRESS) run --browser chrome --spec=$(spec)
-
-.PHONY:screenshots-specific
-screenshots-specific:
 	@rm -rf output && $(CYPRESS) run --browser chrome --spec=cypress/e2e/$(test).cy.js
 
 .PHONY: copy

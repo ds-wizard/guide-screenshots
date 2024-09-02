@@ -4,7 +4,6 @@ describe('Document Template Editors', () => {
         cy.visitApp('/document-template-editors')
         cy.get('.list-group-item').should('exist')
 
-        cy.wait(500)
         cy.get('code.fragment').invoke('text', 'dsw:questionnaire-report:2.9.0')
 
         cy.get('.dropdown-toggle').last().click()

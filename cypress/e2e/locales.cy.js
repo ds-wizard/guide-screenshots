@@ -4,8 +4,6 @@ describe('Locales', () => {
         cy.visitApp('/locales')
         cy.get('.list-group-item').should('exist')
 
-        cy.wait(500)
-
         cy.get('.dropdown-toggle').last().click()
         cy.get('.dropdown-item').should('be.visible')
 
@@ -15,7 +13,7 @@ describe('Locales', () => {
     it('Detail', () => {
         cy.loginAs('admin')
         cy.visitApp('/locales')
-        cy.clickListingItemAction('dsw:cs', 'view')
+        cy.clickListingItemAction('dsw:nl', 'view')
         cy.get('.DetailPage__Content').should('exist')
 
         cy.screenshot('application/administration/locales/detail/detail')

@@ -3,8 +3,6 @@ describe('Profile', () => {
         cy.loginAs('admin')
         cy.visitApp('/locales')
 
-        cy.wait(1000)
-
         cy.get('#menu_profile').trigger('mouseenter')
         cy.get('.profile-submenu').should('be.visible')
 
@@ -14,8 +12,6 @@ describe('Profile', () => {
     it('Change language', () => {
         cy.loginAs('admin')
         cy.visitApp('/locales')
-
-        cy.wait(1000)
 
         cy.get('#menu_profile').trigger('mouseenter')
         cy.get('.profile-submenu').should('be.visible')

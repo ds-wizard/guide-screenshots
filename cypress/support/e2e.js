@@ -20,6 +20,8 @@ import './commands'
 // require('./commands')
 
 before(() => {
+    window.localStorage.setItem('locale', '"en"')
+
     const apiUrl = Cypress.env('apiUrl')
     let token
     cy

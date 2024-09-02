@@ -8,26 +8,17 @@ DOCS_DIR=$(GUIDE_PATH)/docs
 install:
 	@npm install
 
-
 .PHONY: screenshots
 screenshots:
 	@rm -rf output && $(CYPRESS) run --browser chrome
 
-
-.PHONY: screenshots.spec
+.PHONY:screenshots.spec
 screenshots.spec:
-	@rm -rf output && $(CYPRESS) run --browser chrome --spec=$(spec)
-
-
-.PHONY: screenshots.active-sessions
-screenshots.active-sessions:
-	@rm -rf output && $(CYPRESS) run --browser chrome --spec=cypress/e2e/active-sessions.cy.js
-
+	@rm -rf output && $(CYPRESS) run --browser chrome --spec=cypress/e2e/$(test).cy.js
 
 .PHONY: copy
 copy:
 	@node scripts/copy-screenshots "$(DOCS_DIR)" "$(SCREENSHOTS_DIR)"
-
 
 .PHONY: dev.open
 dev.open:

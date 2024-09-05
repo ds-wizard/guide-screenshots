@@ -20,7 +20,7 @@ describe('Projects', () => {
     cy.get('.Projects__Create').screenshot('application/projects/list/create/project-create-custom', { padding: [10, 0, -35, 0] })
   })
 
-  it.only('Detail', () => {
+  it('Detail', () => {
     cy.loginAs('researcher')
     cy.visitApp('/projects/c66ab9be-dd94-4dbd-92a5-ceb31658a99b')
     cy.collapseSidebar()
@@ -61,6 +61,14 @@ describe('Projects', () => {
     cy.get('.nav-link').contains('Interpreting data').click()
     cy.get('#question-a797cab9-0829-4787-a096-1b5cedc9147f').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/list-of-items-question', { padding: [0, 0, -100, 0] })
     cy.get('#question-63ed4349-9743-4fd1-96df-73dbb7e4f05b').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/integration-question', { padding: [0, 10, -25, 10] })
+
+    // Item Select question is taken from different Project
+    cy.visitApp('/projects/1fc65ce4-1612-44ac-b3f6-10a73a1e02b9')
+    cy.collapseSidebar()
+    cy.get('#question-5d3cccc4-736d-44fd-9fc9-a1828a1e1e0c').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/item-select-question', { padding: [0, 10, -25, 10] })
+
+    cy.visitApp('/projects/c66ab9be-dd94-4dbd-92a5-ceb31658a99b')
+    cy.collapseSidebar()
 
     // Questionnaire view options
     cy.get('.btn-link').contains('View').click()

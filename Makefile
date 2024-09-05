@@ -20,6 +20,6 @@ screenshots.spec:
 copy:
 	@node scripts/copy-screenshots "$(DOCS_DIR)" "$(SCREENSHOTS_DIR)"
 
-.PHONY: dev.open
-dev.open:
+.PHONY: open
+open:
 	@$(CYPRESS) open --browser chrome --e2e

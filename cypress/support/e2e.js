@@ -21,32 +21,4 @@ import './commands'
 
 before(() => {
     window.localStorage.setItem('locale', '"en"')
-
-    const apiUrl = Cypress.env('apiUrl')
-    let token
-    cy
-        .getTokenFor('admin')
-        .then((resp) => {
-            token = resp.body.token
-        })
-        .then(() => cy.request({
-            method: 'GET',
-            url: `${apiUrl}/tenants/current/config`,
-            headers: { Authorization: `Bearer ${token}` }
-        }))
-        .then((resp) => {
-            const config = resp.body
-            config.lookAndFeel.appTitle = Cypress.env('appTitle')
-            config.lookAndFeel.appTitleShort = Cypress.env('appTitleShort')
-            config.lookAndFeel.primaryColor = Cypress.env('primaryColor')
-            config.lookAndFeel.illustrationsColor = Cypress.env('illustrationsColor')
-            config.lookAndFeel.logoUrl = Cypress.env('logoUrl')
-
-            cy.request({
-                method: 'PUT',
-                url: `${apiUrl}/tenants/current/config`,
-                headers: { Authorization: `Bearer ${token}` },
-                body: config
-            })
-        })
 })

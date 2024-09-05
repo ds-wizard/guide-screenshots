@@ -10,7 +10,6 @@ const height = 900
 module.exports = defineConfig({
   screenshotsFolder: 'output/screenshots',
   videosFolder: 'output/videos',
-  videoUploadOnPasses: false,
   numTestsKeptInMemory: 1,
   viewportWidth: width,
   viewportHeight: height,
@@ -22,8 +21,9 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       on('before:browser:launch', (browser = {}, launchOptions) => {
         if (browser.family === 'chromium' && browser.name !== 'electron') {
+          launchOptions.args = launchOptions.args.filter((arg) => !arg.startsWith('--force-device-scale-factor=') && !arg.startsWith('--window-size='))
           launchOptions.args.push('--force-device-scale-factor=2')
-          launchOptions.args.push(`--window-size=${width},${height}`)
+          launchOptions.args.push(`--window-size=${width},${height + 200}`)
         }
         return launchOptions
       })

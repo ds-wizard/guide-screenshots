@@ -15,13 +15,16 @@ describe('Locales', () => {
         cy.visitApp('/locales')
         cy.clickListingItemAction('dsw:nl', 'view')
         cy.get('.DetailPage__Content').should('exist')
+        cy.get('p > a > img')
+            .should('have.length', 4)
+            .and('be.visible')
 
         cy.screenshot('application/administration/locales/detail/detail')
     })
 
     it('Import from Registry', () => {
         cy.loginAs('admin')
-        cy.visitApp('/locales/import?localeId=dsw:nl:4.5.0')
+        cy.visitApp('/locales/import?localeId=dsw:nl:4.9.0')
         cy.get('.col-detail').should('exist')
 
         cy.get('.col-detail').screenshot('application/administration/locales/import/registry', { padding: [10, 10, 10, 10] })

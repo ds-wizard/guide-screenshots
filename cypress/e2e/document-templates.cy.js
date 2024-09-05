@@ -20,7 +20,7 @@ describe('Document Templates', () => {
 
     it('Import from Registry', () => {
         cy.loginAs('admin')
-        cy.visitApp('/document-templates/import?documentTemplateId=dsw:questionnaire.report:2.11.0')
+        cy.visitApp('/document-templates/import?documentTemplateId=dsw:questionnaire.report:2.12.0')
         cy.get('.col-detail').should('exist')
 
         cy.get('.col-detail').screenshot('application/document-templates/list/import/registry', { padding: [10, 10, 10, 10] })

@@ -65,7 +65,7 @@ cy.screenshot('projects/detail/index/questionnaire')
  For example `document-templates.cy.js`
 
  ```
- $ make screenshots-specific test=document-templates
+ $ make screenshots-spec test=document-templates
  ```
 
  ### Copy the Screenshots into the Guide

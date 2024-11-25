@@ -57,14 +57,14 @@ describe('Profile', () => {
         cy.get('.Users__Edit__content').screenshot('application/profile/edit/api-keys/form', { padding: [0, 0, 0, 330] })
     })
 
-    it('About', () =>{
+    it.only('About', () =>{
         cy.loginAs('admin')
         cy.visitApp('/dashboard')
 
         cy.get('#menu_profile').trigger('mouseenter')
         cy.get('.profile-submenu').should('be.visible')
         cy.getCy('menu_about').click()
-        cy.get('.modal-cover').should('be.visible')
+        cy.get('.table-build-info').should('have.length', 4)
         cy.get('.modal-cover.visible').invoke('attr', 'style', 'background: #fff')
 
         cy.getCy('modal_about').screenshot('application/profile/about/modal', { padding: [5, 5, 5, 5] })

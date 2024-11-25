@@ -24,8 +24,9 @@ const createSession = (token, expiresAt = null) => {
         apiUrl: apiUrl(''),
         fullscreen: false,
         sidebarCollapsed: false,
+        rightPanelCollapsed: true,
         token: { token, expiresAt },
-        v8: true
+        v9: true
     }))
 }
 

@@ -24,7 +24,7 @@ describe('Knowledge Models / Editors', () => {
         cy.screenshot('application/knowledge-models/editors/detail/index/km-editor')
     })
 
-    it('Detail / Knowledge Model', () => {
+    it.only('Detail / Knowledge Model', () => {
         cy.visitApp('/km-editor/editor/d1fb23b7-c87f-4ff0-84e7-c8b1a1466dd8/edit/f0ef08fd-d733-465c-bc66-5de0b826c41b')
         cy.collapseSidebar()
 
@@ -32,9 +32,11 @@ describe('Knowledge Models / Editors', () => {
         cy.get('.editor-content').invoke('attr', 'style', 'opacity: 1')
 
         // Navigation
+        cy.get('.fa-comment').should('be.visible')
         cy.get('.pane-first-view').screenshot('application/knowledge-models/editors/detail/knowledge-model/navigation', { padding: [0, 0, -300, 0] })
 
         // Editor actions
+        cy.wait(1000)
         cy.get('.editor-title-buttons').screenshot('application/knowledge-models/editors/detail/knowledge-model/editor-action-buttons', { padding: [10, 10, 10, 10] })
 
         // Editor form
@@ -42,7 +44,7 @@ describe('Knowledge Models / Editors', () => {
 
         // Warnings
         cy.get('.item ').contains('Warnings').click()
-        cy.get('.right-panel ul').screenshot('application/knowledge-models/editors/detail/knowledge-model/warnings', { padding: [60, 10, 20, 20] })
+        cy.get('.editor-right-panel').screenshot('application/knowledge-models/editors/detail/knowledge-model/warnings', { padding: [40, 10, -550, 0] })
     })
 
     it('Detail / Phases', () => {

@@ -29,13 +29,14 @@ describe('Projects', () => {
     cy.screenshot('application/projects/list/detail/index/questionnaire')
   })
 
-  it('Questionnaire', () => {
+  it.only('Questionnaire', () => {
     cy.loginAs('researcher')
     cy.visitApp('/projects/c66ab9be-dd94-4dbd-92a5-ceb31658a99b')
     cy.collapseSidebar()
     
     // Chapter list
     cy.get('.pane-first-view').invoke('attr', 'style', 'display: flex; flex: 0.25 1 0%; width: 100%; height: 100%; overflow: hidden; box-sizing: border-box; position: relative;')
+    cy.wait(500)
     cy.get('.NavigationTree').screenshot('application/projects/list/detail/questionnaire/chapter-list')
 
     // Phase selection
@@ -107,7 +108,7 @@ describe('Projects', () => {
     cy.screenshot('application/projects/list/detail/metrics/metrics')
   })
 
-  it('Preview', () => {
+  it.only('Preview', () => {
     cy.loginAs('researcher')
     cy.visitApp('/projects/c66ab9be-dd94-4dbd-92a5-ceb31658a99b')
     cy.collapseSidebar()

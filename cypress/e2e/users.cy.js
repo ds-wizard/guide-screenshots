@@ -1,5 +1,5 @@
 describe('Users', () => {
-    it('List', () => {
+    it.only('List', () => {
         cy.loginAs('admin')
         cy.visitApp('/users')
         cy.get('.list-group-item').should('exist')

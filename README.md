@@ -62,10 +62,10 @@ cy.screenshot('projects/detail/index/questionnaire')
  ```
  ### Run Cypress to Generate the Screenshots of a Specific Part
 
- For example `document-templates.cy.js`
+ For example `knowledge-model-editors.cy.js`
 
  ```
- $ make screenshots-spec test=document-templates
+ $ make screenshots.spec test=knowledge-model-editors
  ```
 
  ### Copy the Screenshots into the Guide

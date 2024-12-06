@@ -57,7 +57,7 @@ describe('Profile', () => {
         cy.get('.Users__Edit__content').screenshot('application/profile/edit/api-keys/form', { padding: [0, 0, 0, 330] })
     })
 
-    it.only('About', () =>{
+    it('About', () =>{
         cy.loginAs('admin')
         cy.visitApp('/dashboard')
 

@@ -29,7 +29,7 @@ describe('Projects', () => {
     cy.screenshot('application/projects/list/detail/index/questionnaire')
   })
 
-  it.only('Questionnaire', () => {
+  it('Questionnaire', () => {
     cy.loginAs('researcher')
     cy.visitApp('/projects/c66ab9be-dd94-4dbd-92a5-ceb31658a99b')
     cy.collapseSidebar()
@@ -63,10 +63,11 @@ describe('Projects', () => {
     cy.get('#question-a797cab9-0829-4787-a096-1b5cedc9147f').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/list-of-items-question', { padding: [0, 0, -200, 0] })
     cy.get('#question-63ed4349-9743-4fd1-96df-73dbb7e4f05b').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/integration-question', { padding: [0, 10, -25, 10] })
 
-    // Item Select question is taken from different Project
-    cy.visitApp('/projects/1fc65ce4-1612-44ac-b3f6-10a73a1e02b9')
+    // Item Select and File questions are taken from different Project
+    cy.visitApp('/projects/b858f6fd-626d-46fc-93d8-a482ed7f4a16')
     cy.collapseSidebar()
-    cy.get('#question-5d3cccc4-736d-44fd-9fc9-a1828a1e1e0c').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/item-select-question', { padding: [0, 10, -25, 10] })
+    cy.get('#question-3e539cde-b38c-40fe-ad66-b7f5bf4426ca').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/item-select-question', { padding: [0, 10, -25, 10] })
+    cy.get('#question-a105fda6-6970-4cd1-9536-0ec7b8448b6d').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/file-question', { padding: [0, 10, -25, 10] })
 
     cy.visitApp('/projects/c66ab9be-dd94-4dbd-92a5-ceb31658a99b')
     cy.collapseSidebar()
@@ -108,7 +109,7 @@ describe('Projects', () => {
     cy.screenshot('application/projects/list/detail/metrics/metrics')
   })
 
-  it.only('Preview', () => {
+  it('Preview', () => {
     cy.loginAs('researcher')
     cy.visitApp('/projects/c66ab9be-dd94-4dbd-92a5-ceb31658a99b')
     cy.collapseSidebar()
@@ -178,6 +179,15 @@ describe('Projects', () => {
     cy.get('.modal-cover.visible .modal-dialog').screenshot('application/projects/list/detail/documents/submission', { padding: [20, 20, 20, 20] })
     cy.get('.modal-cover.visible .btn').contains('Cancel').click()
 
+  })
+
+  it('Files', () => {
+    cy.loginAs('researcher')
+    cy.visitApp('/projects/b858f6fd-626d-46fc-93d8-a482ed7f4a16/files')
+    cy.collapseSidebar()
+
+    cy.wait(500)
+    cy.screenshot('application/projects/list/detail/files/files')
   })
 
   it('Settings', () => {

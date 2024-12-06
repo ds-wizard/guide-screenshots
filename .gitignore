@@ -78,3 +78,6 @@ output
 # Cypress env
 cypress.env.json
 cypress.env.js
+
+# Downloads
+downloads

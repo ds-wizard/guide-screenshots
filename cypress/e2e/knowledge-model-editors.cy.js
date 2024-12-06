@@ -24,7 +24,7 @@ describe('Knowledge Models / Editors', () => {
         cy.screenshot('application/knowledge-models/editors/detail/index/km-editor')
     })
 
-    it.only('Detail / Knowledge Model', () => {
+    it('Detail / Knowledge Model', () => {
         cy.visitApp('/km-editor/editor/d1fb23b7-c87f-4ff0-84e7-c8b1a1466dd8/edit/f0ef08fd-d733-465c-bc66-5de0b826c41b')
         cy.collapseSidebar()
 

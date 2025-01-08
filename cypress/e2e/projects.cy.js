@@ -60,7 +60,7 @@ describe('Projects', () => {
     cy.get('#question-efc80cc8-8318-4f8c-acb7-dc1c60e491c1').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/options-question')
 
     cy.get('.nav-link').contains('Interpreting data').click()
-    cy.get('#question-a797cab9-0829-4787-a096-1b5cedc9147f').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/list-of-items-question', { padding: [0, 0, -200, 0] })
+    cy.get('#question-a797cab9-0829-4787-a096-1b5cedc9147f').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/list-of-items-question', { padding: [0, 0, -950, 0] })
     cy.get('#question-63ed4349-9743-4fd1-96df-73dbb7e4f05b').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/integration-question', { padding: [0, 10, -25, 10] })
 
     // Item Select and File questions are taken from different Project
@@ -186,7 +186,8 @@ describe('Projects', () => {
     cy.visitApp('/projects/b858f6fd-626d-46fc-93d8-a482ed7f4a16/files')
     cy.collapseSidebar()
 
-    cy.wait(500)
+    cy.get('.dropdown-toggle').last().click()
+    cy.get('.dropdown-item').should('be.visible')
     cy.screenshot('application/projects/list/detail/files/files')
   })
 

@@ -45,9 +45,10 @@ describe('Document Template Editors', () => {
     it('Detail - Preview', () => {
         cy.loginAs('admin')
         cy.visitApp('/document-template-editors/dsw.mediakit:questionnaire-report:2.9.0/preview')
-        cy.get('.DocumentTemplateEditor__PreviewEditor').should('exist')
+        cy.get('.flex-grow-1').should('be.visible')
+        cy.wait(2000)
 
-        cy.get('.DocumentTemplateEditor').screenshot('application/document-templates/editors/detail/preview/preview', { padding: [0, 0, -400, 0] })
+        cy.get('.DocumentTemplateEditor').screenshot('application/document-templates/editors/detail/preview/preview')
     })
 
     it('Detail - Publish', () => {

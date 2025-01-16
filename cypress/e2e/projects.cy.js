@@ -241,6 +241,29 @@ describe('Projects', () => {
     cy.clickListingItemAction('1.0.0', 'cancel-migration')
   })
 
+  it.only('Menu Files', () => {
+    cy.loginAs('admin')
+    cy.visitApp('/project-files')
+    cy.get('.list-group-item').should('exist')
+
+    cy.get('.dropdown-toggle').last().click()
+    cy.get('.dropdown-item').should('be.visible')
+
+    cy.screenshot('application/projects/files/files')
+
+  })
+
+  it.only('Menu Documents', () => {
+      cy.loginAs('admin')
+      cy.visitApp('/documents')
+      cy.get('.list-group-item').should('exist')
+
+      cy.get('.dropdown-toggle').last().click()
+      cy.get('.dropdown-item').should('be.visible')
+
+      cy.screenshot('application/projects/documents/documents')
+  })
+
   it('Importers', () => {
     cy.loginAs('dataSteward')
     cy.visitApp('/project-importers')

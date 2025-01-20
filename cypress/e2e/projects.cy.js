@@ -186,8 +186,8 @@ describe('Projects', () => {
     cy.visitApp('/projects/b858f6fd-626d-46fc-93d8-a482ed7f4a16/files')
     cy.collapseSidebar()
 
-    cy.get('.dropdown-toggle').last().click()
-    cy.get('.dropdown-item').should('be.visible')
+    cy.openLastItemDropdown()
+
     cy.screenshot('application/projects/list/detail/files/files')
   })
 
@@ -241,25 +241,21 @@ describe('Projects', () => {
     cy.clickListingItemAction('1.0.0', 'cancel-migration')
   })
 
-  it.only('Menu Files', () => {
+  it('Menu Files', () => {
     cy.loginAs('admin')
     cy.visitApp('/project-files')
-    cy.get('.list-group-item').should('exist')
 
-    cy.get('.dropdown-toggle').last().click()
-    cy.get('.dropdown-item').should('be.visible')
+    cy.openLastItemDropdown()
 
     cy.screenshot('application/projects/files/files')
 
   })
 
-  it.only('Menu Documents', () => {
+  it('Menu Documents', () => {
       cy.loginAs('admin')
       cy.visitApp('/documents')
-      cy.get('.list-group-item').should('exist')
 
-      cy.get('.dropdown-toggle').last().click()
-      cy.get('.dropdown-item').should('be.visible')
+      cy.openLastItemDropdown()
 
       cy.screenshot('application/projects/documents/documents')
   })
@@ -267,7 +263,9 @@ describe('Projects', () => {
   it('Importers', () => {
     cy.loginAs('dataSteward')
     cy.visitApp('/project-importers')
-    cy.get('.list-group-item').should('exist')
-    cy.get('.col-list').screenshot('application/projects/importers/importers')
+
+    cy.openLastItemDropdown()
+
+    cy.screenshot('application/projects/importers/importers')
   })
 })

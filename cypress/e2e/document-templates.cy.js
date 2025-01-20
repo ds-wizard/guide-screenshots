@@ -2,10 +2,8 @@ describe('Document Templates', () => {
     it('List', () => {
         cy.loginAs('admin')
         cy.visitApp('/document-templates')
-        cy.get('.list-group-item').should('exist')
-
-        cy.get('.dropdown-toggle').last().click()
-        cy.get('.dropdown-item').should('be.visible')
+        
+        cy.openLastItemDropdown()
 
         cy.screenshot('application/document-templates/list/index/list')
     })

@@ -119,12 +119,19 @@ Cypress.Commands.add('submitForm', () => {
 
 // Listing commands
 
+Cypress.Commands.add('clickListingItemAction', (identifier, action) => {
+    cy.getListingItem(identifier).find(dataCy(`listing-item_action_${action}`)).click({ force: true })
+})
+
 Cypress.Commands.add('getListingItem', (identifier) => {
     cy.getCy('listing_item').contains(identifier).closest(dataCy('listing_item'))
 })
 
-Cypress.Commands.add('clickListingItemAction', (identifier, action) => {
-    cy.getListingItem(identifier).find(dataCy(`listing-item_action_${action}`)).click({ force: true })
+Cypress.Commands.add('openLastItemDropdown', () => {
+    cy.get('.list-group-item').should('exist')
+
+    cy.get('.dropdown-toggle').last().click()
+    cy.get('.dropdown-item').should('be.visible')
 })
 
 // Modals

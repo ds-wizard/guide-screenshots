@@ -2,12 +2,10 @@ describe('Document Template Editors', () => {
     it('List', () => {
         cy.loginAs('admin')
         cy.visitApp('/document-template-editors')
-        cy.get('.list-group-item').should('exist')
 
         cy.get('code.fragment').invoke('text', 'dsw:questionnaire-report:2.9.0')
 
-        cy.get('.dropdown-toggle').last().click()
-        cy.get('.dropdown-item').should('be.visible')
+        cy.openLastItemDropdown()
 
         cy.screenshot('application/document-templates/editors/index/list')
     })
@@ -45,7 +43,8 @@ describe('Document Template Editors', () => {
     it('Detail - Preview', () => {
         cy.loginAs('admin')
         cy.visitApp('/document-template-editors/dsw.mediakit:questionnaire-report:2.9.0/preview')
-        cy.get('.flex-grow-1').should('be.visible')
+        cy.wait(4000)
+        cy.get('iframe').should('be.visible')
         cy.wait(2000)
 
         cy.get('.DocumentTemplateEditor').screenshot('application/document-templates/editors/detail/preview/preview')

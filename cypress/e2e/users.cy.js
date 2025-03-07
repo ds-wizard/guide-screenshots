@@ -1,6 +1,9 @@
 describe('Users', () => {
-    it('List', () => {
+    beforeEach(() => {
         cy.loginAs('admin')
+    })
+
+    it('List', () => {
         cy.visitApp('/users')
         
         cy.openLastItemDropdown()
@@ -9,7 +12,6 @@ describe('Users', () => {
     })
 
     it('Detail', () => {
-        cy.loginAs('admin')
         cy.visitApp('/users/edit/ec6f8e90-2a91-49ec-aa3f-9eab2267f000')
         cy.get('.Users__Edit__content').should('be.visible')
 
@@ -19,7 +21,6 @@ describe('Users', () => {
     })
 
     it('Create', () => {
-        cy.loginAs('admin')
         cy.visitApp('/users/create')
         cy.get('.Users__Create').should('exist')
 
@@ -27,7 +28,6 @@ describe('Users', () => {
     })
 
     it('Password', () => {
-        cy.loginAs('admin')
         cy.visitApp('/users/edit/ec6f8e90-2a91-49ec-aa3f-9eab2267f000')
         cy.get('.Users__Edit__content').should('exist')
         cy.get('.nav-link').contains('Password').click()

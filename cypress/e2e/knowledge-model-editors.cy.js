@@ -4,28 +4,28 @@ describe('Knowledge Models / Editors', () => {
     })
 
     it('List', () => {
-        cy.visitApp('/km-editor')
+        cy.visitApp('/knowledge-model-editors')
         cy.get('.list-group-item').should('exist')
         cy.get('.col-list').screenshot('application/knowledge-models/editors/index/knowledge-model-editors-list', { padding: [20, 0, 20, 0] })
     })
 
     it('Create', () => {
-        cy.visitApp('/km-editor/create')
+        cy.visitApp('/knowledge-model-editors/create')
         cy.get('.col-detail').screenshot('application/knowledge-models/editors/create/create-km', { padding: [0, 0, -40, 0] })
     })
 
     it('Detail', () => {
-        cy.visitApp('/km-editor/editor/d1fb23b7-c87f-4ff0-84e7-c8b1a1466dd8')
+        cy.visitApp('/knowledge-model-editors/editor/d1fb23b7-c87f-4ff0-84e7-c8b1a1466dd8')
         cy.collapseSidebar()
         cy.wait(1000)
  
         cy.get('.input-children').should('exist')
         cy.get('.editor-content').invoke('attr', 'style', 'opacity: 1')
-        cy.screenshot('application/knowledge-models/editors/detail/index/km-editor')
+        cy.screenshot('application/knowledge-models/editors/detail/index/knowledge-model-editor')
     })
 
     it('Detail / Knowledge Model', () => {
-        cy.visitApp('/km-editor/editor/d1fb23b7-c87f-4ff0-84e7-c8b1a1466dd8/edit/f0ef08fd-d733-465c-bc66-5de0b826c41b')
+        cy.visitApp('/knowledge-model-editors/editor/d1fb23b7-c87f-4ff0-84e7-c8b1a1466dd8/edit/f0ef08fd-d733-465c-bc66-5de0b826c41b')
         cy.collapseSidebar()
 
         cy.get('.input-children').should('exist')
@@ -48,35 +48,35 @@ describe('Knowledge Models / Editors', () => {
     })
 
     it('Detail / Phases', () => {
-        cy.visitApp('/km-editor/editor/d1fb23b7-c87f-4ff0-84e7-c8b1a1466dd8/phases')
+        cy.visitApp('/knowledge-model-editors/editor/d1fb23b7-c87f-4ff0-84e7-c8b1a1466dd8/phases')
         cy.collapseSidebar()
         
         cy.get('.col-full').screenshot('application/knowledge-models/editors/detail/phases/phases-editor')
     })
 
     it('Detail / Question Tags', () => {
-        cy.visitApp('/km-editor/editor/d1fb23b7-c87f-4ff0-84e7-c8b1a1466dd8/question-tags')
+        cy.visitApp('/knowledge-model-editors/editor/d1fb23b7-c87f-4ff0-84e7-c8b1a1466dd8/question-tags')
         cy.collapseSidebar()
         
         cy.get('.col-full').screenshot('application/knowledge-models/editors/detail/question-tags/question-tag-editor')
     })
 
     it('Detail / Preview', () => {
-        cy.visitApp('/km-editor/editor/d1fb23b7-c87f-4ff0-84e7-c8b1a1466dd8/preview')
+        cy.visitApp('/knowledge-model-editors/editor/d1fb23b7-c87f-4ff0-84e7-c8b1a1466dd8/preview')
         cy.collapseSidebar()
         
         cy.get('.col-full').screenshot('application/knowledge-models/editors/detail/preview/preview')
     })
 
     it('Detail / Settings', () => {
-        cy.visitApp('/km-editor/editor/d1fb23b7-c87f-4ff0-84e7-c8b1a1466dd8/settings')
+        cy.visitApp('/knowledge-model-editors/editor/d1fb23b7-c87f-4ff0-84e7-c8b1a1466dd8/settings')
         cy.collapseSidebar()
         
         cy.get('.col-full').screenshot('application/knowledge-models/editors/detail/settings/settings-form')
     })
 
     it('Detail / Publish', () => {
-        cy.visitApp('/km-editor/editor/d1fb23b7-c87f-4ff0-84e7-c8b1a1466dd8')
+        cy.visitApp('/knowledge-model-editors/editor/d1fb23b7-c87f-4ff0-84e7-c8b1a1466dd8')
         cy.get('.KMEditor__Editor').should('exist')
         cy.get('.DetailNavigation__Row__Section__Actions .btn').contains('Publish').click()
         cy.get('.modal-cover.visible').invoke('attr', 'style', 'background: #fff')
@@ -84,7 +84,7 @@ describe('Knowledge Models / Editors', () => {
     })
 
     it('Migration', () => {
-        cy.visitApp('/km-editor')
+        cy.visitApp('/knowledge-model-editors')
         cy.get('.KMEditor__Index').should('exist')
 
         // update available badge
@@ -104,7 +104,7 @@ describe('Knowledge Models / Editors', () => {
         cy.screenshot('application/knowledge-models/editors/migration/migration')
 
         // clean up
-        cy.visitApp('/km-editor')
+        cy.visitApp('/knowledge-model-editors')
         cy.get('.KMEditor__Index').should('exist')
         cy.clickListingItemAction('Chemistry', 'cancel-migration')
     })

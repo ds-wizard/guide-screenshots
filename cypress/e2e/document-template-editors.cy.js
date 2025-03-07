@@ -1,6 +1,9 @@
 describe('Document Template Editors', () => {
-    it('List', () => {
+    beforeEach(() => {
         cy.loginAs('admin')
+    })
+    
+    it('List', () => {
         cy.visitApp('/document-template-editors')
 
         cy.get('code.fragment').invoke('text', 'dsw:questionnaire-report:2.9.0')
@@ -11,7 +14,6 @@ describe('Document Template Editors', () => {
     })
 
     it('Create', () => {
-        cy.loginAs('admin')
         cy.visitApp('/document-template-editors/create')
         cy.get('.col-detail').should('exist')
 
@@ -19,7 +21,6 @@ describe('Document Template Editors', () => {
     })
 
     it('Detail', () => {
-        cy.loginAs('admin')
         cy.visitApp('/document-template-editors/dsw.mediakit:questionnaire-report:2.9.0/settings')
         cy.get('.DocumentTemplateEditor__MetadataEditor').should('exist')
 
@@ -27,7 +28,6 @@ describe('Document Template Editors', () => {
     })
 
     it('Detail - Files', () => {
-        cy.loginAs('admin')
         cy.visitApp('/document-template-editors/dsw.mediakit:questionnaire-report:2.9.0')
         cy.get('.DocumentTemplateEditor').should('exist')
 
@@ -41,7 +41,6 @@ describe('Document Template Editors', () => {
     })
 
     it('Detail - Preview', () => {
-        cy.loginAs('admin')
         cy.visitApp('/document-template-editors/dsw.mediakit:questionnaire-report:2.9.0/preview')
         cy.wait(4000)
         cy.get('iframe').should('be.visible')
@@ -51,7 +50,6 @@ describe('Document Template Editors', () => {
     })
 
     it('Detail - Publish', () => {
-        cy.loginAs('admin')
         cy.visitApp('/document-template-editors/dsw.mediakit:questionnaire-report:2.9.0/preview')
         cy.get('.DocumentTemplateEditor__PreviewEditor').should('exist')
 
@@ -63,7 +61,6 @@ describe('Document Template Editors', () => {
     })
 
     it('Detail - Template (KMs)', () => {
-        cy.loginAs('admin')
         cy.visitApp('/document-template-editors/dsw.mediakit:questionnaire-report:2.9.0/settings')
         cy.get('.DocumentTemplateEditor__MetadataEditor').should('exist')
 
@@ -89,7 +86,6 @@ describe('Document Template Editors', () => {
     })
 
     it('Detail - Template (Formats)', () => {
-        cy.loginAs('admin')
         cy.visitApp('/document-template-editors/dsw.mediakit:questionnaire-report:2.9.0/settings')
         cy.get('.DocumentTemplateEditor__MetadataEditor').should('exist')
 

@@ -29,7 +29,7 @@ describe('Projects', () => {
     cy.screenshot('application/projects/list/detail/index/questionnaire')
   })
 
-  it('Questionnaire', () => {
+  it.only('Questionnaire', () => {
     cy.loginAs('researcher')
     cy.visitApp('/projects/c66ab9be-dd94-4dbd-92a5-ceb31658a99b')
     cy.collapseSidebar()
@@ -52,15 +52,15 @@ describe('Projects', () => {
     // Resize chapter list
     cy.get('.pane-first-view').invoke('attr', 'style', 'display: flex; flex: 0.35 1 0%; width: 100%; height: 100%; overflow: hidden; box-sizing: border-box; position: relative;')
 
-    // Different question types
+    // Different question types'
     cy.get('#question-6155ad47-3d1e-4488-9f2a-742de1e56580').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/value-question', { padding: [0, 10, -25, 10] })
     cy.get('#question-829dcda6-db8a-40ac-819a-92b9b52490f5').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/multi-choice-question', { padding: [0, 10, -350, 10], capture: 'viewport' })
 
-    cy.get('.nav-link').contains('Re-using data').click()
-    cy.get('#question-efc80cc8-8318-4f8c-acb7-dc1c60e491c1').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/options-question')
+    cy.get('.nav-link').contains('Creating and collecting data').click()
+    cy.get('#question-ecff019a-d4e6-44c6-a8fe-c84eb15ed8b7').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/options-question')
 
     cy.get('.nav-link').contains('Interpreting data').click()
-    cy.get('#question-a797cab9-0829-4787-a096-1b5cedc9147f').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/list-of-items-question', { padding: [0, 0, -950, 0] })
+    cy.get('#question-a797cab9-0829-4787-a096-1b5cedc9147f').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/list-of-items-question', { padding: [0, 0, -1000, 0] })
     cy.get('#question-63ed4349-9743-4fd1-96df-73dbb7e4f05b').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/integration-question', { padding: [0, 10, -25, 10] })
 
     // Item Select and File questions are taken from different Project
@@ -247,17 +247,17 @@ describe('Projects', () => {
 
     cy.openLastItemDropdown()
 
-    cy.screenshot('application/projects/files/files')
+    cy.screenshot('application/projects/project-files/files')
 
   })
 
   it('Menu Documents', () => {
       cy.loginAs('admin')
-      cy.visitApp('/documents')
+      cy.visitApp('/project-documents')
 
       cy.openLastItemDropdown()
 
-      cy.screenshot('application/projects/documents/documents')
+      cy.screenshot('application/projects/project-documents/documents')
   })
 
   it('Importers', () => {
@@ -266,6 +266,6 @@ describe('Projects', () => {
 
     cy.openLastItemDropdown()
 
-    cy.screenshot('application/projects/importers/importers')
+    cy.screenshot('application/projects/project-importers/importers')
   })
 })

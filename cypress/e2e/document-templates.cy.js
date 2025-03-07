@@ -1,6 +1,9 @@
 describe('Document Templates', () => {
-    it('List', () => {
+    beforeEach(() => {
         cy.loginAs('admin')
+    })
+
+    it('List', () => {
         cy.visitApp('/document-templates')
         
         cy.openLastItemDropdown()
@@ -9,7 +12,6 @@ describe('Document Templates', () => {
     })
 
     it('Detail', () => {
-        cy.loginAs('admin')
         cy.visitApp('/document-templates/dsw:horizon-europe-dmp:latest')
         cy.get('.DetailPage__Content').should('exist')
 
@@ -17,7 +19,6 @@ describe('Document Templates', () => {
     })
 
     it('Import from Registry', () => {
-        cy.loginAs('admin')
         cy.visitApp('/document-templates/import?documentTemplateId=dsw:questionnaire.report:2.12.0')
         cy.get('.col-detail').should('exist')
 
@@ -25,7 +26,6 @@ describe('Document Templates', () => {
     })
 
     it('Import from file', () => {
-        cy.loginAs('admin')
         cy.visitApp('/document-templates/import')
         cy.getCy('template_import_nav_file').click()
         cy.get('.dropzone').should('exist')

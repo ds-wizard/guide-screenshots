@@ -1,6 +1,10 @@
 describe('Settings', () => {
-    it('OpenID', () => {
+    beforeEach(() => {
         cy.loginAs('admin')
+    })
+
+    // System Settings
+    it('OpenID', () => {
         cy.visitApp('/settings/authentication')
 
         cy.getCy('form-group_list_add-button').contains('Add service').click()
@@ -19,8 +23,8 @@ describe('Settings', () => {
         cy.get('.form-group').eq(1).screenshot('application/administration/settings/system/authentication/openid', { padding: [70, 30, 30, 30] })
     })
 
+    // User Interface Settings
     it('Custom Links', () => {
-        cy.loginAs('admin')
         cy.visitApp('/settings/look-and-feel')
 
         cy.getCy('form-group_list_add-button').contains('Add link').click()
@@ -33,8 +37,10 @@ describe('Settings', () => {
         cy.get('.Settings__content').screenshot('application/administration/settings/user-interface/look-and-feel/custom-links', { padding: [50, 50, -60, 0] })
     })
 
+    // Content Settings
+
+    // Info
     it('Usage', () => {
-        cy.loginAs('admin')
         cy.visitApp('/settings/usage')
 
         cy.get('.table-usage').should('exist')

@@ -1,6 +1,9 @@
 describe('Locales', () => {
-    it('List', () => {
+    beforeEach(() => {
         cy.loginAs('admin')
+    })
+
+    it('List', () => {
         cy.visitApp('/locales')
         
         cy.openLastItemDropdown()
@@ -9,7 +12,6 @@ describe('Locales', () => {
     })
 
     it('Detail', () => {
-        cy.loginAs('admin')
         cy.visitApp('/locales')
         cy.clickListingItemAction('dsw:nl', 'view')
         cy.get('.DetailPage__Content').should('exist')
@@ -21,7 +23,6 @@ describe('Locales', () => {
     })
 
     it('Import from Registry', () => {
-        cy.loginAs('admin')
         cy.visitApp('/locales/import?localeId=dsw:nl:4.9.0')
         cy.get('.col-detail').should('exist')
 
@@ -29,11 +30,30 @@ describe('Locales', () => {
     })
 
     it('Import from file', () => {
-        cy.loginAs('admin')
         cy.visitApp('/locales/import')
         cy.getCy('locale_import_nav_file').click()
         cy.get('.dropzone').should('exist')
 
         cy.get('.col-detail').screenshot('application/administration/locales/import/file', { padding: [10, 10, 10, 10] })
+    })
+
+    it('Create', () => {
+        cy.visitApp('/locales/create')
+        cy.fillFields({
+            name: 'French',
+            description: 'French locale for Wizard UI',
+            code: 'fr',
+            localeId: 'dsw:fr:4.15.0',
+            localeMajor: '0',
+            localeMinor: '0',
+            localePatch: '1',
+            license: 'CC-BY-4.0',
+            readme: 'French Locale for Wizard Client',
+            appMajor: '4',
+            appMinor: '15',
+            appPatch: '0',
+        })
+
+        cy.get('.col-detail').screenshot('application/administration/locales/create/form')
     })
 })

@@ -26,7 +26,7 @@ describe('Profile', () => {
         cy.visitApp('/users/edit/current')
         cy.get('#email').should('be.visible')
 
-        cy.get('.Users__Edit__content').screenshot('application/profile/edit/index/form', { padding: [0, 0, 0, 330] })
+        cy.get('.Users__Edit__content').screenshot('application/profile/settings/index/form', { padding: [0, 0, 0, 330] })
     })
 
     it('Assigned comments', () => {
@@ -46,7 +46,7 @@ describe('Profile', () => {
         cy.get('#passwordConfirmation').type('somepassword')
         cy.get('#passwordConfirmation').blur()
 
-        cy.get('.Users__Edit__content').screenshot('application/profile/edit/password/form', { padding: [0, -280, 0, 330] })
+        cy.get('.Users__Edit__content').screenshot('application/profile/settings/password/form', { padding: [0, -280, 0, 330] })
     })
 
     it('API Keys', () => {
@@ -54,7 +54,7 @@ describe('Profile', () => {
         cy.visitApp('/users/edit/current/api-keys')
         cy.getCy('flash_alert-info').should('be.visible')
 
-        cy.get('.Users__Edit__content').screenshot('application/profile/edit/api-keys/form', { padding: [0, 0, 0, 330] })
+        cy.get('.Users__Edit__content').screenshot('application/profile/settings/api-keys/form', { padding: [0, 0, 0, 330] })
     })
 
     it('About', () =>{

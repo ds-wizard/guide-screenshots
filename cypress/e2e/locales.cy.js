@@ -43,14 +43,14 @@ describe('Locales', () => {
             name: 'French',
             description: 'French locale for Wizard UI',
             code: 'fr',
-            localeId: 'dsw:fr:4.15.0',
+            localeId: 'fr',
             localeMajor: '0',
             localeMinor: '0',
             localePatch: '1',
             license: 'CC-BY-4.0',
             readme: 'French Locale for Wizard Client',
             appMajor: '4',
-            appMinor: '15',
+            appMinor: '17',
             appPatch: '0',
         })
 

@@ -18,8 +18,8 @@ describe('Knowledge Models', () => {
 
     it('Import from Registry', () => {
         cy.loginAs('admin')
-        cy.visitApp('/knowledge-models/import?packageId=dsw:root:2.6.8')
-        cy.get('.col-detail').should('exist')
+        cy.visitApp('/knowledge-models/import?packageId=dsw:root:2.6.10')
+        cy.wait(1000)
 
         cy.get('.col-detail').screenshot('application/knowledge-models/list/import/registry', { padding: [10, 10, 10, 10] })
     })

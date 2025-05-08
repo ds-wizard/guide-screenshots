@@ -19,8 +19,9 @@ describe('Document Templates', () => {
     })
 
     it('Import from Registry', () => {
-        cy.visitApp('/document-templates/import?documentTemplateId=dsw:questionnaire.report:2.12.0')
+        cy.visitApp('/document-templates/import?documentTemplateId=dsw:questionnaire.report:2.15.0')
         cy.get('.col-detail').should('exist')
+        cy.wait(1000)
 
         cy.get('.col-detail').screenshot('application/document-templates/list/import/registry', { padding: [10, 10, 10, 10] })
     })
@@ -29,6 +30,7 @@ describe('Document Templates', () => {
         cy.visitApp('/document-templates/import')
         cy.getCy('template_import_nav_file').click()
         cy.get('.dropzone').should('exist')
+        cy.get('.guide-link').should('be.visible')
 
         cy.get('.col-detail').screenshot('application/document-templates/list/import/file', { padding: [10, 10, 10, 10] })
     })

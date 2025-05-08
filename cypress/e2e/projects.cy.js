@@ -29,7 +29,7 @@ describe('Projects', () => {
     cy.screenshot('application/projects/list/detail/index/questionnaire')
   })
 
-  it.only('Questionnaire', () => {
+  it('Questionnaire', () => {
     cy.loginAs('researcher')
     cy.visitApp('/projects/c66ab9be-dd94-4dbd-92a5-ceb31658a99b')
     cy.collapseSidebar()
@@ -74,7 +74,6 @@ describe('Projects', () => {
 
     // Questionnaire view options
     cy.get('.btn-link').contains('View').click()
-    cy.get('.btn-link').contains('View').focus()
     cy.get('.dropdown-menu.show').screenshot('application/projects/list/detail/questionnaire/view-options', { padding: [38, 5, 5, 5]})
 
     // Warnings

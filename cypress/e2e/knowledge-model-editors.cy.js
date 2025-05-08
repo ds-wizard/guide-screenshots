@@ -6,11 +6,14 @@ describe('Knowledge Models / Editors', () => {
     it('List', () => {
         cy.visitApp('/knowledge-model-editors')
         cy.get('.list-group-item').should('exist')
+
         cy.get('.col-list').screenshot('application/knowledge-models/editors/index/knowledge-model-editors-list', { padding: [20, 0, 20, 0] })
     })
 
     it('Create', () => {
         cy.visitApp('/knowledge-model-editors/create')
+        cy.wait(1000)
+
         cy.get('.col-detail').screenshot('application/knowledge-models/editors/create/create-km', { padding: [0, 0, -40, 0] })
     })
 
@@ -21,6 +24,7 @@ describe('Knowledge Models / Editors', () => {
  
         cy.get('.input-children').should('exist')
         cy.get('.editor-content').invoke('attr', 'style', 'opacity: 1')
+
         cy.screenshot('application/knowledge-models/editors/detail/index/knowledge-model-editor')
     })
 
@@ -80,6 +84,7 @@ describe('Knowledge Models / Editors', () => {
         cy.get('.KMEditor__Editor').should('exist')
         cy.get('.DetailNavigation__Row__Section__Actions .btn').contains('Publish').click()
         cy.get('.modal-cover.visible').invoke('attr', 'style', 'background: #fff')
+
         cy.getCy('modal_km-editor_publish').screenshot('application/knowledge-models/editors/detail/publish/publish-modal', { padding: [10, 10, 10, 10] })
     })
 
@@ -93,6 +98,7 @@ describe('Knowledge Models / Editors', () => {
         // create migration modal
         cy.getCy('km-editor_list_outdated-badge').click()
         cy.get('#targetPackageId').should('exist')
+
         cy.getCy('modal_km-editor-update').screenshot('application/knowledge-models/editors/migration/create-migration-modal')
 
         // migration itself

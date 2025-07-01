@@ -246,7 +246,7 @@ describe('Projects', () => {
 
     cy.openLastItemDropdown()
 
-    cy.screenshot('application/projects/project-files/files')
+    cy.screenshot('application/projects/files/files')
 
   })
 
@@ -256,7 +256,7 @@ describe('Projects', () => {
 
       cy.openLastItemDropdown()
 
-      cy.screenshot('application/projects/project-documents/documents')
+      cy.screenshot('application/projects/documents/documents')
   })
 
   it('Importers', () => {
@@ -265,6 +265,6 @@ describe('Projects', () => {
 
     cy.openLastItemDropdown()
 
-    cy.screenshot('application/projects/project-importers/importers')
+    cy.screenshot('application/projects/importers/importers')
   })
 })

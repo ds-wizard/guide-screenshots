@@ -16,9 +16,9 @@ describe('Profile', () => {
         cy.get('#menu_profile').trigger('mouseenter')
         cy.get('.profile-submenu').should('be.visible')
         cy.getCy('menu_languages').click()
-        cy.get('.modal-cover.visible').invoke('attr', 'style', 'background: #fff')
+        cy.get('.description').contains('French localization').should('be.visible')
 
-        cy.getCy('modal_languages').screenshot('application/profile/language/modal', { padding: [10, 10, 10, 10] })
+        cy.get('.Users__Edit__content').screenshot('application/profile/language/list', { padding: [0, 0, 0, 330] })
     })
 
     it('Edit profile', () => {
@@ -47,6 +47,14 @@ describe('Profile', () => {
         cy.get('#passwordConfirmation').blur()
 
         cy.get('.Users__Edit__content').screenshot('application/profile/settings/password/form', { padding: [0, -280, 0, 330] })
+    })
+
+    it('Tours', () => {
+        cy.loginAs('admin')
+        cy.visitApp('/users/edit/current/tours')
+        cy.get('.Users__Edit__content').should('be.visible')
+
+        cy.get('.Users__Edit__content').screenshot('application/profile/settings/tours/reset', { padding: [0, 0, 0, 330] })
     })
 
     it('API Keys', () => {

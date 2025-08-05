@@ -16,7 +16,7 @@ describe('Profile', () => {
         cy.get('#menu_profile').trigger('mouseenter')
         cy.get('.profile-submenu').should('be.visible')
         cy.getCy('menu_languages').click()
-        cy.get('.description').contains('French localization').should('be.visible')
+        cy.get('.description').contains('Czech locale for Wizard').should('be.visible').click()
 
         cy.get('.Users__Edit__content').screenshot('application/profile/language/list', { padding: [0, 0, 0, 330] })
     })

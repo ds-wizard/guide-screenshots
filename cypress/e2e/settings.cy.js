@@ -23,6 +23,14 @@ describe('Settings', () => {
         cy.get('.form-group').eq(1).screenshot('application/administration/settings/system/authentication/openid', { padding: [70, 30, 30, 30] })
     })
 
+    it('Features', () => {
+        cy.visitApp('/settings/features')
+
+        cy.get('.form-check-label').should('be.visible')
+
+        cy.get('.Settings__content').screenshot('application/administration/settings/system/features/tours', { padding: [0, 0, 0, 330] })
+    })
+
     // User Interface Settings
     it('Custom Links', () => {
         cy.visitApp('/settings/look-and-feel')

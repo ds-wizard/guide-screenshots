@@ -13,10 +13,10 @@ describe('Locales', () => {
 
     it('Detail', () => {
         cy.visitApp('/locales')
-        cy.clickListingItemAction('dsw.mediakit:fr', 'view')
+        cy.clickListingItemAction('dsw:fr:4.20.0', 'view')
         cy.get('.DetailPage__Content').should('exist')
         cy.get('p > a > img')
-            .should('have.length', 4)
+            .should('have.length', 3)
             .and('be.visible')
 
         cy.screenshot('application/administration/locales/detail/detail')

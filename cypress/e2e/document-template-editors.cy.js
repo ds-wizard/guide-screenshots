@@ -85,13 +85,13 @@ describe('Document Template Editors', () => {
         cy.get('.DocumentTemplateEditor__MetadataEditor__Content .form-group').screenshot('application/document-templates/editors/detail/template/allowed-kms', { padding: [10, 10, 10, 10] })
     })
 
-    it('Detail - Template (Formats)', () => {
+    it.only('Detail - Template (Formats)', () => {
         cy.visitApp('/document-template-editors/dsw.mediakit:questionnaire-report:2.9.0/settings')
         cy.get('.DocumentTemplateEditor__MetadataEditor').should('exist')
 
         cy.getCy('dt_template-nav_formats').click()
 
         cy.get('.DocumentTemplateEditor__MetadataEditor__Content > div > .form-group > div > .card').last().scrollIntoView()
-        cy.get('.DocumentTemplateEditor__MetadataEditor__Content > div > .form-group > div > .card').last().screenshot('application/document-templates/editors/detail/template/formats', { padding: [10, 10, 10, 10] })
+        cy.get('.DocumentTemplateEditor__MetadataEditor__Content > div > .form-group > div > .card').last().screenshot('application/document-templates/editors/detail/template/formats', { padding: [10, 10, -100, 10] })
     })
 })

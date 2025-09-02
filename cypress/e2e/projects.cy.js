@@ -1,9 +1,9 @@
 describe('Projects', () => {
-  it('List', () => {
+  it.only('List', () => {
     cy.loginAs('researcher')
     cy.visitApp('/projects')
-    cy.get('.list-group-item').should('exist')
-    cy.get('.col-list').screenshot('application/projects/list/index/project-list', { padding: [20, 0, 20, 0]})
+    cy.openLastItemDropdown()
+    cy.get('.col-list').screenshot('application/projects/list/index/project-list', { padding: [20, 0, 130, 0]})
   })
 
   it('Create', () => {

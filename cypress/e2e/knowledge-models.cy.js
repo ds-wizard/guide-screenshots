@@ -32,4 +32,12 @@ describe('Knowledge Models', () => {
 
         cy.get('.col-detail').screenshot('application/knowledge-models/list/import/file', { padding: [10, 10, 10, 10] })
     })
+
+    it('Secrets', () => {
+        cy.loginAs('admin')
+        cy.visitApp('/knowledge-model-secrets')
+        cy.get('.fa-lock').should('be.visible')
+
+        cy.screenshot('application/knowledge-models/secrets/secrets')
+    })
 })

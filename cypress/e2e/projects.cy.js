@@ -1,5 +1,5 @@
 describe('Projects', () => {
-  it.only('List', () => {
+  it('List', () => {
     cy.loginAs('researcher')
     cy.visitApp('/projects')
     cy.openLastItemDropdown()

@@ -85,7 +85,7 @@ describe('Document Template Editors', () => {
         cy.get('.DocumentTemplateEditor__MetadataEditor__Content .form-group').screenshot('application/document-templates/editors/detail/template/allowed-kms', { padding: [10, 10, 10, 10] })
     })
 
-    it.only('Detail - Template (Formats)', () => {
+    it('Detail - Template (Formats)', () => {
         cy.visitApp('/document-template-editors/dsw.mediakit:questionnaire-report:2.9.0/settings')
         cy.get('.DocumentTemplateEditor__MetadataEditor').should('exist')
 

@@ -15,9 +15,9 @@ describe('Document Template Editors', () => {
 
     it('Create', () => {
         cy.visitApp('/document-template-editors/create')
-        cy.get('.col-detail').should('exist')
+        cy.get('.container').should('exist')
 
-        cy.get('.col-detail').screenshot('application/document-templates/editors/create/create-document-template', { padding: [10, 10, -30, 10] })
+        cy.get('.container').screenshot('application/document-templates/editors/create/create-document-template', { padding: [10, 10, 10, 10] })
     })
 
     it('Detail', () => {

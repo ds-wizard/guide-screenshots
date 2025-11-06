@@ -9,7 +9,7 @@ describe('Projects', () => {
   it('Create', () => {
     cy.loginAs('researcher')
     cy.visitApp('/projects/create')
-    cy.get('.Projects__Create').screenshot('application/projects/list/create/project-create', { padding: [10, 0, -35, 0] })
+    cy.get('.container').screenshot('application/projects/list/create/project-create', { padding: [10, 10, 10, 10] })
 
     cy.visitApp('/projects/create')
     cy.getCy('project_create_nav_custom').click()
@@ -17,7 +17,7 @@ describe('Projects', () => {
     cy.get('#question-tags-filter').click()
     cy.getCy('tag').contains('Horizon Europe DMP').click()
     cy.getCy('tag').contains('maDMP').click()
-    cy.get('.Projects__Create').screenshot('application/projects/list/create/project-create-custom', { padding: [10, 0, -35, 0] })
+    cy.get('.container').screenshot('application/projects/list/create/project-create-custom', { padding: [10, 10, 10, 10] })
   })
 
   it('Detail', () => {
@@ -54,13 +54,13 @@ describe('Projects', () => {
 
     // Different question types'
     cy.get('#question-6155ad47-3d1e-4488-9f2a-742de1e56580').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/value-question', { padding: [0, 10, -25, 10] })
-    cy.get('#question-829dcda6-db8a-40ac-819a-92b9b52490f5').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/multi-choice-question', { padding: [0, 10, -350, 10], capture: 'viewport' })
+    cy.get('#question-829dcda6-db8a-40ac-819a-92b9b52490f5').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/multi-choice-question', { padding: [0, 10, -400, 10], capture: 'viewport' })
 
     cy.get('.nav-link').contains('Creating and collecting data').click()
     cy.get('#question-ecff019a-d4e6-44c6-a8fe-c84eb15ed8b7').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/options-question')
 
     cy.get('.nav-link').contains('Interpreting data').click()
-    cy.get('#question-a797cab9-0829-4787-a096-1b5cedc9147f').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/list-of-items-question', { padding: [0, 0, -1000, 0] })
+    cy.get('#question-a797cab9-0829-4787-a096-1b5cedc9147f').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/list-of-items-question', { padding: [0, 0, -1100, 0] })
     cy.get('#question-63ed4349-9743-4fd1-96df-73dbb7e4f05b').scrollIntoView().screenshot('application/projects/list/detail/questionnaire/integration-question', { padding: [0, 10, -25, 10] })
 
     // Item Select and File questions are taken from different Project
@@ -108,7 +108,7 @@ describe('Projects', () => {
     cy.screenshot('application/projects/list/detail/metrics/metrics')
   })
 
-  it('Preview', () => {
+  it.only('Preview', () => {
     cy.loginAs('researcher')
     cy.visitApp('/projects/c66ab9be-dd94-4dbd-92a5-ceb31658a99b')
     cy.collapseSidebar()
@@ -124,7 +124,7 @@ describe('Projects', () => {
       'th_documentTemplateId': 'Horizon Europe'
     })
     cy.get('.export-link').contains('HTML').click()
-    cy.get('.form-actions-dynamic .btn').contains('Save').click()
+    cy.getCy('form_submit', ':visible').click()
 
     // HTML preview
     cy.getCy('project_nav_preview').click()
@@ -136,7 +136,7 @@ describe('Projects', () => {
     // Set Horizon Europe Word
     cy.getCy('project_nav_settings').click()
     cy.get('.export-link').contains('MS Word').click()
-    cy.get('.form-actions-dynamic .btn').contains('Save').click()
+    cy.getCy('form_submit', ':visible').click()
 
     // Download preview
     cy.getCy('project_nav_preview').click()
@@ -145,8 +145,8 @@ describe('Projects', () => {
 
     // Reset template after screenshots
     cy.getCy('project_nav_settings').click()
-    cy.get('.TypeHintInput__Value a > .fa').click()
-    cy.get('.form-actions-dynamic .btn').should('be.visible').contains('Save').click()
+    cy.get('.typehint-input-value > .ms-2').click()
+    cy.getCy('form_submit', ':visible').click()
   })
 
   it('Documents', () => {
@@ -168,7 +168,7 @@ describe('Projects', () => {
       th_documentTemplateId: 'Horizon Europe DMP'
     })
     cy.get('.export-link').contains('PDF').click()
-    cy.get('.col-detail').screenshot('application/projects/list/detail/documents/new', { padding: [20, 0, 20, 0] })
+    cy.get('.container').screenshot('application/projects/list/detail/documents/new', { padding: [10, 10, 10, 10] })
 
     // Document submission
     cy.getCy('project_nav_documents').click()

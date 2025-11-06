@@ -12,9 +12,9 @@ describe('Knowledge Models / Editors', () => {
 
     it('Create', () => {
         cy.visitApp('/knowledge-model-editors/create')
-        cy.wait(1000)
+        cy.get('.container').should('exist')
 
-        cy.get('.col-detail').screenshot('application/knowledge-models/editors/create/create-km', { padding: [0, 0, -40, 0] })
+        cy.get('.container').screenshot('application/knowledge-models/editors/create/create-km', { padding: [10, 10, 10, 10] })
     })
 
     it('Detail', () => {

@@ -82,8 +82,8 @@ Cypress.Commands.add('fillFields', (fields) => {
         } else if (key.startsWith('th_')) {
             key = key.replace(/^th_/, '')
             cy.get(`#${key}`).click()
-            cy.get(`#${key} .TypeHintInput__TypeHints__Search`).type(value)
-            cy.get(`#${key} .TypeHintInput__TypeHints ul li a`).contains(value).click()
+            cy.get(`#${key} .typehints-search`).type(value)
+            cy.get(`#${key} ul li a .typehints-complex-item`).contains(value).click()
         } else if (key.startsWith('c_')) {
             key = key.replace(/^c_/, '')
             if (value) {

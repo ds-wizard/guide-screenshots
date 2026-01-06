@@ -13,7 +13,7 @@ describe('Projects', () => {
 
     cy.visitApp('/projects/create')
     cy.getCy('project_create_nav_custom').click()
-    cy.fillFields({ th_packageId: 'Common'})
+    cy.fillFields({ th_knowledgeModelPackageId: 'Common'})
     cy.get('#question-tags-filter').click()
     cy.getCy('tag').contains('Horizon Europe DMP').click()
     cy.getCy('tag').contains('maDMP').click()
@@ -108,7 +108,7 @@ describe('Projects', () => {
     cy.screenshot('application/projects/list/detail/metrics/metrics')
   })
 
-  it.only('Preview', () => {
+  it('Preview', () => {
     cy.loginAs('researcher')
     cy.visitApp('/projects/c66ab9be-dd94-4dbd-92a5-ceb31658a99b')
     cy.collapseSidebar()
@@ -229,7 +229,7 @@ describe('Projects', () => {
 
     // Migration screenshot
     cy.fillFields({
-      s_packageId: 'dsw:root:1.0.0'
+      s_knowledgeModelPackageId: 'dsw:root:1.0.0'
     })
     cy.get('.btn').contains('Create').click()
     cy.get('.changes-view').should('exist')

@@ -22,9 +22,9 @@ describe('Users', () => {
 
     it('Create', () => {
         cy.visitApp('/users/create')
-        cy.get('.Users__Create').should('exist')
+        cy.getCy('form_submit').should('be.visible')
 
-        cy.get('.Users__Create').screenshot('application/administration/users/create/create', { padding: [0, 0, -30, 0] })
+        cy.get('.container').screenshot('application/administration/users/create/create', { padding: [0, 0, 10, 0] })
     })
 
     it('Password', () => {

@@ -13,7 +13,7 @@ describe('Locales', () => {
 
     it('Detail', () => {
         cy.visitApp('/locales')
-        cy.clickListingItemAction('dsw:fr:4.24.0', 'view')
+        cy.clickListingItemAction('dsw:fr:4.26.0', 'view')
         cy.get('.DetailPage__Content').should('exist')
         cy.get('p > a > img')
             .should('have.length', 3)
@@ -23,7 +23,7 @@ describe('Locales', () => {
     })
 
     it('Import from Registry', () => {
-        cy.visitApp('/locales/import?localeId=dsw:nl:4.24.0')
+        cy.visitApp('/locales/import?localeId=dsw:nl:4.26.0')
         cy.get('.col-detail').should('exist')
 
         cy.get('.col-detail').screenshot('application/administration/locales/import/registry', { padding: [10, 10, 10, 10] })

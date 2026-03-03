@@ -10,7 +10,7 @@ describe('Knowledge Models', () => {
 
     it('Detail', () => {
         cy.loginAs('admin')
-        cy.visitApp('/knowledge-models/dsw:root:latest')
+        cy.visitApp('/knowledge-models/24811ad5-ee3b-4e8b-8cf1-dbbd3dc45614')
         cy.get('.DetailPage__Content').should('exist')
 
         cy.screenshot('application/knowledge-models/list/detail/detail')
@@ -18,8 +18,7 @@ describe('Knowledge Models', () => {
 
     it('Import from Registry', () => {
         cy.loginAs('admin')
-        cy.visitApp('/knowledge-models/import?packageId=dsw:root:2.6.10')
-        cy.wait(1000)
+        cy.visitApp('/knowledge-models/import')
 
         cy.get('.col-detail').screenshot('application/knowledge-models/list/import/registry', { padding: [10, 10, 10, 10] })
     })

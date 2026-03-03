@@ -97,12 +97,12 @@ describe('Knowledge Models / Editors', () => {
 
         // create migration modal
         cy.getCy('km-editor_list_outdated-badge').click()
-        cy.get('#targetPackageId').should('exist')
+        cy.get('#targetPackageUuid').should('exist')
 
         cy.getCy('modal_km-editor-update').screenshot('application/knowledge-models/editors/migration/create-migration-modal')
 
         // migration itself
-        cy.fillFields({ s_targetPackageId: 'dsw:root:2.4.4' })
+        cy.fillFields({ s_targetPackageUuid: '24811ad5-ee3b-4e8b-8cf1-dbbd3dc45614' })
         cy.clickModalAction()
         cy.getCy('km-editor_migration').should('exist')
         cy.getCy('km-migration_apply-button').click()

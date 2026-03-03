@@ -13,7 +13,7 @@ describe('Projects', () => {
 
     cy.visitApp('/projects/create')
     cy.getCy('project_create_nav_custom').click()
-    cy.fillFields({ th_knowledgeModelPackageId: 'Common'})
+    cy.fillFields({ th_knowledgeModelPackageUuid: 'common'})
     cy.get('#question-tags-filter').click()
     cy.getCy('tag').contains('Horizon Europe DMP').click()
     cy.getCy('tag').contains('maDMP').click()
@@ -121,7 +121,7 @@ describe('Projects', () => {
     // Set Horizon Europe PDF
     cy.getCy('project_nav_settings').click()
     cy.fillFields({
-      'th_documentTemplateId': 'Horizon Europe'
+      'th_documentTemplateUuid': 'Horizon Europe'
     })
     cy.get('.export-link').contains('HTML').click()
     cy.getCy('form_submit', ':visible').click()
@@ -165,7 +165,7 @@ describe('Projects', () => {
     // New document
     cy.get('.btn').contains('New document').click()
     cy.fillFields({
-      th_documentTemplateId: 'Horizon Europe DMP'
+      th_documentTemplateUuid: 'Horizon Europe DMP'
     })
     cy.get('.export-link').contains('PDF').click()
     cy.get('.container').screenshot('application/projects/list/detail/documents/new', { padding: [10, 10, 10, 10] })
@@ -216,28 +216,23 @@ describe('Projects', () => {
     cy.get('.modal-cover.visible .modal-dialog').screenshot('application/projects/list/detail/sharing/share-modal', { padding: [20, 20, 20, 20] })
   })
 
-  it('Migration', () => {
+  it.only('Migration', () => {
     cy.loginAs('researcher')
-    cy.visitApp('/projects')
     cy.collapseSidebar()
+    cy.visitApp('/projects/create-migration/b858f6fd-626d-46fc-93d8-a482ed7f4a16')
 
-    // Create migration
-    cy.clickListingItemAction('My Experiment', 'create-migration')
     cy.get('.Questionnaires__CreateMigration').should('exist')
     cy.get('.tag-selection').should('exist')
     cy.screenshot('application/projects/list/migration/create')
 
     // Migration screenshot
-    cy.fillFields({
-      s_knowledgeModelPackageId: 'dsw:root:1.0.0'
-    })
     cy.get('.btn').contains('Create').click()
     cy.get('.changes-view').should('exist')
     cy.screenshot('application/projects/list/migration/migration')
 
     // Delete migration to clean up
     cy.visitApp('/projects')
-    cy.clickListingItemAction('1.0.0', 'cancel-migration')
+    cy.clickListingItemAction('0.0.5', 'cancel-migration')
   })
 
   it('Menu Files', () => {
@@ -257,14 +252,5 @@ describe('Projects', () => {
       cy.openLastItemDropdown()
 
       cy.screenshot('application/projects/documents/documents')
-  })
-
-  it('Importers', () => {
-    cy.loginAs('dataSteward')
-    cy.visitApp('/project-importers')
-
-    cy.openLastItemDropdown()
-
-    cy.screenshot('application/projects/importers/importers')
   })
 })

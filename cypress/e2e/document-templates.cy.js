@@ -12,14 +12,14 @@ describe('Document Templates', () => {
     })
 
     it('Detail', () => {
-        cy.visitApp('/document-templates/dsw:horizon-europe-dmp:latest')
+        cy.visitApp('/document-templates/efbbb0d7-a946-497a-8ae2-4b221cd52acf')
         cy.get('.DetailPage__Content').should('exist')
 
         cy.screenshot('application/document-templates/list/detail/detail')
     })
 
     it('Import from Registry', () => {
-        cy.visitApp('/document-templates/import?documentTemplateId=dsw:questionnaire.report:2.15.0')
+        cy.visitApp('/document-templates/import')
         cy.get('.col-detail').should('exist')
         cy.wait(1000)
 

@@ -21,14 +21,14 @@ describe('Document Template Editors', () => {
     })
 
     it('Detail', () => {
-        cy.visitApp('/document-template-editors/75de312d-9e49-4711-ab96-a3dbf462c042/settings')
+        cy.visitApp('/document-template-editors/2022088b-f67b-4094-8383-2114247fc50b/settings')
         cy.get('.DocumentTemplateEditor__MetadataEditor').should('exist')
 
         cy.screenshot('application/document-templates/editors/detail/index/editor')
     })
 
     it('Detail - Files', () => {
-        cy.visitApp('/document-template-editors/75de312d-9e49-4711-ab96-a3dbf462c042')
+        cy.visitApp('/document-template-editors/2022088b-f67b-4094-8383-2114247fc50b')
         cy.get('.DocumentTemplateEditor').should('exist')
 
         cy.getCy('dt-editor_file-tree_file').contains('default.css').click()
@@ -41,7 +41,7 @@ describe('Document Template Editors', () => {
     })
 
     it('Detail - Preview', () => {
-        cy.visitApp('/document-template-editors/75de312d-9e49-4711-ab96-a3dbf462c042/preview')
+        cy.visitApp('/document-template-editors/2022088b-f67b-4094-8383-2114247fc50b/preview')
         cy.wait(4000)
         cy.get('iframe').should('be.visible')
         cy.wait(2000)
@@ -50,7 +50,7 @@ describe('Document Template Editors', () => {
     })
 
     it('Detail - Publish', () => {
-        cy.visitApp('/document-template-editors/75de312d-9e49-4711-ab96-a3dbf462c042/preview')
+        cy.visitApp('/document-template-editors/2022088b-f67b-4094-8383-2114247fc50b/preview')
         cy.get('.DocumentTemplateEditor__PreviewEditor').should('exist')
 
         cy.get('.DetailNavigation__Row__Section__Actions .btn').contains('Publish').click()
@@ -61,7 +61,7 @@ describe('Document Template Editors', () => {
     })
 
     it('Detail - Template (KMs)', () => {
-        cy.visitApp('/document-template-editors/75de312d-9e49-4711-ab96-a3dbf462c042/settings')
+        cy.visitApp('/document-template-editors/2022088b-f67b-4094-8383-2114247fc50b/settings')
         cy.get('.DocumentTemplateEditor__MetadataEditor').should('exist')
 
         cy.getCy('dt_template-nav_knowledge-models').click()
@@ -86,7 +86,7 @@ describe('Document Template Editors', () => {
     })
 
     it('Detail - Template (Formats)', () => {
-        cy.visitApp('/document-template-editors/75de312d-9e49-4711-ab96-a3dbf462c042/settings')
+        cy.visitApp('/document-template-editors/2022088b-f67b-4094-8383-2114247fc50b/settings')
         cy.get('.DocumentTemplateEditor__MetadataEditor').should('exist')
 
         cy.getCy('dt_template-nav_formats').click()

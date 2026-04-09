@@ -72,7 +72,7 @@ describe('Profile', () => {
         cy.get('#menu_profile').trigger('mouseenter')
         cy.get('.profile-submenu').should('be.visible')
         cy.getCy('menu_about').click()
-        cy.get('.table-build-info').should('have.length', 5)
+        cy.get('.table-build-info').should('have.length', 6)
         cy.get('.modal-cover.visible').invoke('attr', 'style', 'background: #fff')
 
         cy.getCy('modal_about').screenshot('application/profile/about/modal', { padding: [5, 5, 5, 5] })

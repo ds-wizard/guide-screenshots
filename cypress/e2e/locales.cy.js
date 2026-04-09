@@ -13,7 +13,7 @@ describe('Locales', () => {
 
     it('Detail', () => {
         cy.visitApp('/locales')
-        cy.clickListingItemAction('dsw:fr:4.26.0', 'view')
+        cy.clickListingItemAction('dsw:fr:4.27.0', 'view')
         cy.get('.DetailPage__Content').should('exist')
         cy.get('p > a > img')
             .should('have.length', 3)

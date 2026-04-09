@@ -13,7 +13,7 @@ describe('Projects', () => {
 
     cy.visitApp('/projects/create')
     cy.getCy('project_create_nav_custom').click()
-    cy.fillFields({ th_knowledgeModelPackageUuid: 'common'})
+    cy.fillFields({ th_knowledgeModelPackageUuid: 'Common'})
     cy.get('#question-tags-filter').click()
     cy.getCy('tag').contains('Horizon Europe DMP').click()
     cy.getCy('tag').contains('maDMP').click()
@@ -216,7 +216,7 @@ describe('Projects', () => {
     cy.get('.modal-cover.visible .modal-dialog').screenshot('application/projects/list/detail/sharing/share-modal', { padding: [20, 20, 20, 20] })
   })
 
-  it.only('Migration', () => {
+  it('Migration', () => {
     cy.loginAs('researcher')
     cy.collapseSidebar()
     cy.visitApp('/projects/create-migration/b858f6fd-626d-46fc-93d8-a482ed7f4a16')

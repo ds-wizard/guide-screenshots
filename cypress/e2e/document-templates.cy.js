@@ -12,7 +12,7 @@ describe('Document Templates', () => {
     })
 
     it('Detail', () => {
-        cy.visitApp('/document-templates/efbbb0d7-a946-497a-8ae2-4b221cd52acf')
+        cy.visitApp('/document-templates/beae59cd-db25-4102-82ba-833dd6d6a96b')
         cy.get('.DetailPage__Content').should('exist')
 
         cy.screenshot('application/document-templates/list/detail/detail')

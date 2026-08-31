@@ -6,7 +6,7 @@ A repository for generating screenshots for the [DSW User Guide](https://github.
 
 ### Install Requirements
 
-Use node 18 and install all the dependencies:
+Use Node.js 24 LTS and install all dependencies:
 
 ```
 $ make install

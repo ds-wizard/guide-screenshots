@@ -6,8 +6,21 @@ const env = require('./cypress.env')
 
 const width = 1440
 const height = 900
+const publicConfigKeys = [
+  'url',
+  'appTitle',
+  'appTitleShort',
+  'primaryColor',
+  'illustrationsColor',
+  'logoFixture',
+]
+const expose = Object.fromEntries(Object.entries(env).filter(([key]) => publicConfigKeys.includes(key)))
+const privateEnv = Object.fromEntries(Object.entries(env).filter(([key]) => !publicConfigKeys.includes(key)))
 
 module.exports = defineConfig({
+  allowCypressEnv: false,
+  env: privateEnv,
+  expose,
   screenshotsFolder: 'output/screenshots',
   videosFolder: 'output/videos',
   numTestsKeptInMemory: 1,
@@ -47,6 +60,5 @@ module.exports = defineConfig({
         })
       })
     },
-    env,
   },
 })

@@ -5,7 +5,7 @@ describe('Settings', () => {
 
     // System Settings
     it('OpenID', () => {
-        cy.visitApp('/settings/authentication')
+        cy.visitApp('/settings/openid')
 
         cy.getCy('form-group_list_add-button').contains('Add service').click()
 
@@ -29,6 +29,14 @@ describe('Settings', () => {
         cy.get('.form-check-label').should('be.visible')
 
         cy.get('.Settings__content').screenshot('application/administration/settings/system/features/tours', { padding: [0, 0, 0, 330] })
+    })
+
+    it('Plugins', () => {
+        cy.visitApp('/settings/plugins')
+
+        cy.get('.form-check-label').should('be.visible')
+
+        cy.get('.Settings__content').screenshot('application/administration/settings/system/plugins/plugins', { padding: [0, 0, 0, 330] })
     })
 
     // User Interface Settings

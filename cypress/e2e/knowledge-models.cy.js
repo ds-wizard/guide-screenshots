@@ -16,6 +16,13 @@ describe('Knowledge Models', () => {
         cy.screenshot('application/knowledge-models/list/detail/detail')
     })
 
+    it('Compare', () => {
+        cy.loginAs('admin')
+        cy.visitApp('/knowledge-models/compare?leftKnowledgeModelPackageId=24811ad5-ee3b-4e8b-8cf1-dbbd3dc45614')
+        cy.wait(1000)
+        cy.getCy('modal_confirm').screenshot('application/knowledge-models/list/compare/compare')
+    })
+
     it('Import from Registry', () => {
         cy.loginAs('admin')
         cy.visitApp('/knowledge-models/import')

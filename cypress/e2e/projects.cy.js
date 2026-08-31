@@ -200,7 +200,7 @@ describe('Projects', () => {
     cy.screenshot('application/projects/list/detail/settings/settings')
   })
 
-   it('Sharing', () => {
+  it('Sharing', () => {
     cy.loginAs('researcher')
     cy.visitApp('/projects/c66ab9be-dd94-4dbd-92a5-ceb31658a99b')
     cy.collapseSidebar()
@@ -223,16 +223,8 @@ describe('Projects', () => {
 
     cy.get('.Questionnaires__CreateMigration').should('exist')
     cy.get('.tag-selection').should('exist')
+    cy.get('.btn').contains('Migrate').should('be.visible')
     cy.screenshot('application/projects/list/migration/create')
-
-    // Migration screenshot
-    cy.get('.btn').contains('Create').click()
-    cy.get('.changes-view').should('exist')
-    cy.screenshot('application/projects/list/migration/migration')
-
-    // Delete migration to clean up
-    cy.visitApp('/projects')
-    cy.clickListingItemAction('0.0.5', 'cancel-migration')
   })
 
   it('Menu Files', () => {

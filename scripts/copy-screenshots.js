@@ -1,12 +1,13 @@
 const fs = require('fs')
-const glob = require('glob')
+const { glob } = require('glob')
 const cliProgress = require('cli-progress')
 
 const [, , docsDir, screenshotsDir] = process.argv
 
-console.info('Copying screenshots')
+const copyScreenshots = async () => {
+    console.info('Copying screenshots')
 
-glob(`${screenshotsDir}/**/*.png`, (err, files) => {
+    const files = await glob(`${screenshotsDir}/**/*.png`)
     const bar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic)
     let value = 0
     bar.start(files.length, value)
@@ -25,4 +26,9 @@ glob(`${screenshotsDir}/**/*.png`, (err, files) => {
             }
         })
     })
+}
+
+copyScreenshots().catch((err) => {
+    console.error(err)
+    process.exit(1)
 })

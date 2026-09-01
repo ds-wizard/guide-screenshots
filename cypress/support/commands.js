@@ -1,27 +1,37 @@
-const apiUrl = (url) => Cypress.env('apiUrl') + url
+const appUrl = (url) => Cypress.expose('url') + url
+const apiUrl = (baseUrl, url) => baseUrl + url
 
 const createHeaders = (token) => ({ Authorization: 'Bearer ' + token })
 
-const getTokenWith = (email, password) => cy.request({
+const getTokenWith = (email, password, baseUrl) => cy.request({
     method: 'POST',
-    url: apiUrl('/tokens'),
+    url: apiUrl(baseUrl, '/tokens'),
     body: { email, password }
 })
 
-const getTokenFor = (role) => getTokenWith(
-    Cypress.env(role + 'Username'),
-    Cypress.env(role + 'Password')
-)
+const getTokenFor = (role) => {
+    const usernameKey = role + 'Username'
+    const passwordKey = role + 'Password'
+
+    return cy.env(['apiUrl', usernameKey, passwordKey]).then((env) => getTokenWith(
+        env[usernameKey],
+        env[passwordKey],
+        env.apiUrl
+    ).then((resp) => {
+        resp.apiUrl = env.apiUrl
+        return resp
+    }))
+}
 
 const login = (resp) => {
     const token = resp.body.token
-    createSession(token)
+    createSession(token, resp.apiUrl)
 }
 
-const createSession = (token, expiresAt = null) => {
+const createSession = (token, baseUrl, expiresAt = null) => {
     expiresAt = expiresAt || new Date(Date.now() + 14000 * 86400)
     window.localStorage.setItem('session/wizard', JSON.stringify({
-        apiUrl: apiUrl(''),
+        apiUrl: apiUrl(baseUrl, ''),
         fullscreen: false,
         sidebarCollapsed: false,
         rightPanelCollapsed: true,
@@ -48,7 +58,7 @@ Cypress.Commands.add('loginAs', (role) => {
 
 Cypress.Commands.add('visitApp', (url) => {
     cy.visit({
-        url: `${Cypress.env('url')}${url}`,
+        url: appUrl(url),
         method: 'GET',
         headers: {
             'Accept-Language': 'en',

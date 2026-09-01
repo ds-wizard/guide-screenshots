@@ -12,8 +12,8 @@ describe('Document Templates', () => {
     })
 
     it('Detail', () => {
-        cy.visitApp('/document-templates/beae59cd-db25-4102-82ba-833dd6d6a96b')
-        cy.get('.DetailPage__Content').should('exist')
+        cy.visitApp('/document-templates/ee23f11b-bbb4-4604-a19c-7c256a00c633')
+        cy.getCy('detail-page_content').should('exist')
 
         cy.screenshot('application/document-templates/list/detail/detail')
     })

@@ -35,12 +35,10 @@ describe('Projects', () => {
     cy.collapseSidebar()
     
     // Chapter list
-    cy.get('.pane-first-view').invoke('attr', 'style', 'display: flex; flex: 0.25 1 0%; width: 100%; height: 100%; overflow: hidden; box-sizing: border-box; position: relative;')
-    cy.wait(500)
-    cy.get('.NavigationTree').screenshot('application/projects/list/detail/questionnaire/chapter-list')
+    cy.get('.questionnaireNavigation').first().screenshot('application/projects/list/detail/questionnaire/chapter-list')
 
     // Phase selection
-    cy.get('.questionnaire__left-panel__phase').screenshot('application/projects/list/detail/questionnaire/phase-selection')
+    cy.getCy('phase-selection').first().closest('.bg-light').screenshot('application/projects/list/detail/questionnaire/phase-selection')
     cy.getCy('phase-selection').click()
     cy.getCy('phase-option').contains('Before Finishing the Project').click()
     cy.getCy('phase-selection').click()
@@ -169,15 +167,6 @@ describe('Projects', () => {
     })
     cy.get('.export-link').contains('PDF').click()
     cy.get('.container').screenshot('application/projects/list/detail/documents/new', { padding: [10, 10, 10, 10] })
-
-    // Document submission
-    cy.getCy('project_nav_documents').click()
-    cy.clickListingItemAction('My Experiment v1', 'submit')
-    cy.get('.form-radio-group').should('exist')
-    cy.get('.modal-cover.visible').invoke('attr', 'style', 'background: #fff')
-    cy.get('.modal-cover.visible .modal-dialog').screenshot('application/projects/list/detail/documents/submission', { padding: [20, 20, 20, 20] })
-    cy.get('.modal-cover.visible .btn').contains('Cancel').click()
-
   })
 
   it('Files', () => {
@@ -218,8 +207,8 @@ describe('Projects', () => {
 
   it('Migration', () => {
     cy.loginAs('researcher')
-    cy.collapseSidebar()
     cy.visitApp('/projects/create-migration/b858f6fd-626d-46fc-93d8-a482ed7f4a16')
+    cy.collapseSidebar()
 
     cy.get('.Questionnaires__CreateMigration').should('exist')
     cy.get('.tag-selection').should('exist')

@@ -5,22 +5,37 @@ describe('Settings', () => {
 
     // System Settings
     it('OpenID', () => {
-        cy.visitApp('/settings/openid')
+        cy.visitApp('/settings/open-id/create')
 
-        cy.getCy('form-group_list_add-button').contains('Add service').click()
+        cy.contains('.nav-link', 'Custom').click()
 
         cy.fillFields({
-            'services\\.0\\.id': 'institutional-idp',
-            'services\\.0\\.clientId': '4bd87155-42b9-4a7a-b48b-cf2880b0b763',
-            'services\\.0\\.clientSecret': 'idpClientSecret',
-            'services\\.0\\.url': 'https://idp.example.com/4bd87155-42b9-4a7a-b48b-cf2880b0b763/v2.0',
-            'services\\.0\\.styleIcon': 'fas fa-key',
-            'services\\.0\\.name': 'Example SSO',
-            'services\\.0\\.styleBackground': '#3f58ab',
-            'services\\.0\\.styleColor': '#ffffff',
+            'clientId': '4bd87155-42b9-4a7a-b48b-cf2880b0b763',
+            'clientSecret': 'idpClientSecret',
+            'url': 'https://idp.example.com/4bd87155-42b9-4a7a-b48b-cf2880b0b763/v2.0',
+            'styleIcon': 'fas fa-key',
+            'name': 'Example SSO',
+            'styleBackground': '#3f58ab',
+            'styleColor': '#ffffff',
         })
 
-        cy.get('.form-group').eq(1).screenshot('application/administration/settings/system/authentication/openid', { padding: [70, 30, 30, 30] })
+        cy.get('.Settings__content').screenshot('application/administration/roles/system/openid/form', { padding: [20, 30, -100, 30] })
+    })
+
+    it('Roles / List', () => {
+        cy.visitApp('/settings/roles')
+
+        cy.get('.card-list > .card').should('have.length', 3).and('be.visible')
+
+        cy.get('.Settings__content').screenshot('application/administration/settings/system/roles/list', { padding: [0, 0, 0, 330] })
+    })
+
+    it('Roles / Detail', () => {
+        cy.visitApp('/settings/roles/a7209241-302c-42b1-970e-188d9bb8a2ed')
+
+        cy.contains('h4', 'Project Permissions').should('be.visible')
+
+        cy.get('.Settings__content').screenshot('application/administration/settings/system/roles/detail', { padding: [0, 0, -1000, 330] })
     })
 
     it('Features', () => {

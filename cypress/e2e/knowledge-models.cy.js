@@ -11,7 +11,7 @@ describe('Knowledge Models', () => {
     it('Detail', () => {
         cy.loginAs('admin')
         cy.visitApp('/knowledge-models/24811ad5-ee3b-4e8b-8cf1-dbbd3dc45614')
-        cy.get('.DetailPage__Content').should('exist')
+        cy.getCy('detail-page_content').should('exist')
 
         cy.screenshot('application/knowledge-models/list/detail/detail')
     })

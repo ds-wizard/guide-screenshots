@@ -1,0 +1,16 @@
+{
+  "repositoryProjectUuid": "52d29893-7a17-4b7f-a4af-c88d38cbf92c",
+  "integrationProjectUuid": "35d7d452-608f-462d-9bab-e7d298783d31",
+  "repositoryPath": "d5b27482-b598-4b8c-b534-417d4ad27394.4e0c1edf-660c-4ebf-81f5-9fa959dead30.3c4d5dff-375d-4bb8-b2ab-cc1db89b9de9.a063da1c-aaea-4e18-85ec-f560d833f292.8d1b07a7-f177-41f5-9532-05536223a8d6.81d3095e-a530-40a4-878e-ced42fabc4cd.a3a57aa2-95fd-4958-8617-a51765c617e9.80a682bd-8a5c-4a52-935d-680509838a4e",
+  "integrationPath": "d5b27482-b598-4b8c-b534-417d4ad27394.4e0c1edf-660c-4ebf-81f5-9fa959dead30.3c4d5dff-375d-4bb8-b2ab-cc1db89b9de9.a063da1c-aaea-4e18-85ec-f560d833f292.8d1b07a7-f177-41f5-9532-05536223a8d6.81d3095e-a530-40a4-878e-ced42fabc4cd.a3a57aa2-95fd-4958-8617-a51765c617e9.80a682bd-8a5c-4a52-935d-680509838a4e.1dc412c6-da92-4cc2-8639-316c0c6ec5ff.221c322e-dff5-438f-8a2e-90e762681156",
+  "repositoryQuestion": "80a682bd-8a5c-4a52-935d-680509838a4e",
+  "integrationQuestion": "221c322e-dff5-438f-8a2e-90e762681156",
+  "repositoryChapter": "d5b27482-b598-4b8c-b534-417d4ad27394",
+  "integrationChapter": "d5b27482-b598-4b8c-b534-417d4ad27394",
+  "sourceQuestion": {
+    "bundle": "dsw.root_2.7.0 (1).km",
+    "uuid": "80a682bd-8a5c-4a52-935d-680509838a4e",
+    "title": "What repository will this data be stored in?"
+  },
+  "integrationSearch": "banana"
+}

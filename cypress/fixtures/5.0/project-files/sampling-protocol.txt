@@ -1,0 +1,6 @@
+Geology experiment: sampling protocol
+
+Synthetic example for the DSW guide.
+1. Record the site and sample identifier.
+2. Photograph the sample and note its rock type.
+3. Add the sample to the register.

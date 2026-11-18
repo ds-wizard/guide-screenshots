@@ -1,0 +1,247 @@
+# Fill in the header before uploading the translation:
+#   Language        the language's code, such as de or pt-BR
+#   X-Display-Name  its name as people choose it, such as Deutsch
+msgid ""
+msgstr ""
+"Project-Id-Version: dsw-mail-templates:4.35.0.post36.dev0+a780164\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : (n >= 2 && n <= 4) ? 1 : 2;\n"
+"X-Display-Name: Čeština\n"
+
+#: _common/footer.html.j2:155 _common/footer.txt.j2:7
+msgid "Please do not reply to this email"
+msgstr "Na tento e-mail prosím neodpovídejte"
+
+#: _common/footer.html.j2:159 _common/footer.txt.j2:9
+msgid "This email was generated from"
+msgstr "Tento e-mail byl vygenerován aplikací"
+
+#: _common/footer.txt.j2:2 registry/registrationConfirmation/message.html.j2:75 registry/resetToken/message.html.j2:76 wizard/apiKeyCreated/message.html.j2:81 wizard/apiKeyExpiration/message.html.j2:79 wizard/commentThreadAssigned/message.html.j2:123 wizard/emailChange/message.html.j2:79 wizard/projectInvitation/message.html.j2:80 wizard/registrationConfirmation/message.html.j2:78 wizard/resetPassword/message.html.j2:77 wizard/twoFactorAuth/message.html.j2:76
+msgid "Thank you for using DSW!"
+msgstr "Děkujeme, že používáte DSW!"
+
+#: _common/footer.txt.j2:5 registry/registrationConfirmation/message.html.j2:76 registry/resetToken/message.html.j2:77 wizard/apiKeyCreated/message.html.j2:82 wizard/apiKeyExpiration/message.html.j2:80 wizard/commentThreadAssigned/message.html.j2:124 wizard/emailChange/message.html.j2:80 wizard/projectInvitation/message.html.j2:81 wizard/registrationConfirmation/message.html.j2:79 wizard/resetPassword/message.html.j2:78 wizard/twoFactorAuth/message.html.j2:77
+msgid "team"
+msgstr "tým"
+
+#: registry/registrationConfirmation/message.html.j2:24 registry/resetToken/message.html.j2:24 registry/resetToken/message.txt.j2:5
+msgid "Hello!"
+msgstr ""
+
+#: registry/registrationConfirmation/message.html.j2:25
+msgid "Your registration of %(orgName)s (%(orgId)s) is almost done. Just one more step to go. To activate the account, please click on the button below."
+msgstr ""
+
+#: registry/registrationConfirmation/message.html.j2:50 registry/registrationConfirmation/message.html.j2:50 wizard/registrationConfirmation/message.html.j2:50
+msgid "Activate your account"
+msgstr ""
+
+#: registry/registrationConfirmation/message.txt.j2:5
+msgid "Hello"
+msgstr ""
+
+#: registry/registrationConfirmation/message.txt.j2:7
+msgid "For the activation of your account %(orgName)s (%(orgId)s), please proceed here"
+msgstr ""
+
+#: registry/registrationConfirmation/subject.txt.j2:1 wizard/registrationConfirmation/subject.txt.j2:1
+msgid "Registration Confirmation"
+msgstr ""
+
+#: registry/resetToken/message.html.j2:25 registry/resetToken/message.txt.j2:7
+msgid "Lost the token for %(orgName)s (%(orgId)s)?"
+msgstr ""
+
+#: registry/resetToken/message.html.j2:26
+msgid "No problem, just click the button below to set up a new one."
+msgstr ""
+
+#: registry/resetToken/message.html.j2:51
+msgid "Generate a new token"
+msgstr ""
+
+#: registry/resetToken/message.txt.j2:8
+msgid "No problem, just use the link below to set up a new one."
+msgstr ""
+
+#: registry/resetToken/subject.txt.j2:1
+msgid "Reset Token"
+msgstr ""
+
+#: wizard/apiKeyCreated/message.html.j2:25 wizard/apiKeyCreated/message.txt.j2:6 wizard/apiKeyExpiration/message.html.j2:25 wizard/apiKeyExpiration/message.txt.j2:6 wizard/commentThreadAssigned/message.html.j2:31 wizard/commentThreadAssigned/message.txt.j2:12 wizard/emailChange/message.html.j2:23 wizard/emailChange/message.txt.j2:3 wizard/projectInvitation/message.html.j2:26 wizard/projectInvitation/message.txt.j2:6 wizard/registrationConfirmation/message.html.j2:23 wizard/registrationConfirmation/message.txt.j2:3 wizard/resetPassword/message.html.j2:22 wizard/resetPassword/message.txt.j2:3 wizard/twoFactorAuth/message.html.j2:22 wizard/twoFactorAuth/message.txt.j2:4
+msgid "Hello %(userFirstName)s"
+msgstr "Dobrý den, %(userFirstName)s"
+
+#: wizard/apiKeyCreated/message.html.j2:26 wizard/apiKeyCreated/message.txt.j2:8
+msgid "A new API key named %(tokenName)s has been created for your account."
+msgstr ""
+
+#: wizard/apiKeyCreated/message.html.j2:28 wizard/apiKeyCreated/message.txt.j2:10
+msgid "It will expire on %(tokenExpirationDate)s at %(tokenExpirationTime)s."
+msgstr ""
+
+#: wizard/apiKeyCreated/message.html.j2:53 wizard/apiKeyCreated/message.html.j2:53 wizard/apiKeyExpiration/message.html.j2:51
+msgid "Manage API Keys"
+msgstr ""
+
+#: wizard/apiKeyCreated/message.html.j2:79 wizard/apiKeyCreated/message.txt.j2:15
+msgid "If you did not initiate this action, please contact us via"
+msgstr ""
+
+#: wizard/apiKeyCreated/message.txt.j2:12 wizard/apiKeyExpiration/message.txt.j2:10
+msgid "You can manage your API keys here:"
+msgstr ""
+
+#: wizard/apiKeyCreated/subject.txt.j2:1
+msgid "New API Key Created"
+msgstr ""
+
+#: wizard/apiKeyExpiration/message.html.j2:26 wizard/apiKeyExpiration/message.txt.j2:8
+msgid "Your API key, identified as %(tokenName)s, is scheduled to expire on %(tokenExpirationDate)s at %(tokenExpirationTime)s."
+msgstr ""
+
+#: wizard/apiKeyExpiration/message.html.j2:77 wizard/apiKeyExpiration/message.txt.j2:13
+msgid "If you encounter any issues, please contact us via"
+msgstr ""
+
+#: wizard/apiKeyExpiration/subject.txt.j2:1
+msgid "API Key Expiring Soon"
+msgstr ""
+
+#: wizard/commentThreadAssigned/message.html.j2:32 wizard/commentThreadAssigned/message.txt.j2:14
+msgid "The following comment thread has been assigned to you:"
+msgid_plural "The following %(count)s comment threads have been assigned to you:"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: wizard/commentThreadAssigned/message.html.j2:73 wizard/commentThreadAssigned/message.txt.j2:20
+msgid "Question"
+msgstr ""
+
+#: wizard/commentThreadAssigned/message.html.j2:80 wizard/commentThreadAssigned/message.txt.j2:21
+msgid "Assigned by"
+msgstr ""
+
+#: wizard/commentThreadAssigned/message.html.j2:83
+msgid "Open"
+msgstr ""
+
+#: wizard/commentThreadAssigned/message.html.j2:118
+msgid "View all comment threads assigned to you"
+msgstr ""
+
+#: wizard/commentThreadAssigned/message.html.j2:121 wizard/emailChange/message.html.j2:77 wizard/projectInvitation/message.html.j2:78 wizard/registrationConfirmation/message.html.j2:76 wizard/resetPassword/message.html.j2:75
+msgid "If any problem occurs contact us via"
+msgstr "V případě potíží nás kontaktujte na"
+
+#: wizard/commentThreadAssigned/message.txt.j2:20
+msgid "(unknown)"
+msgstr ""
+
+#: wizard/commentThreadAssigned/message.txt.j2:21
+msgid "already resolved"
+msgstr ""
+
+#: wizard/commentThreadAssigned/message.txt.j2:21
+msgid "unresolved"
+msgstr ""
+
+#: wizard/commentThreadAssigned/message.txt.j2:21
+msgid "private editor note"
+msgstr ""
+
+#: wizard/commentThreadAssigned/subject.txt.j2:1
+msgid "Assigned to Comment Threads"
+msgstr ""
+
+#: wizard/emailChange/message.html.j2:24 wizard/emailChange/message.txt.j2:5
+msgid "You recently requested to change the email address associated with your DSW account."
+msgstr ""
+
+#: wizard/emailChange/message.html.j2:25
+msgid "To confirm that this email address is correct, please click on the button below."
+msgstr ""
+
+#: wizard/emailChange/message.html.j2:50 wizard/emailChange/message.html.j2:50
+msgid "Verify your email"
+msgstr ""
+
+#: wizard/emailChange/message.html.j2:75
+msgid "In case you did not request this change, you can safely ignore this email."
+msgstr ""
+
+#: wizard/emailChange/message.txt.j2:7
+msgid "To confirm that this email address is correct, please proceed here"
+msgstr ""
+
+#: wizard/emailChange/message.txt.j2:9
+msgid "If you did not request this change, you can safely ignore this email."
+msgstr ""
+
+#: wizard/emailChange/subject.txt.j2:1
+msgid "Email Address Confirmation"
+msgstr ""
+
+#: wizard/projectInvitation/message.html.j2:27 wizard/projectInvitation/message.txt.j2:8
+msgid "%(ownerFirstName)s %(ownerLastName)s has invited you to the project %(projectName)s"
+msgstr "%(ownerFirstName)s %(ownerLastName)s vás zve do projektu %(projectName)s"
+
+#: wizard/projectInvitation/message.html.j2:52
+msgid "Open project"
+msgstr "Otevřít projekt"
+
+#: wizard/projectInvitation/subject.txt.j2:1
+msgid "Project Invitation"
+msgstr "Pozvánka do projektu"
+
+#: wizard/registrationConfirmation/message.html.j2:24 wizard/registrationConfirmation/message.txt.j2:5
+msgid "Welcome aboard! Well, you’re almost set. Just one more step and you can start using the DSW."
+msgstr ""
+
+#: wizard/registrationConfirmation/message.html.j2:25
+msgid "To activate your account, please click on the button below."
+msgstr ""
+
+#: wizard/registrationConfirmation/message.txt.j2:7
+msgid "To activate your account, please proceed here"
+msgstr ""
+
+#: wizard/resetPassword/message.html.j2:23 wizard/resetPassword/message.txt.j2:5
+msgid "Forgot your password? No problem, that happens to the best of us!"
+msgstr "Zapomněli jste heslo? To se může stát každému!"
+
+#: wizard/resetPassword/message.html.j2:24
+msgid "You can easily set up a new password by clicking on the button below."
+msgstr "Nové heslo si můžete nastavit kliknutím na tlačítko níže."
+
+#: wizard/resetPassword/message.html.j2:49 wizard/resetPassword/message.html.j2:49
+msgid "Set up a new password"
+msgstr "Nastavit nové heslo"
+
+#: wizard/resetPassword/message.txt.j2:6
+msgid "You can easily set up a new password here"
+msgstr "Nové heslo si můžete nastavit zde"
+
+#: wizard/resetPassword/subject.txt.j2:1
+msgid "Reset Password"
+msgstr "Obnovení hesla"
+
+#: wizard/twoFactorAuth/message.html.j2:23 wizard/twoFactorAuth/message.txt.j2:6
+msgid "You have requested an authentication code to log in to your account. Your code is:"
+msgstr ""
+
+#: wizard/twoFactorAuth/message.html.j2:71 wizard/twoFactorAuth/message.txt.j2:10
+msgid "This code is valid for"
+msgstr ""
+
+#: wizard/twoFactorAuth/message.html.j2:74 wizard/twoFactorAuth/message.txt.j2:12
+msgid "If you did not initiate this login attempt, please contact us via"
+msgstr ""
+
+#: wizard/twoFactorAuth/subject.txt.j2:1
+msgid "Two-Factor Login Verification"
+msgstr ""

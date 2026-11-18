@@ -1,0 +1,43 @@
+[
+  {
+    "id": "slide-23-repository-question",
+    "path": "presentation-slides/slide-23-repository-question",
+    "caption": "Repository question with advice and metrics",
+    "alt": "Repository question with advice and metrics",
+    "selector": ".c-questionnaire-question",
+    "height": 1500
+  },
+  {
+    "id": "slide-25-integration-search",
+    "path": "presentation-slides/slide-25-integration-search",
+    "caption": "FAIRsharing search suggestions",
+    "alt": "FAIRsharing search suggestions",
+    "selector": ".c-questionnaire-question",
+    "height": 1000
+  },
+  {
+    "id": "slide-25-integration-selection",
+    "path": "presentation-slides/slide-25-integration-selection",
+    "caption": "Selected FAIRsharing result with persistent URI",
+    "alt": "Selected FAIRsharing result with persistent URI",
+    "selector": ".c-questionnaire-question",
+    "height": 1000
+  },
+  {
+    "id": "slide-25-external-record",
+    "path": "presentation-slides/slide-25-external-record",
+    "caption": "Linked FAIRsharing record",
+    "alt": "Linked FAIRsharing record",
+    "selector": "body",
+    "height": 1000,
+    "url": "https://fairsharing.org/10.25504/FAIRsharing.p90p8q"
+  },
+  {
+    "id": "slide-26-open-comments",
+    "path": "presentation-slides/slide-26-open-comments",
+    "caption": "Opened discussion on a questionnaire question",
+    "alt": "Opened discussion on a questionnaire question",
+    "selector": ".ui-workspace__aside",
+    "height": 900
+  }
+]

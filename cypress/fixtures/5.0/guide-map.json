@@ -1,0 +1,868 @@
+{
+  "placements": [
+    {
+      "page": "about/introduction/index.rst",
+      "todo": "DSW dashboard and main navigation.",
+      "images": [
+        "dashboard"
+      ]
+    },
+    {
+      "page": "application/administration/settings/system/authentication.rst",
+      "todo": "Authentication settings and two-factor options.",
+      "images": [
+        "settings-authentication"
+      ]
+    },
+    {
+      "page": "application/administration/settings/system/users.rst",
+      "todo": "Affiliation suggestions in User settings.",
+      "images": [
+        "settings-users"
+      ]
+    },
+    {
+      "page": "application/administration/settings/system/features.rst",
+      "todo": "Tours and AI Assistant feature settings.",
+      "images": [
+        "settings-features"
+      ]
+    },
+    {
+      "page": "application/administration/settings/system/privacy-and-support.rst",
+      "todo": "Support settings in DSW 5.0.",
+      "images": [
+        "settings-support"
+      ]
+    },
+    {
+      "page": "application/administration/settings/info/usage.rst",
+      "todo": "DSW Usage page without commercial-plan information.",
+      "images": [
+        "settings-usage"
+      ]
+    },
+    {
+      "page": "application/administration/settings/user-interface/look-and-feel.rst",
+      "todo": "Look and Feel settings in DSW 5.0.",
+      "images": [
+        "settings-look-and-feel"
+      ]
+    },
+    {
+      "page": "application/administration/settings/user-interface/login-screen.rst",
+      "todo": "Login Screen settings in DSW 5.0.",
+      "images": [
+        "settings-login-screen"
+      ]
+    },
+    {
+      "page": "application/administration/settings/user-interface/login-screen.rst",
+      "todo": "Login screen announcement settings in DSW 5.0.",
+      "images": [
+        "login-announcement"
+      ]
+    },
+    {
+      "page": "application/administration/settings/user-interface/dashboard-and-login-screen.rst",
+      "todo": "Dashboard and Menu settings in DSW 5.0.",
+      "images": [
+        "settings-dashboard-and-menu"
+      ]
+    },
+    {
+      "page": "application/administration/settings/user-interface/dashboard-and-login-screen.rst",
+      "todo": "Custom menu link settings in DSW 5.0.",
+      "images": [
+        "dashboard-menu-link"
+      ]
+    },
+    {
+      "page": "application/administration/settings/content/projects.rst",
+      "todo": "Project defaults in DSW 5.0.",
+      "images": [
+        "settings-projects"
+      ]
+    },
+    {
+      "page": "application/administration/settings/content/projects.rst",
+      "todo": "Project creation defaults in DSW 5.0.",
+      "images": [
+        "project-default-creation"
+      ]
+    },
+    {
+      "page": "application/administration/settings/content/projects.rst",
+      "todo": "Default project tags in DSW 5.0.",
+      "images": [
+        "project-default-tags"
+      ]
+    },
+    {
+      "page": "application/administration/settings/content/document-submission.rst",
+      "todo": "Document Submission settings in DSW 5.0.",
+      "images": [
+        "settings-submission"
+      ]
+    },
+    {
+      "page": "application/administration/settings/system/roles.rst",
+      "todo": "Role list, default-role action and permission form.",
+      "images": [
+        "settings-roles",
+        "role-create"
+      ]
+    },
+    {
+      "page": "application/administration/settings/system/openid.rst",
+      "todo": "OpenID providers in DSW 5.0.",
+      "images": [
+        "settings-open-id"
+      ]
+    },
+    {
+      "page": "application/administration/settings/system/openid.rst",
+      "todo": "Create OpenID configuration in DSW 5.0.",
+      "images": [
+        "create-open-id"
+      ]
+    },
+    {
+      "page": "application/administration/settings/translations/index.rst",
+      "todo": "Application translation list and email translation list.",
+      "images": [
+        "settings-locales",
+        "settings-mail-template-locales"
+      ]
+    },
+    {
+      "page": "application/administration/settings/translations/upload.rst",
+      "todo": "Upload interface translation in DSW 5.0.",
+      "images": [
+        "upload-locales"
+      ]
+    },
+    {
+      "page": "application/profile/settings/index.rst",
+      "todo": "User profile in DSW 5.0.",
+      "images": [
+        "account-profile"
+      ]
+    },
+    {
+      "page": "application/profile/settings/password.rst",
+      "todo": "Change password in DSW 5.0.",
+      "images": [
+        "account-password"
+      ]
+    },
+    {
+      "page": "application/profile/settings/language.rst",
+      "todo": "Language preferences in DSW 5.0.",
+      "images": [
+        "account-language"
+      ]
+    },
+    {
+      "page": "application/profile/settings/active-sessions.rst",
+      "todo": "Active sessions in DSW 5.0.",
+      "images": [
+        "account-active-sessions"
+      ]
+    },
+    {
+      "page": "application/profile/settings/tours.rst",
+      "todo": "Guided tours in DSW 5.0.",
+      "images": [
+        "account-tours"
+      ]
+    },
+    {
+      "page": "application/profile/settings/api-keys.rst",
+      "todo": "API keys in DSW 5.0.",
+      "images": [
+        "account-api-keys"
+      ]
+    },
+    {
+      "page": "application/profile/settings/api-keys.rst",
+      "todo": "Create an API key in DSW 5.0.",
+      "images": [
+        "api-key-create"
+      ]
+    },
+    {
+      "page": "application/administration/users/index.rst",
+      "todo": "User list and account actions.",
+      "images": [
+        "users"
+      ]
+    },
+    {
+      "page": "application/administration/users/create.rst",
+      "todo": "Create User form with role selection.",
+      "images": [
+        "user-invite"
+      ]
+    },
+    {
+      "page": "application/administration/users/detail.rst",
+      "todo": "User detail, assigned role and active status.",
+      "images": [
+        "user-profile"
+      ]
+    },
+    {
+      "page": "application/user-groups/index.rst",
+      "todo": "User Groups in DSW 5.0.",
+      "images": [
+        "group-list"
+      ]
+    },
+    {
+      "page": "application/user-groups/create.rst",
+      "todo": "Create a User Group in DSW 5.0.",
+      "images": [
+        "group-create"
+      ]
+    },
+    {
+      "page": "application/user-groups/detail.rst",
+      "todo": "User Group information in DSW 5.0.",
+      "images": [
+        "group-info"
+      ]
+    },
+    {
+      "page": "application/user-groups/detail.rst",
+      "todo": "User Group members in DSW 5.0.",
+      "images": [
+        "group-members"
+      ]
+    },
+    {
+      "page": "application/user-groups/detail.rst",
+      "todo": "Add a User Group member in DSW 5.0.",
+      "images": [
+        "group-member-add"
+      ]
+    },
+    {
+      "page": "application/knowledge-models/list/index.rst",
+      "todo": "Knowledge Model library in DSW 5.0.",
+      "images": [
+        "km-list"
+      ]
+    },
+    {
+      "page": "application/knowledge-models/list/detail.rst",
+      "todo": "Knowledge Model details in DSW 5.0.",
+      "images": [
+        "km-detail"
+      ]
+    },
+    {
+      "page": "application/knowledge-models/list/detail.rst",
+      "todo": "Delete Knowledge Model with dependent projects in DSW 5.0.",
+      "images": [
+        "km-delete"
+      ]
+    },
+    {
+      "page": "application/knowledge-models/list/import.rst",
+      "todo": "Import a Knowledge Model from registry in DSW 5.0.",
+      "images": [
+        "km-import-registry"
+      ]
+    },
+    {
+      "page": "application/knowledge-models/list/import.rst",
+      "todo": "Import a Knowledge Model from file in DSW 5.0.",
+      "images": [
+        "km-import-file"
+      ]
+    },
+    {
+      "page": "application/knowledge-models/editors/index.rst",
+      "todo": "Knowledge Model Editors in DSW 5.0.",
+      "images": [
+        "km-editor-list"
+      ]
+    },
+    {
+      "page": "application/knowledge-models/editors/create.rst",
+      "todo": "Create a Knowledge Model Editor in DSW 5.0.",
+      "images": [
+        "km-editor-create"
+      ]
+    },
+    {
+      "page": "application/knowledge-models/editors/detail/index.rst",
+      "todo": "Knowledge Model Editor in DSW 5.0.",
+      "images": [
+        "km-editor"
+      ]
+    },
+    {
+      "page": "application/knowledge-models/editors/detail/preview.rst",
+      "todo": "Knowledge Model Editor preview in DSW 5.0.",
+      "images": [
+        "km-editor-preview"
+      ]
+    },
+    {
+      "page": "application/knowledge-models/editors/detail/publish.rst",
+      "todo": "Publish a Knowledge Model in DSW 5.0.",
+      "images": [
+        "km-publish"
+      ]
+    },
+    {
+      "page": "application/document-templates/list/index.rst",
+      "todo": "Document Template library in DSW 5.0.",
+      "images": [
+        "dt-list"
+      ]
+    },
+    {
+      "page": "application/document-templates/list/detail.rst",
+      "todo": "Document Template details in DSW 5.0.",
+      "images": [
+        "dt-detail"
+      ]
+    },
+    {
+      "page": "application/document-templates/list/detail.rst",
+      "todo": "Delete Document Template with dependent projects in DSW 5.0.",
+      "images": [
+        "dt-delete"
+      ]
+    },
+    {
+      "page": "application/document-templates/list/import.rst",
+      "todo": "Import a Document Template from registry in DSW 5.0.",
+      "images": [
+        "dt-import-registry"
+      ]
+    },
+    {
+      "page": "application/document-templates/list/import.rst",
+      "todo": "Import a Document Template from file in DSW 5.0.",
+      "images": [
+        "dt-import-file"
+      ]
+    },
+    {
+      "page": "application/document-templates/editors/index.rst",
+      "todo": "Document Template Editors in DSW 5.0.",
+      "images": [
+        "dt-editor-list"
+      ]
+    },
+    {
+      "page": "application/document-templates/editors/create.rst",
+      "todo": "Create a Document Template Editor in DSW 5.0.",
+      "images": [
+        "dt-editor-create"
+      ]
+    },
+    {
+      "page": "application/document-templates/editors/detail/index.rst",
+      "todo": "Document Template Editor in DSW 5.0.",
+      "images": [
+        "dt-editor"
+      ]
+    },
+    {
+      "page": "application/document-templates/editors/detail/preview.rst",
+      "todo": "Preview in a document template editor using project.",
+      "images": [
+        "dt-editor-preview"
+      ]
+    },
+    {
+      "page": "application/document-templates/editors/detail/publish.rst",
+      "todo": "Publish a Document Template in DSW 5.0.",
+      "images": [
+        "dt-publish"
+      ]
+    },
+    {
+      "page": "application/knowledge-models/editors/detail/settings.rst",
+      "todo": "Knowledge Model Editor settings in DSW 5.0.",
+      "images": [
+        "km-settings"
+      ]
+    },
+    {
+      "page": "application/knowledge-models/editors/detail/phases.rst",
+      "todo": "Knowledge Model phases in DSW 5.0.",
+      "images": [
+        "km-phases"
+      ]
+    },
+    {
+      "page": "application/knowledge-models/editors/detail/question-tags.rst",
+      "todo": "Knowledge Model question tags in DSW 5.0.",
+      "images": [
+        "km-tags"
+      ]
+    },
+    {
+      "page": "application/knowledge-models/list/preview.rst",
+      "todo": "Published Knowledge Model preview and Create project action.",
+      "images": [
+        "km-preview"
+      ]
+    },
+    {
+      "page": "application/knowledge-models/list/compare.rst",
+      "todo": "Compare Knowledge Models in DSW 5.0.",
+      "images": [
+        "km-compare"
+      ]
+    },
+    {
+      "page": "application/knowledge-models/secrets.rst",
+      "todo": "Knowledge Model secrets in DSW 5.0.",
+      "images": [
+        "km-secrets"
+      ]
+    },
+    {
+      "page": "application/document-templates/editors/detail/settings.rst",
+      "todo": "Document Template settings in DSW 5.0.",
+      "images": [
+        "dt-settings"
+      ]
+    },
+    {
+      "page": "application/document-templates/editors/detail/settings.rst",
+      "todo": "Document Template formats in DSW 5.0.",
+      "images": [
+        "dt-formats"
+      ]
+    },
+    {
+      "page": "application/document-templates/editors/detail/settings.rst",
+      "todo": "Allowed Knowledge Models in DSW 5.0.",
+      "images": [
+        "dt-allowed"
+      ]
+    },
+    {
+      "page": "application/document-templates/editors/detail/settings.rst",
+      "todo": "Jinja rendering step with its template and file output options.",
+      "images": [
+        "dt-format-steps"
+      ]
+    },
+    {
+      "page": "application/document-templates/editors/detail/files.rst",
+      "todo": "Document Template file tree, unsaved-change indicator and split editor panes.",
+      "images": [
+        "dt-files"
+      ]
+    },
+    {
+      "page": "application/projects/documents.rst",
+      "todo": "Documents across projects in DSW 5.0.",
+      "images": [
+        "projects-documents"
+      ]
+    },
+    {
+      "page": "application/projects/files.rst",
+      "todo": "Files across projects in DSW 5.0.",
+      "images": [
+        "projects-files"
+      ]
+    },
+    {
+      "page": "application/projects/list/index.rst",
+      "todo": "Clone a project in DSW 5.0.",
+      "images": [
+        "project-clone"
+      ]
+    },
+    {
+      "page": "application/projects/list/index.rst",
+      "todo": "Project list and actions.",
+      "images": [
+        "project-list"
+      ]
+    },
+    {
+      "page": "application/projects/list/detail/questionnaire.rst",
+      "todo": "Questionnaire view options in DSW 5.0.",
+      "images": [
+        "questionnaire-view"
+      ]
+    },
+    {
+      "page": "application/projects/list/detail/questionnaire.rst",
+      "todo": "Search within a questionnaire in DSW 5.0.",
+      "images": [
+        "questionnaire-search"
+      ]
+    },
+    {
+      "page": "application/projects/list/detail/questionnaire.rst",
+      "todo": "Questionnaire TODOs in DSW 5.0.",
+      "images": [
+        "questionnaire-todos"
+      ]
+    },
+    {
+      "page": "application/projects/list/detail/questionnaire.rst",
+      "todo": "Warnings referring to questions with invalid values.",
+      "images": [
+        "questionnaire-warnings"
+      ]
+    },
+    {
+      "page": "application/projects/list/detail/questionnaire.rst",
+      "todo": "Select a project phase.",
+      "images": [
+        "project-phases"
+      ]
+    },
+    {
+      "page": "application/projects/list/detail/questionnaire.rst",
+      "todo": "Questionnaire version history.",
+      "images": [
+        "project-history"
+      ]
+    },
+    {
+      "page": "application/projects/list/detail/questionnaire.rst",
+      "todo": "Questionnaire comments.",
+      "images": [
+        "project-comments"
+      ]
+    },
+    {
+      "page": "application/projects/list/detail/questionnaire.rst",
+      "todo": "Text value question.",
+      "images": [
+        "question-value"
+      ]
+    },
+    {
+      "page": "application/projects/list/detail/questionnaire.rst",
+      "todo": "Multiple-choice question.",
+      "images": [
+        "question-multi-choice"
+      ]
+    },
+    {
+      "page": "application/projects/list/detail/questionnaire.rst",
+      "todo": "Options question.",
+      "images": [
+        "question-options"
+      ]
+    },
+    {
+      "page": "application/projects/list/detail/questionnaire.rst",
+      "todo": "List of datasets.",
+      "images": [
+        "question-list"
+      ]
+    },
+    {
+      "page": "application/projects/list/detail/questionnaire.rst",
+      "todo": "API integration question with search results and a selected answer.",
+      "images": [
+        "question-integration"
+      ]
+    },
+    {
+      "page": "application/projects/list/detail/questionnaire.rst",
+      "todo": "Select an item from a dataset list.",
+      "images": [
+        "question-item-select"
+      ]
+    },
+    {
+      "page": "application/projects/list/detail/questionnaire.rst",
+      "todo": "File question with an uploaded protocol.",
+      "images": [
+        "question-file"
+      ]
+    },
+    {
+      "page": "application/projects/list/detail/questionnaire.rst",
+      "todo": "Question validation error in DSW 5.0.",
+      "images": [
+        "validation-error"
+      ]
+    },
+    {
+      "page": "application/projects/list/detail/questionnaire.rst",
+      "todo": "Unanswered questions panel grouped by chapter.",
+      "images": [
+        "questionnaire-unanswered"
+      ]
+    },
+    {
+      "page": "application/knowledge-models/editors/detail/knowledge-model.rst",
+      "todo": "Knowledge Model warnings in DSW 5.0.",
+      "images": [
+        "km-warnings"
+      ]
+    },
+    {
+      "page": "application/knowledge-models/editors/detail/knowledge-model.rst",
+      "todo": "Knowledge Model URL checker in DSW 5.0.",
+      "images": [
+        "km-url-checker"
+      ]
+    },
+    {
+      "page": "application/administration/settings/content/dsw-registry.rst",
+      "todo": "Registry connection enabled with its API key masked.",
+      "images": [
+        "settings-registry"
+      ]
+    },
+    {
+      "page": "application/administration/settings/system/plugins.rst",
+      "todo": "Installed plugins and a plugin configuration page.",
+      "images": [
+        "settings-plugins"
+      ]
+    },
+    {
+      "page": "application/profile/about.rst",
+      "todo": "About DSW in DSW 5.0.",
+      "images": [
+        "about"
+      ]
+    },
+    {
+      "page": "application/projects/list/create.rst",
+      "todo": "Create a project from a knowledge model.",
+      "images": [
+        "project-create-custom"
+      ]
+    },
+    {
+      "page": "application/projects/list/create.rst",
+      "todo": "Create a project from a template.",
+      "images": [
+        "project-create-template"
+      ]
+    },
+    {
+      "page": "application/projects/list/detail/index.rst",
+      "todo": "Project questionnaire.",
+      "images": [
+        "project-detail"
+      ]
+    },
+    {
+      "page": "application/projects/list/detail/sharing.rst",
+      "todo": "Project sharing.",
+      "images": [
+        "project-sharing"
+      ]
+    },
+    {
+      "page": "application/projects/list/detail/documents.rst",
+      "todo": "Generated documents.",
+      "images": [
+        "project-documents"
+      ]
+    },
+    {
+      "page": "application/projects/list/detail/documents.rst",
+      "todo": "Create a document.",
+      "images": [
+        "project-new-document"
+      ]
+    },
+    {
+      "page": "application/projects/list/detail/files.rst",
+      "todo": "Project files.",
+      "images": [
+        "project-files"
+      ]
+    },
+    {
+      "page": "application/projects/list/detail/settings.rst",
+      "todo": "Project settings.",
+      "images": [
+        "project-settings"
+      ]
+    },
+    {
+      "page": "application/projects/list/detail/settings.rst",
+      "todo": "Project settings showing the selected Questionnaire Report template and document format choices.",
+      "images": [
+        "project-settings-template"
+      ]
+    },
+    {
+      "page": "application/projects/list/detail/preview.rst",
+      "todo": "Document preview in the project detail.",
+      "images": [
+        "project-preview"
+      ]
+    },
+    {
+      "page": "application/projects/list/detail/preview.rst",
+      "todo": "Project Preview explaining that a default Document Template and format need to be selected.",
+      "images": [
+        "project-preview-empty"
+      ]
+    },
+    {
+      "page": "application/projects/list/detail/metrics.rst",
+      "todo": "Project summary report.",
+      "images": [
+        "project-metrics"
+      ]
+    },
+    {
+      "page": "application/projects/list/templates.rst",
+      "todo": "Use a project as a template in DSW 5.0.",
+      "images": [
+        "project-template"
+      ]
+    },
+    {
+      "page": "application/projects/list/migration.rst",
+      "todo": "Migrate a project to a newer Knowledge Model in DSW 5.0.",
+      "images": [
+        "project-migration"
+      ]
+    },
+    {
+      "page": "more/miscellaneous/help.rst",
+      "todo": "Report issue dialog showing the instance support contacts.",
+      "images": [
+        "report-issue"
+      ]
+    },
+    {
+      "page": "about/introduction/document-template.rst",
+      "todo": "Document template details showing its description, version and available formats.",
+      "images": [
+        "dt-detail"
+      ]
+    },
+    {
+      "page": "application/projects/list/detail/questionnaire.rst",
+      "todo": "Project questionnaire.",
+      "images": [
+        "project-detail"
+      ]
+    },
+    {
+      "page": "application/knowledge-models/editors/detail/knowledge-model.rst",
+      "todo": "Knowledge Model Editor in DSW 5.0.",
+      "images": [
+        "km-editor"
+      ]
+    },
+    {
+      "page": "application/knowledge-models/editors/detail/knowledge-model.rst",
+      "todo": "Value question configuration in DSW 5.0.",
+      "images": [
+        "km-question"
+      ]
+    },
+    {
+      "page": "application/knowledge-models/editors/detail/knowledge-model.rst",
+      "todo": "API integration configuration in DSW 5.0.",
+      "images": [
+        "km-integration"
+      ]
+    },
+    {
+      "page": "application/profile/index.rst",
+      "todo": "Profile menu with appearance choices.",
+      "images": [
+        "profile-menu"
+      ]
+    },
+    {
+      "page": "application/profile/assigned-comments.rst",
+      "todo": "Assigned comments in DSW 5.0.",
+      "images": [
+        "assigned-comments"
+      ]
+    },
+    {
+      "page": "application/projects/list/detail/documents.rst",
+      "todo": "Document submission dialog explaining that no compatible service is configured for this document type.",
+      "images": [
+        "document-submit"
+      ]
+    },
+    {
+      "page": "more/miscellaneous/keyboard-shortcuts.rst",
+      "after": "Use :kbd:`Ctrl+K` (:kbd:`Cmd+K` on macOS) to open the command palette and find available pages and account actions.",
+      "images": [
+        "command-palette"
+      ]
+    },
+    {
+      "page": "application/projects/list/detail/questionnaire.rst",
+      "after": "For the opened chapter, we can see a navigation tree for the chapter structure, showing the questions, follow-up questions, items, etc. We can use this tree to quickly navigate to a specific question in the chapter.",
+      "images": [
+        "chapter-navigation"
+      ]
+    },
+    {
+      "page": "application/projects/list/detail/sharing.rst",
+      "after": "The arrow beside :guilabel:`Share` opens sharing information and :guilabel:`Copy link`.",
+      "images": [
+        "project-sharing-members"
+      ]
+    },
+    {
+      "page": "application/administration/settings/user-interface/login-screen.rst",
+      "after": "Login announcements\n===================\n\nUse :guilabel:`Add announcement`, choose **Info**, **Warning** or **Critical**, and enter the Markdown content. Announcements appear above the login screen's main content. To display the same message after sign-in, also add it in Dashboard & Menu.",
+      "images": [
+        "login-example"
+      ]
+    },
+    {
+      "page": "application/administration/settings/user-interface/dashboard-and-login-screen.rst",
+      "after": "Announcements in Dashboard & Menu appear above the dashboard content after sign-in. Configure an announcement separately in Login Screen if it should also be shown before sign-in. Changes to one section do not automatically change the other.",
+      "images": [
+        "dashboard"
+      ]
+    },
+    {
+      "page": "application/administration/settings/system/openid.rst",
+      "after": "DSW supports Microsoft Azure, ORCID, and other OpenID providers. The following sections describe the setup for these options.",
+      "images": [
+        "openid-example"
+      ]
+    },
+    {
+      "page": "application/knowledge-models/editors/migration.rst",
+      "todo": "Knowledge Model Editors in DSW 5.0.",
+      "images": [
+        "km-migration-list"
+      ]
+    },
+    {
+      "page": "application/knowledge-models/editors/migration.rst",
+      "todo": "Update a Knowledge Model Editor in DSW 5.0.",
+      "images": [
+        "km-migration-update"
+      ]
+    },
+    {
+      "page": "application/knowledge-models/editors/migration.rst",
+      "todo": "Knowledge Model migration in DSW 5.0.",
+      "images": [
+        "km-migration-review"
+      ]
+    }
+  ],
+  "blocked": {}
+}

@@ -1,0 +1,17 @@
+{
+  "baseUrl": "https://mediakit.ds-wizard.org",
+  "projectUuid": "c66ab9be-dd94-4dbd-92a5-ceb31658a99b",
+  "secondProjectUuid": "b858f6fd-626d-46fc-93d8-a482ed7f4a16",
+  "kmUuid": "965452f7-7cf5-4327-bf07-1e41cca8e65e",
+  "templateUuid": "ddcf9040-0333-464a-88b5-8966c2b848dc",
+  "templateEditorUuid": "728f5ca9-6e35-45ea-a861-ae2913413b91",
+  "kmEditorUuid": "d1fb23b7-c87f-4ff0-84e7-c8b1a1466dd8",
+  "groupUuid": "3455f3ab-416e-4089-8248-532be1b2225b",
+  "adminUuid": "ec6f8e90-2a91-49ec-aa3f-9eab2267f000",
+  "researcherUuid": "e1c58e52-0824-4526-8ebe-ec38eec67030",
+  "documentUuid": "e952548a-aa42-4dd9-8654-db2449d19d52",
+  "stewardUuid": "30d48cf4-8c8a-496f-bafe-585bd238f798",
+  "secondResearcherUuid": "50e75bf3-be4c-4469-96d1-cbd35f1fb5c7",
+  "openIdUuid": "7d9536fa-371c-4802-a894-7b194990dcfc",
+  "migrationEditorUuid": "f460a348-b1b3-4e62-9322-4196e2583383"
+}

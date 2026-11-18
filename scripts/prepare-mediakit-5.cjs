@@ -1,0 +1,9 @@
+const fs=require('node:fs'),path=require('node:path');const{api,items}=require('./mediakit-api.cjs');const root=path.resolve(__dirname,'..');
+(async()=>{
+ const before=items(await api('/projects'));if(before.length!==2)throw Error('Expected the two existing projects; refusing bulk setup')
+ const templates=items(await api('/document-templates?size=100'));
+ const imports=[['questionnaire-report','dsw.questionnaire-report','3.0.0'],['science-europe','dsw.science-europe','3.0.1'],['horizon-europe','dsw.horizon-europe-dmp','3.1.1'],['rda-madmp','dsw.rda-madmp','3.1.0']];
+ for(const[file,id,version]of imports){if(templates.some(t=>t.id===id&&t.version===version)){console.log('Already installed',id,version);continue}const form=new FormData();form.set('file',new Blob([fs.readFileSync(path.join(root,'cypress/fixtures/5.0/templates',file+'.zip'))],{type:'application/zip'}),file+'.zip');await api('/document-templates/bundle',{method:'POST',body:form});console.log('Imported',id,version)}
+ for(const[kind,file]of[['locales','ui.cs.po'],['mail-template-locales','mail.cs.po']]){const existing=items(await api('/'+kind+'?size=100'));if(existing.some(x=>x.code==='cs')){console.log('Czech translation already present',kind);continue}const make=confirmed=>{const f=new FormData();f.set('file',new Blob([fs.readFileSync(path.join(root,'cypress/fixtures/5.0/locales',file))],{type:'text/plain'}),file);if(confirmed)f.set('confirmed','true');return f};let result=await api('/'+kind,{method:'POST',body:make(false)});console.log('Translation upload check',kind,JSON.stringify(result).slice(0,700));if(!result.locale)result=await api('/'+kind,{method:'POST',body:make(true)});console.log('Translation uploaded',kind)}
+ const after=items(await api('/projects'));if(after.length!==2)throw Error('Project count changed unexpectedly');console.log('Projects preserved',after.map(x=>x.name).join(', '));
+})().catch(e=>{console.error(e.message);process.exit(1)})

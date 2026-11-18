@@ -10,16 +10,22 @@ install:
 
 .PHONY: screenshots
 screenshots:
-	@rm -rf output && $(CYPRESS) run --browser chrome
+	@node scripts/run-captures.cjs
 
 .PHONY:screenshots.spec
 screenshots.spec:
-	@rm -rf output && $(CYPRESS) run --browser chrome --spec=cypress/e2e/$(test).cy.js
+	@node scripts/run-captures.cjs
 
 .PHONY: copy
 copy:
-	@node scripts/copy-screenshots "$(DOCS_DIR)" "$(SCREENSHOTS_DIR)"
+	@node scripts/copy-5-screenshots.cjs "$(DOCS_DIR)"
 
 .PHONY: open
 open:
 	@$(CYPRESS) open --browser chrome --e2e
+
+# Presentation captures have their own fixtures/output and are never copied to the guide.
+.PHONY: presentation-slides
+presentation-slides:
+	@node scripts/prepare-presentation-slides.cjs
+	@DSW_CAPTURE_SET=presentation-slides node node_modules/cypress/bin/cypress run --browser chrome
